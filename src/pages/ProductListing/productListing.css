@@ -1,0 +1,20 @@
+.product-grid {
+  display: grid;
+  grid-template-columns: 230px auto;
+  height: calc(100vh - 48px);
+  gap: 1rem;
+}
+
+.product-card {
+  display: inline-block;
+  text-decoration: none;
+  width: 300px;
+}
+
+.products-grid-list {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 1rem;
+  margin: 1rem;
+  overflow-y: scroll;
+}

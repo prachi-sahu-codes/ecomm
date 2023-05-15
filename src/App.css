@@ -1,0 +1,210 @@
+:root {
+  --primary: #1c1b1b;
+  --secondary: #661f1e;
+  --tertiary: #b0b0b0;
+
+  --white: #fff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/**********************************************/
+
+.flex-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/******************NavBar*********************/
+
+.nav-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 0.5rem 5rem;
+  height: 3rem;
+}
+
+.nav-logo {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.nav-search {
+  width: 200px;
+  margin-left: 0.5rem;
+  background-color: var(--primary);
+  color: var(--white);
+  font-size: 1rem;
+  border: none;
+  border-bottom: 1px solid var(--white);
+}
+.nav-search:focus {
+  outline: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 0rem 1rem;
+  color: var(--white);
+}
+
+.nav-acc {
+  font-size: 1.3rem;
+}
+
+/****************filters*****************/
+
+.filters-box {
+  padding: 0 1rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/********** Range Input Styles **********/
+/*Range Reset*/
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 9.5rem;
+}
+
+/* Removes default focus */
+input[type="range"]:focus {
+  outline: none;
+}
+
+/***** Chrome, Safari, Opera and Edge Chromium styles *****/
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: var(--secondary);
+  border-radius: 0.5rem;
+  height: 0.2rem;
+}
+
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -6px; /* Centers thumb on the track */
+  border-radius: 0.5rem;
+  background-color: var(--secondary);
+  height: 0.8rem;
+  width: 0.8rem;
+}
+
+/* input[type="range"]:focus::-webkit-slider-thumb {
+  border: 1px solid var(--secondary);
+  outline: 3px solid var(--secondary);
+  outline-offset: 0.125rem;
+} */
+
+/******** Firefox styles ********/
+/* slider track */
+input[type="range"]::-moz-range-track {
+  background-color: var(--secondary);
+  border-radius: 0.5rem;
+  height: 0.2rem;
+}
+
+/* slider thumb */
+input[type="range"]::-moz-range-thumb {
+  border: none; /*Removes extra border that FF applies*/
+  border-radius: 0; /*Removes default border-radius that FF applies*/
+
+  /*custom styles*/
+  background-color: var(--secondary);
+  border-radius: 0.5rem;
+  height: 0.8rem;
+  width: 0.8rem;
+}
+
+/* input[type="range"]:focus::-moz-range-thumb {
+  border: 1px solid var(--secondary);
+  outline: 3px solid var(--secondary);
+  outline-offset: 0.125rem;
+} */
+
+/***************filters******************/
+
+.filter-single {
+  border-bottom: 1px solid var(--tertiary);
+  padding: 1.5rem 1rem;
+}
+
+.filter-label {
+  display: inline-block;
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding-bottom: 0.5rem;
+}
+
+.checkbox-whole {
+  display: flex;
+  align-items: center;
+  margin: 0.4rem 0;
+  font-size: 1rem;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--primary);
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  border-radius: 2px;
+  margin-right: 0.6rem;
+}
+
+input[type="checkbox"]:checked::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 3px;
+  height: 8px;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--secondary);
+}
+
+/***********reset link********/
+.reset-link {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+/********************card********************/
+.card-image {
+  width: 300px;
+  background-color: aliceblue;
+}
+
+.card-title {
+  font-size: 1rem;
+}
+.card-price {
+  font-size: 0.9rem;
+  color: var(--primary);
+}
