@@ -12,13 +12,24 @@ export const ProductListing = () => {
       {/* <div>breadcrumbs</div> */}
       <div className="product-grid">
         <Filters />
-        <ul className="products-grid-list">
-          {data.map((item) => (
-            <li key={item?.id} className="product-card">
-              <ProductCard {...item} />
-            </li>
-          ))}
-        </ul>
+        <div className="listing-main-body">
+          <div className="flex-center listing-main-head">
+            <span>Breadcrumbs</span>
+            <select className="wrapper">
+              <option value="Relevance">Relevent Products</option>
+              <option value="Best Selling">Best Selling Products</option>
+              <option value="High to Low">Price: High to Low</option>
+              <option value="Low to High">Price: Low to High</option>
+            </select>
+          </div>
+          <ul className="products-grid-list">
+            {data.map((item) => (
+              <li key={item?.id} className="product-card">
+                <ProductCard {...item} />
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ export const Filters = () => {
     <div className="filters-box">
       <div className="filter-single">
         <label className="filter-label">Price</label>
-        <input type="range" min="100" max="10000" step="100" />
+        <input type="range" min="100" max="20000" step="100" />
       </div>
 
       <div className="filter-single">
@@ -33,7 +33,7 @@ export const Filters = () => {
         <p className="filter-label">Ratings</p>
         <label className="radio-whole">
           <input type="radio" name="rating" />
-          Table
+          Rating
         </label>
       </div>
 

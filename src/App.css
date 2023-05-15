@@ -23,6 +23,8 @@
 /******************NavBar*********************/
 
 .nav-flex {
+  position: fixed;
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,6 +32,7 @@
   color: var(--white);
   padding: 0.5rem 5rem;
   height: 3rem;
+  z-index: 1000;
 }
 
 .nav-logo {
@@ -65,8 +68,28 @@
 
 .filters-box {
   padding: 0 1rem;
+  margin-top: 4rem;
   overflow-y: scroll;
   overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
 }
 
 /********** Range Input Styles **********/
@@ -149,6 +172,10 @@ input[type="range"]::-moz-range-thumb {
   padding-bottom: 0.5rem;
 }
 
+input {
+  transition: all 0.3s ease-in-out;
+}
+
 .checkbox-whole {
   display: flex;
   align-items: center;
@@ -197,8 +224,13 @@ input[type="checkbox"]:checked {
 
 /********************card********************/
 .card-image {
+  /* position: relative; */
   width: 300px;
-  background-color: aliceblue;
+  background-color: #661f1e0f;
+}
+
+.card-content {
+  padding: 1rem;
 }
 
 .card-title {
@@ -207,4 +239,37 @@ input[type="checkbox"]:checked {
 .card-price {
   font-size: 0.9rem;
   color: var(--primary);
+}
+
+.card-heart {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.card-bag {
+  font-size: 1.1rem;
+  color: #661f1e;
+  cursor: pointer;
+}
+
+.card-btn {
+  background-color: var(--secondary);
+  background-image: linear-gradient(to bottom, #661f1e, #852827);
+  color: var(--white);
+  border: none;
+  border-radius: 2px;
+  padding: 0.4rem 0.9rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.card-btn:hover {
+  background-image: linear-gradient(to bottom, #852827, #661f1e);
+  cursor: pointer;
+}
+
+.card-btn:active {
+  background-image: linear-gradient(to bottom, #661f1e, #852827);
 }
