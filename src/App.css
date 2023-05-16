@@ -1,15 +1,18 @@
 :root {
   --primary: #1c1b1b;
   --secondary: #661f1e;
-  --tertiary: #b0b0b0;
+  --tertiary: #a5a5a5;
 
   --white: #fff;
+
+  --light-gray: #eaeaea;
 }
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 /**********************************************/
@@ -68,26 +71,25 @@
 
 .filters-box {
   padding: 0 1rem;
-  margin-top: 4rem;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  margin-top: 3rem;
+  border-right: 2px solid var(--light-gray);
 }
+
+/********scrollbar********/
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 10px;
+  padding-top: 10rem;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: var(--secondary);
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary);
 }
@@ -99,7 +101,7 @@ input[type="range"] {
   appearance: none;
   background: transparent;
   cursor: pointer;
-  width: 9.5rem;
+  width: 10rem;
 }
 
 /* Removes default focus */
@@ -144,8 +146,6 @@ input[type="range"]::-moz-range-track {
 input[type="range"]::-moz-range-thumb {
   border: none; /*Removes extra border that FF applies*/
   border-radius: 0; /*Removes default border-radius that FF applies*/
-
-  /*custom styles*/
   background-color: var(--secondary);
   border-radius: 0.5rem;
   height: 0.8rem;
@@ -158,11 +158,27 @@ input[type="range"]::-moz-range-thumb {
   outline-offset: 0.125rem;
 } */
 
+.filter-input-price {
+  padding: 0.2rem 0.3rem;
+  font-size: 0.9rem;
+  width: 4rem;
+  text-align: center;
+  margin-top: 0.5rem;
+  border: 1px solid var(--secondary);
+  border-radius: 2px;
+  touch-action: none;
+}
+
+.filter-input-price > legend {
+  font-weight: 500;
+  color: var(--secondary);
+}
+
 /***************filters******************/
 
 .filter-single {
   border-bottom: 1px solid var(--tertiary);
-  padding: 1.5rem 1rem;
+  padding: 1rem;
 }
 
 .filter-label {
@@ -177,6 +193,13 @@ input {
 }
 
 .checkbox-whole {
+  display: flex;
+  align-items: center;
+  margin: 0.4rem 0;
+  font-size: 1rem;
+}
+
+.radio-whole {
   display: flex;
   align-items: center;
   margin: 0.4rem 0;
@@ -214,6 +237,14 @@ input[type="checkbox"]:checked {
   background-color: var(--secondary);
 }
 
+/****************radio*****************/
+
+input[type="radio"] {
+  accent-color: var(--secondary);
+  margin-right: 0.6rem;
+  transform: scale(1.2);
+}
+
 /***********reset link********/
 .reset-link {
   text-transform: uppercase;
@@ -230,15 +261,17 @@ input[type="checkbox"]:checked {
 }
 
 .card-content {
-  padding: 1rem;
+  padding: 0.5rem 1rem 1rem;
 }
 
 .card-title {
   font-size: 1rem;
+  margin-bottom: 0.1rem;
 }
 .card-price {
   font-size: 0.9rem;
   color: var(--primary);
+  margin-right: 0.6rem;
 }
 
 .card-heart {
@@ -251,12 +284,16 @@ input[type="checkbox"]:checked {
 
 .card-bag {
   font-size: 1.1rem;
-  color: #661f1e;
+  color: var(--white);
+  background-color: var(--secondary);
+  padding: 0.4rem 0.8rem;
   cursor: pointer;
 }
 
 .card-btn {
   background-color: var(--secondary);
+  width: 100%;
+  margin-top: 0.5rem;
   background-image: linear-gradient(to bottom, #661f1e, #852827);
   color: var(--white);
   border: none;

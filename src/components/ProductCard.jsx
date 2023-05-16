@@ -8,6 +8,7 @@ export const ProductCard = ({
   name,
   decription,
   price,
+  discountedPrice,
   category,
   color,
   material,
@@ -24,11 +25,12 @@ export const ProductCard = ({
       </div>
       <div className="card-content">
         <h4 className="card-title">{name}</h4>
-        <div className="flex-center">
-          <span className="card-price">$ {price}</span>
+        <div>
+          <span className="card-price">${price}</span>
 
-          <button className="card-btn">Add to Cart</button>
+          {/* <button className="card-btn">Add to Bag</button> */}
         </div>
+        <button className="card-btn">Add to Bag</button>
         {/* <button className="card-btn" style={{width:"100%"}}>Add to Cart</button> */}
       </div>
     </>
