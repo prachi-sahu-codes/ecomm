@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { BsBag, BsSearch, BsPerson, BsHeart } from "react-icons/bs";
+import { useData } from "../context/ProductContext";
+import { ACTION_TYPE } from "../backend/utils/actionType";
 
 //BsHeart, BsPerson, BsSearch, BsSliders2(phone filter), BsChevronDown, BsChevronUp, BsDashLg, BsDash, BsPlusLg, BsPlus, BsJustify(hamburger)
 
@@ -9,6 +11,7 @@ const styleLinks = ({ isActive }) => ({
 });
 
 export const NavBar = () => {
+  const { dispatch } = useData();
   return (
     <div className="nav-flex">
       <Link to="/" className="nav-logo">
@@ -17,7 +20,13 @@ export const NavBar = () => {
 
       <div className="flex-center">
         <BsSearch />
-        <input type="text" className="nav-search" />
+        <input
+          type="text"
+          className="nav-search"
+          onChange={(e) =>
+            dispatch({ type: ACTION_TYPE.SEARCH, payload: e.target.value })
+          }
+        />
       </div>
 
       <div className="flex-center">

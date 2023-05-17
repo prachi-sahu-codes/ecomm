@@ -2,6 +2,9 @@ import { ACTION_TYPE } from "../backend/utils/actionType";
 
 export const productReducer = (state, action) => {
   switch (action.type) {
+    case ACTION_TYPE.SEARCH: {
+      return { ...state, searchTerm: action.payload };
+    }
     case ACTION_TYPE.CLEAR_FILTER: {
       return { state };
     }

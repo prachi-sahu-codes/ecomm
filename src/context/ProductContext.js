@@ -30,6 +30,7 @@ export const ProductProvider = ({ children }) => {
     checkboxCatg: [],
     radioRating: "",
     sortBy: "",
+    searchTerm: "",
   };
 
   const [state, dispatch] = useReducer(productReducer, initialState);
@@ -42,15 +43,30 @@ export const ProductProvider = ({ children }) => {
         : true) &&
       (state.radioRating !== ""
         ? product?.rating >= Number(state.radioRating)
+        : true) &&
+      (state.searchTerm.length > 0
+        ? product?.name.toLowerCase().includes(state.searchTerm.toLowerCase())
         : true)
   );
 
-  // const sortedList = filteredList.sort((a,b)=>{
-  //   if(state.sortBy)
-  // });
+  const sortedList =
+    state.sortBy !== "" || state.sortBy === "relevance"
+      ? filteredList.sort((a, b) => {
+          if (state.sortBy === "bestSell") {
+            return b.sales - a.sales;
+          } else if (state.sortBy === "HTL") {
+            return b.price - a.price;
+          } else if (state.sortBy === "LTH") {
+            return a.price - b.price;
+          }
+        })
+      : filteredList;
+  console.log(sortedList);
 
   return (
-    <ProductContext.Provider value={{ data, state, dispatch, filteredList }}>
+    <ProductContext.Provider
+      value={{ data, state, dispatch, filteredList, sortedList }}
+    >
       {children}
     </ProductContext.Provider>
   );

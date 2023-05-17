@@ -22,6 +22,7 @@ export const products = [
       "https://essentialhome.eu/images/products/product-page/upholstery/gable-dining-chair/gable-dining-chair-1.png",
     rating: 2.0,
     reviewsCount: "1.5k",
+    sales: 2000,
     reviews: [
       {
         author: "Tom Wilson",
@@ -51,6 +52,7 @@ export const products = [
       "https://essentialhome.eu/images/products/product-page/upholstery/isadora-i-bed/isadora-i-bed-1.png",
     rating: 5.0,
     reviewsCount: "15k",
+    sales: 20000,
     reviews: [
       {
         author: "Tom Wilson",
@@ -80,6 +82,7 @@ export const products = [
       "https://essentialhome.eu/images/products/thumbnails/upholstery/apollo-single-sofa.png",
     rating: 3.0,
     reviewsCount: "8.5k",
+    sales: 9000,
     reviews: [
       {
         author: "Tom Wilson",
@@ -109,6 +112,7 @@ export const products = [
       "https://essentialhome.eu/images/products/thumbnails/upholstery/mansfield-dining-chair-qv.png",
     rating: 5.0,
     reviewsCount: "1.5k",
+    sales: 2000,
     reviews: [
       {
         author: "Tom Wilson",
@@ -167,6 +171,7 @@ export const products = [
       "https://essentialhome.eu/images/products/product-page/upholstery/isadora-dining-chair/isadora-dining-chair-1.png",
     rating: 5.0,
     reviewsCount: "1.5k",
+    sales: 2000,
     reviews: [
       {
         author: "Tom Wilson",
@@ -196,6 +201,7 @@ export const products = [
       "https://essentialhome.eu/images/products/product-page/upholstery/collins-dining-chair/collins-dining-chair-1.png",
     rating: 5.0,
     reviewsCount: "1.5k",
+    sales: 1800,
     reviews: [
       {
         author: "Tom Wilson",
@@ -225,6 +231,7 @@ export const products = [
       "https://essentialhome.eu/images/products/thumbnails/upholstery/loren-sofa-qv.png",
     rating: 4.5,
     reviewsCount: "6.5k",
+    sales: 6900,
     reviews: [
       {
         author: "John Doe",
@@ -254,6 +261,7 @@ export const products = [
       "https://essentialhome.eu/images/products/product-page/upholstery/hadley-dining-chair/hadley-dining-chair-1.png",
     rating: 5.0,
     reviewsCount: "1.5k",
+    sales: 1650,
     reviews: [
       {
         author: "Tom Wilson",
@@ -313,6 +321,7 @@ export const products = [
       "https://essentialhome.eu/images/products/thumbnails/upholstery/mansfield-sofa-qv.png",
     rating: 2.0,
     reviewsCount: "1.5k",
+    sales: 1701,
     reviews: [
       {
         author: "Tom Wilson",
@@ -342,6 +351,7 @@ export const products = [
       "https://essentialhome.eu/images/products/thumbnails/casegoods/maxime-dining-table-qv.png",
     rating: 4.5,
     reviewsCount: "4.5k",
+    sales: 5500,
     reviews: [
       {
         author: "John Doe",
@@ -355,7 +365,6 @@ export const products = [
       },
     ],
   },
-
   {
     _id: uuid(),
     name: "Sophia Sectional Sofa",
@@ -372,6 +381,7 @@ export const products = [
       "https://essentialhome.eu/images/products/thumbnails/upholstery/sophia-sectional-sofa.png",
     rating: 4.0,
     reviewsCount: "6.5k",
+    sales: 6800,
     reviews: [
       {
         author: "Mark Johnson",
@@ -401,6 +411,7 @@ export const products = [
       "https://essentialhome.eu/images/products/product-page/upholstery/novak-sofa/novak-sofa-1.png",
     rating: 5.0,
     reviewsCount: "4.5k",
+    sales: 4800,
     reviews: [
       {
         author: "Tom Wilson",
@@ -429,7 +440,8 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/thumbnails/upholstery/marco-sofa-qv.png",
     rating: 3.0,
-    reviewsCount: "4.5k",
+    reviewsCount: "14.5k",
+    sales: 15000,
     reviews: [
       {
         author: "Tom Wilson",
@@ -458,7 +470,8 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/curtis-sofa/curtis-sofa-1.png",
     rating: 2.0,
-    reviewsCount: "4.5k",
+    reviewsCount: "49.5k",
+    sales: 50000,
     reviews: [
       {
         author: "Tom Wilson",
@@ -487,7 +500,8 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/russel-dining-chair/russel-dining-chair-1.png",
     rating: 5.0,
-    reviewsCount: "1.5k",
+    reviewsCount: "12.5k",
+    sales: 13000,
     reviews: [
       {
         author: "Tom Wilson",
@@ -501,7 +515,6 @@ export const products = [
       },
     ],
   },
-
   {
     _id: uuid(),
     name: "Romero Sofa",
@@ -517,7 +530,8 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/romero-sofa/romero-sofa-1.png",
     rating: 3.0,
-    reviewsCount: "3.5k",
+    reviewsCount: "23.5k",
+    sales: 24000,
     reviews: [
       {
         author: "Tom Wilson",
@@ -546,7 +560,8 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/dandridge-sofa/dandridge-sofa-1.png",
     rating: 5.0,
-    reviewsCount: "4.5k",
+    reviewsCount: "42.5k",
+    sales: 43000,
     reviews: [
       {
         author: "Tom Wilson",
@@ -575,7 +590,8 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/thumbnails/upholstery/pierre-single-sofa.png",
     rating: 5.0,
-    reviewsCount: "4.5k",
+    reviewsCount: "40.5k",
+    sales: 41000,
     reviews: [
       {
         author: "Tom Wilson",
@@ -605,7 +621,8 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/gable-single-sofa/gable-single-sofa-3.png",
     rating: 5.0,
-    reviewsCount: "4.5k",
+    reviewsCount: "62.5k",
+    sales: 63000,
     reviews: [
       {
         author: "Tom Wilson",
@@ -635,7 +652,8 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/casegoods/sidney-dining-table/sidney-dining-table-1.png",
     rating: 5.0,
-    reviewsCount: "4.5k",
+    reviewsCount: "9.5k",
+    sales: 10000,
     reviews: [
       {
         author: "Tom Wilson",
@@ -664,7 +682,8 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/isadora-ii-bed/isadora-ii-bed-1.png",
     rating: 5.0,
-    reviewsCount: "14.5k",
+    reviewsCount: "12.5k",
+    sales: 14000,
     reviews: [
       {
         author: "Tom Wilson",
@@ -694,6 +713,7 @@ export const products = [
       "https://essentialhome.eu/images/products/product-page/upholstery/minelli-bed/minelli-bed-1.png",
     rating: 5.0,
     reviewsCount: "42.5k",
+    sales: 44000,
     reviews: [
       {
         author: "Tom Wilson",
@@ -722,7 +742,8 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/thumbnails/casegoods/wormley-dining-table-qv.png",
     rating: 5.0,
-    reviewsCount: "4.5k",
+    reviewsCount: "5k",
+    sales: 7520,
     reviews: [
       {
         author: "Tom Wilson",
@@ -751,7 +772,8 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/casegoods/ezra-dining-table/ezra-dining-table-1.png",
     rating: 2.0,
-    reviewsCount: "4.5k",
+    reviewsCount: "25k",
+    sales: 26000,
     reviews: [
       {
         author: "Tom Wilson",
@@ -770,7 +792,7 @@ export const products = [
     name: "Isadora Bed",
     description:
       "Inspired by the Isadora Dining Chair, that has become one of the public's favorite pieces from the Studiopepe collection with Essential Home, the Isadora Bed is here to elevate and transform your bedroom décor. This bed achieves elegance through its design featuring a soft touch boucle textile throughout and minimalistic brass details to complement the look.",
-    price: 19599.99,
+    price: 15599.99,
     category: "Bed",
     dimensions: {
       width: "80.7 inches",
@@ -781,6 +803,7 @@ export const products = [
       "https://essentialhome.eu/images/products/product-page/upholstery/isadora-i-bed/isadora-i-bed-1.png",
     rating: 3.0,
     reviewsCount: "15k",
+    sales: 16000,
     reviews: [
       {
         author: "Tom Wilson",
@@ -810,6 +833,7 @@ export const products = [
       "https://essentialhome.eu/images/products/thumbnails/upholstery/franco-bed-qv.png",
     rating: 5.0,
     reviewsCount: "25k",
+    sales: 25900,
     reviews: [
       {
         author: "Tom Wilson",
@@ -839,6 +863,7 @@ export const products = [
       "https://essentialhome.eu/images/products/product-page/upholstery/hadley-side-dining-chair/hadley-side-dining-chair-1.png",
     rating: 5.0,
     reviewsCount: "1.5k",
+    sales: 2020,
     reviews: [
       {
         author: "Tom Wilson",
@@ -868,6 +893,7 @@ export const products = [
       "https://essentialhome.eu/images/products/thumbnails/upholstery/loren-sofa-qv.png",
     rating: 4.5,
     reviewsCount: "6.5k",
+    sales: 7060,
     reviews: [
       {
         author: "John Doe",
@@ -896,7 +922,8 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/doris-sofa/doris-sofa-1.png",
     rating: 4.5,
-    reviewsCount: "3.5k",
+    reviewsCount: "33.5k",
+    sales: 34000,
     reviews: [
       {
         author: "John Doe",
@@ -925,7 +952,8 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/thumbnails/upholstery/mansfield-sofa-qv.png",
     rating: 1.0,
-    reviewsCount: "1.5k",
+    reviewsCount: "16.5k",
+    sales: 17900,
     reviews: [
       {
         author: "Tom Wilson",
@@ -955,6 +983,7 @@ export const products = [
       "https://essentialhome.eu/images/products/thumbnails/casegoods/maxime-dining-table-qv.png",
     rating: 4.5,
     reviewsCount: "4.5k",
+    sales: 9850,
     reviews: [
       {
         author: "John Doe",
@@ -985,6 +1014,7 @@ export const products = [
       "https://essentialhome.eu/images/products/thumbnails/upholstery/sophia-sectional-sofa.png",
     rating: 4.0,
     reviewsCount: "6.5k",
+    sales: 9040,
     reviews: [
       {
         author: "Mark Johnson",
@@ -1014,6 +1044,7 @@ export const products = [
       "https://essentialhome.eu/images/products/product-page/upholstery/novak-sofa/novak-sofa-1.png",
     rating: 5.0,
     reviewsCount: "4.5k",
+    sales: 6125,
     reviews: [
       {
         author: "Tom Wilson",
@@ -1043,6 +1074,7 @@ export const products = [
       "https://essentialhome.eu/images/products/thumbnails/upholstery/marco-sofa-qv.png",
     rating: 3.0,
     reviewsCount: "4.5k",
+    sales: 9900,
     reviews: [
       {
         author: "Tom Wilson",
@@ -1071,7 +1103,8 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/curtis-sofa/curtis-sofa-1.png",
     rating: 2.0,
-    reviewsCount: "4.5k",
+    reviewsCount: "9.5k",
+    sales: 9540,
     reviews: [
       {
         author: "Tom Wilson",
@@ -1102,6 +1135,7 @@ export const products = [
       "https://essentialhome.eu/images/products/product-page/upholstery/romero-sofa/romero-sofa-1.png",
     rating: 1.0,
     reviewsCount: "3.5k",
+    sales: 4250,
     reviews: [
       {
         author: "Tom Wilson",
@@ -1130,7 +1164,8 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/dandridge-sofa/dandridge-sofa-1.png",
     rating: 5.0,
-    reviewsCount: "4.5k",
+    reviewsCount: "24.5k",
+    sales: 28000,
     reviews: [
       {
         author: "Tom Wilson",
@@ -1159,7 +1194,8 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/thumbnails/upholstery/pierre-single-sofa.png",
     rating: 5.0,
-    reviewsCount: "4.5k",
+    reviewsCount: "89.5k",
+    sales: 90000,
     reviews: [
       {
         author: "Tom Wilson",
@@ -1189,6 +1225,7 @@ export const products = [
       "https://essentialhome.eu/images/products/thumbnails/upholstery/apollo-single-sofa.png",
     rating: 5.0,
     reviewsCount: "8.5k",
+    sales: 9518,
     reviews: [
       {
         author: "Tom Wilson",
@@ -1217,7 +1254,8 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/gable-single-sofa/gable-single-sofa-3.png",
     rating: 5.0,
-    reviewsCount: "4.5k",
+    reviewsCount: "41.5k",
+    sales: 43520,
     reviews: [
       {
         author: "Tom Wilson",
@@ -1247,7 +1285,8 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/casegoods/sidney-dining-table/sidney-dining-table-1.png",
     rating: 5.0,
-    reviewsCount: "4.5k",
+    reviewsCount: "65k",
+    sales: 67000,
     reviews: [
       {
         author: "Tom Wilson",
@@ -1276,7 +1315,8 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/isadora-ii-bed/isadora-ii-bed-1.png",
     rating: 5.0,
-    reviewsCount: "14.5k",
+    reviewsCount: "11.5k",
+    sales: 12020,
     reviews: [
       {
         author: "Tom Wilson",
@@ -1306,6 +1346,7 @@ export const products = [
       "https://essentialhome.eu/images/products/product-page/upholstery/minelli-bed/minelli-bed-1.png",
     rating: 5.0,
     reviewsCount: "42.5k",
+    sales: 46020,
     reviews: [
       {
         author: "Tom Wilson",
@@ -1335,6 +1376,7 @@ export const products = [
       "https://essentialhome.eu/images/products/thumbnails/casegoods/wormley-dining-table-qv.png",
     rating: 5.0,
     reviewsCount: "4.5k",
+    sales: 8600,
     reviews: [
       {
         author: "Tom Wilson",
@@ -1363,7 +1405,8 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/casegoods/ezra-dining-table/ezra-dining-table-1.png",
     rating: 2.0,
-    reviewsCount: "4.5k",
+    reviewsCount: "54.5k",
+    sales: 59000,
     reviews: [
       {
         author: "Tom Wilson",

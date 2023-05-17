@@ -6,7 +6,7 @@ import { ProductCard } from "../../components/ProductCard";
 import { ACTION_TYPE } from "../../backend/utils/actionType";
 
 export const ProductListing = () => {
-  const { filteredList, dispatch } = useData();
+  const { sortedList, dispatch } = useData();
 
   return (
     <div>
@@ -31,8 +31,8 @@ export const ProductListing = () => {
             </select>
           </div>
           <ul className="products-grid-list">
-            {filteredList.length > 0 ? (
-              filteredList.map((item) => (
+            {sortedList.length > 0 ? (
+              sortedList.map((item) => (
                 <li key={item?.id} className="product-card">
                   <ProductCard {...item} />
                 </li>
