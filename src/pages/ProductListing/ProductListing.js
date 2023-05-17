@@ -10,7 +10,6 @@ export const ProductListing = () => {
 
   return (
     <div>
-      {/* <div>breadcrumbs</div> */}
       <div className="product-grid">
         <Filters />
         <div className="listing-main-body">
@@ -18,12 +17,17 @@ export const ProductListing = () => {
             <span>Breadcrumbs</span>
             <select
               className="wrapper"
-              onChange={() => dispatch({ type: ACTION_TYPE })}
+              onChange={(e) =>
+                dispatch({
+                  type: ACTION_TYPE.SORT_SELECT,
+                  payload: e.target.value,
+                })
+              }
             >
-              <option value="Relevance">Relevent Products</option>
-              <option value="Best Selling">Best Selling Products</option>
-              <option value="High to Low">Price: High to Low</option>
-              <option value="Low to High">Price: Low to High</option>
+              <option value="relevance">Relevent Products</option>
+              <option value="bestSell">Best Selling Products</option>
+              <option value="HTL">Price: High to Low</option>
+              <option value="LTH">Price: Low to High</option>
             </select>
           </div>
           <ul className="products-grid-list">

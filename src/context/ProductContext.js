@@ -5,7 +5,7 @@ import {
   useReducer,
   useState,
 } from "react";
-import { ACTION_TYPE } from "../backend/utils/actionType";
+import { productReducer } from "../reducer/ProductReducer";
 
 const ProductContext = createContext();
 
@@ -32,38 +32,6 @@ export const ProductProvider = ({ children }) => {
     sortBy: "",
   };
 
-  const productReducer = (state, action) => {
-    switch (action.type) {
-      case ACTION_TYPE.CLEAR_FILTER: {
-        return { state };
-      }
-      case ACTION_TYPE.PRICE_RANGE: {
-        return { ...state, priceRange: action.payload };
-      }
-      case ACTION_TYPE.CHECKBOX_CATG: {
-        const checkPresence = state.checkboxCatg.indexOf(action.payload);
-        console.log("called", checkPresence, action.payload);
-        if (checkPresence !== -1) {
-          const filterCatg = state.checkboxCatg.filter(
-            (catg) => catg !== action.payload
-          );
-          return { ...state, checkboxCatg: filterCatg };
-        } else {
-          return {
-            ...state,
-            checkboxCatg: [...state.checkboxCatg, action.payload],
-          };
-        }
-      }
-      case ACTION_TYPE.RADIO_RATING: {
-        return { ...state, radioRating: action.payload };
-      }
-      default: {
-        return state;
-      }
-    }
-  };
-
   const [state, dispatch] = useReducer(productReducer, initialState);
 
   const filteredList = data.filter(
@@ -77,7 +45,9 @@ export const ProductProvider = ({ children }) => {
         : true)
   );
 
-  console.log(state.radioRating);
+  // const sortedList = filteredList.sort((a,b)=>{
+  //   if(state.sortBy)
+  // });
 
   return (
     <ProductContext.Provider value={{ data, state, dispatch, filteredList }}>
