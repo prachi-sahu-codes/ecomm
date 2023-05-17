@@ -6,14 +6,19 @@ export const productReducer = (state, action) => {
       return { ...state, searchTerm: action.payload };
     }
     case ACTION_TYPE.CLEAR_FILTER: {
-      return { state };
+      return {
+        priceRange: "20000",
+        checkboxCatg: [],
+        radioRating: "",
+        sortBy: "relevance",
+        searchTerm: "",
+      };
     }
     case ACTION_TYPE.PRICE_RANGE: {
       return { ...state, priceRange: action.payload };
     }
     case ACTION_TYPE.CHECKBOX_CATG: {
       const checkPresence = state.checkboxCatg.indexOf(action.payload);
-      console.log("called", checkPresence, action.payload);
       if (checkPresence !== -1) {
         const filterCatg = state.checkboxCatg.filter(
           (catg) => catg !== action.payload

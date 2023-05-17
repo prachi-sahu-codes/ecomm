@@ -41,9 +41,7 @@ export const ProductProvider = ({ children }) => {
       (state.checkboxCatg.length > 0
         ? state.checkboxCatg.includes(product?.category)
         : true) &&
-      (state.radioRating !== ""
-        ? product?.rating >= Number(state.radioRating)
-        : true) &&
+      (state.radioRating > 0 ? product?.rating >= state.radioRating : true) &&
       (state.searchTerm.length > 0
         ? product?.name.toLowerCase().includes(state.searchTerm.toLowerCase())
         : true)

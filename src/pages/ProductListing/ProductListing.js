@@ -6,10 +6,10 @@ import { ProductCard } from "../../components/ProductCard";
 import { ACTION_TYPE } from "../../backend/utils/actionType";
 
 export const ProductListing = () => {
-  const { sortedList, dispatch } = useData();
+  const { sortedList, dispatch, state } = useData();
 
   return (
-    <div>
+    <div className="product-listing-whole">
       <div className="product-grid">
         <Filters />
         <div className="listing-main-body">
@@ -23,6 +23,7 @@ export const ProductListing = () => {
                   payload: e.target.value,
                 })
               }
+              value={state.sortBy}
             >
               <option value="relevance">Relevent Products</option>
               <option value="bestSell">Best Selling Products</option>

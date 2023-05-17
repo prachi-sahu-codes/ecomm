@@ -4,6 +4,7 @@ import { useData } from "../context/ProductContext";
 import { ACTION_TYPE } from "../backend/utils/actionType";
 
 const categoryArray = ["Sofa", "Chair", "Bed", "Table"];
+const ratingArray = [4, 3, 2, 1];
 
 export const Filters = () => {
   const { state, dispatch } = useData();
@@ -57,65 +58,32 @@ export const Filters = () => {
 
       <div className="filter-single">
         <p className="filter-label">Ratings</p>
-        <label className="radio-whole">
-          <input
-            type="radio"
-            name="rating"
-            value="4"
-            onChange={(e) =>
-              dispatch({
-                type: ACTION_TYPE.RADIO_RATING,
-                payload: e.target.value,
-              })
-            }
-          />
-          4 stars & above
-        </label>
-        <label className="radio-whole">
-          <input
-            type="radio"
-            name="rating"
-            value="3"
-            onChange={(e) =>
-              dispatch({
-                type: ACTION_TYPE.RADIO_RATING,
-                payload: e.target.value,
-              })
-            }
-          />
-          3 stars & above
-        </label>
-        <label className="radio-whole">
-          <input
-            type="radio"
-            name="rating"
-            value="2"
-            onChange={(e) =>
-              dispatch({
-                type: ACTION_TYPE.RADIO_RATING,
-                payload: e.target.value,
-              })
-            }
-          />
-          2 stars & above
-        </label>
-        <label className="radio-whole">
-          <input
-            type="radio"
-            name="rating"
-            value="1"
-            onChange={(e) =>
-              dispatch({
-                type: ACTION_TYPE.RADIO_RATING,
-                payload: e.target.value,
-              })
-            }
-          />
-          1 stars & above
-        </label>
+
+        {ratingArray.map((rating) => (
+          <label className="radio-whole">
+            <input
+              type="radio"
+              name="rating"
+              value=""
+              checked={state.radioRating === rating}
+              onChange={(e) =>
+                dispatch({
+                  type: ACTION_TYPE.RADIO_RATING,
+                  payload: rating,
+                })
+              }
+            />
+            {rating} stars & above
+          </label>
+        ))}
       </div>
 
-      <Link className="reset-link">Reset all filters</Link>
+      <Link
+        className="reset-link"
+        onClick={() => dispatch({ type: ACTION_TYPE.CLEAR_FILTER })}
+      >
+        Reset all filters
+      </Link>
     </div>
   );
 };

@@ -11,7 +11,7 @@ const styleLinks = ({ isActive }) => ({
 });
 
 export const NavBar = () => {
-  const { dispatch } = useData();
+  const { state, dispatch } = useData();
   return (
     <div className="nav-flex">
       <Link to="/" className="nav-logo">
@@ -23,6 +23,7 @@ export const NavBar = () => {
         <input
           type="text"
           className="nav-search"
+          value={state.searchTerm}
           onChange={(e) =>
             dispatch({ type: ACTION_TYPE.SEARCH, payload: e.target.value })
           }
