@@ -3,14 +3,21 @@ import { Link } from "react-router-dom";
 import "./home.css";
 import home from "../../backend/utils/images/home.jpg";
 import dt from "../../backend/utils/images/dt.png";
-import goal from "../../backend/utils/images/goal.png";
 import waran from "../../backend/utils/images/waran.png";
 import quality from "../../backend/utils/images/quality.png";
+import goal from "../../backend/utils/images/goal.png";
 import { Footer } from "../../components/Footer";
 import { useCatg } from "../../context/CategoryContext";
+import { useData } from "../../context/ProductContext";
+import { ProductCard } from "../../components/ProductCard";
+import { ACTION_TYPE } from "../../backend/utils/actionType";
 
 export const Home = () => {
+  const { data, dispatch } = useData();
   const { categories } = useCatg();
+
+  const hotProducts = [...data].sort((a, b) => b.sales - a.sales).slice(0, 3);
+  console.log(data);
   return (
     <div className="container">
       <img src={home} alt="Hero sofa" className="hero-img" />
@@ -58,7 +65,7 @@ export const Home = () => {
 
           <div className="benefits-single">
             <img src={dt} alt="Delivery truck" className="benefits-truck" />
-            <h4 className="benefits-head">Best Quality</h4>
+            <h4 className="benefits-head ">Free Shipping</h4>
             <p className="benefits-detail">
               Enjoy the convenience of free shipping on all our online products,
               making your shopping experience hassle-free.
@@ -67,7 +74,7 @@ export const Home = () => {
 
           <div className="benefits-single">
             <img src={waran} alt="Waranty" className="benefits-wara" />
-            <h4 className="benefits-head">Best Quality</h4>
+            <h4 className="benefits-head">Waranty</h4>
             <p className="benefits-detail">
               Rest assured with our comprehensive warranty, providing peace of
               mind and protection for your purchased online products.
@@ -75,7 +82,23 @@ export const Home = () => {
           </div>
         </div>
         <h2 className="home-title">Hot Products</h2>
-        <h2 className="home-title title-catalog">Catalogs</h2>
+        <div className="hot-products">
+          {hotProducts.map((item) => (
+            <li key={item?.id} className="product-card">
+              <ProductCard {...item} noDetail />
+            </li>
+          ))}
+          <Link
+            to="/shop"
+            className="home-best-sell-link"
+            onClick={() =>
+              dispatch({ type: ACTION_TYPE.SORT_SELECT, payload: "bestSell" })
+            }
+          >
+            See All &#x27F6;
+          </Link>
+        </div>
+        <h2 className="home-title catg-head">Catalogs</h2>
         <div>
           {categories.map((item, index) => (
             <div className="catg-single" key={item.id}>

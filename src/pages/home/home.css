@@ -65,8 +65,8 @@
   text-align: center;
 }
 
-.title-catalog {
-  margin: 4rem 2rem 3rem;
+.catg-head {
+  margin: 4rem 2rem 2rem;
 }
 
 .home-content {
@@ -77,7 +77,8 @@
 
 .about-goal,
 .benefits,
-.catg-single {
+.catg-single,
+.hot-products {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -108,6 +109,10 @@
 
 /*******************benefits************************/
 
+.benefits {
+  padding: 1rem 0 3rem;
+}
+
 .benefits-single {
   width: 250px;
   text-align: center;
@@ -126,7 +131,7 @@
 }
 
 .benefits-head {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 500;
   padding-bottom: 1rem;
 }
@@ -134,21 +139,37 @@
   color: var(--gray);
 }
 
+/*****************************HOT PRODUCT****************************/
+
+.home-best-sell-link {
+  text-transform: uppercase;
+  color: var(--secondary);
+  font-weight: 500;
+}
+
+.hot-products {
+  padding: 1rem 0;
+}
 /******************categories/catalog*******************/
 
+.catg-single {
+  padding: 3rem;
+}
 .catg-image {
   width: 400px;
+  height: 350px;
   border-radius: 2px;
+  background-color: #8529270f;
 }
 
 .catg-content {
-  width: 500px;
-  padding: 3rem;
-  box-shadow: 0 2px 6px rgb(228, 228, 228);
+  width: 400px;
+  padding: 1rem;
+  margin: 2rem;
 }
 
 .catg-content > h3 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 500;
   padding-bottom: 2rem;
 }
@@ -231,24 +252,29 @@
 @media screen and (max-width: 600px) {
   .hero-img-content {
     position: relative;
+    margin: 0 2rem;
   }
   .hero-title {
     color: var(--secondary);
-    max-width: 300px;
+    max-width: 310px;
     margin-top: 1rem;
+    font-size: 2rem;
   }
 
   .hero-title-detail {
     color: var(--gray);
     max-width: 300px;
     margin-top: 1rem;
+    font-size: 1rem;
+  }
+  .hero-btn {
+    margin-bottom: 2rem;
   }
 }
 
 @media screen and (max-width: 640px) {
   .catg-content {
     width: 100%;
-    padding: 3rem;
-    box-shadow: 0 2px 6px rgb(228, 228, 228);
+    padding: 1rem 0;
   }
 }
