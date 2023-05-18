@@ -60,7 +60,7 @@ export const Filters = () => {
         <p className="filter-label">Ratings</p>
 
         {ratingArray.map((rating) => (
-          <label className="radio-whole">
+          <label key={rating} className="radio-whole">
             <input
               type="radio"
               name="rating"

@@ -13,15 +13,6 @@
   border-radius: 2px;
   box-shadow: 0 1px 5px rgb(228, 228, 228);
 }
-/* 
-.listing-main-body::-webkit-scrollbar {
-  display: none;
-}
-
-.listing-main-body {
-  -ms-overflow-style: none; 
-  scrollbar-width: none; 
-} */
 
 .products-grid-list {
   display: flex;

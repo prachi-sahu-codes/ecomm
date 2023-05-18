@@ -4,7 +4,7 @@
   --tertiary: #a5a5a5;
 
   --white: #fff;
-
+  --gray: #4f4f4f;
   --light-gray: #eaeaea;
 }
 
@@ -109,7 +109,6 @@ input[type="range"]:focus {
   outline: none;
 }
 
-/***** Chrome, Safari, Opera and Edge Chromium styles *****/
 /* slider track */
 input[type="range"]::-webkit-slider-runnable-track {
   background-color: var(--secondary);
@@ -119,9 +118,9 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 /* slider thumb */
 input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Override default look */
+  -webkit-appearance: none;
   appearance: none;
-  margin-top: -6px; /* Centers thumb on the track */
+  margin-top: -6px;
   border-radius: 0.5rem;
   background-color: var(--secondary);
   height: 0.8rem;

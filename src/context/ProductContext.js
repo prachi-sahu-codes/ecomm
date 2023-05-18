@@ -59,7 +59,6 @@ export const ProductProvider = ({ children }) => {
           }
         })
       : filteredList;
-  console.log(sortedList);
 
   return (
     <ProductContext.Provider
