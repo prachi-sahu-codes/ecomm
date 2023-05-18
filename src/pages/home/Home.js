@@ -112,7 +112,18 @@ export const Home = () => {
                   <div className="catg-content">
                     <h3>{item.categoryName}</h3>
                     <p>{item.description}</p>
-                    <Link className="see-catg-link">Catalog</Link>
+                    <Link
+                      className="see-catg-link"
+                      to="./shop"
+                      onClick={() =>
+                        dispatch({
+                          type: ACTION_TYPE.CHECKBOX_CATG,
+                          payload: item.categoryName,
+                        })
+                      }
+                    >
+                      Catalog
+                    </Link>
                   </div>
                 </>
               ) : (
@@ -120,7 +131,18 @@ export const Home = () => {
                   <div className="catg-content">
                     <h3>{item.categoryName}</h3>
                     <p>{item.description}</p>
-                    <Link className="see-catg-link">Catalog</Link>
+                    <Link
+                      className="see-catg-link"
+                      to="./shop"
+                      onClick={() =>
+                        dispatch({
+                          type: ACTION_TYPE.CHECKBOX_CATG,
+                          payload: item.categoryName,
+                        })
+                      }
+                    >
+                      Catalog
+                    </Link>
                   </div>
                   <img
                     className="catg-image"
@@ -143,7 +165,18 @@ export const Home = () => {
                 <div className="catg-content">
                   <h3>{item.categoryName}</h3>
                   <p>{item.description}</p>
-                  <Link className="see-catg-link">Catalog</Link>
+                  <Link
+                    className="see-catg-link"
+                    to="./shop"
+                    onClick={() =>
+                      dispatch({
+                        type: ACTION_TYPE.CHECKBOX_CATG,
+                        payload: item.categoryName,
+                      })
+                    }
+                  >
+                    Catalog
+                  </Link>
                 </div>
               </>
             </div>

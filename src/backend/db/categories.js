@@ -8,7 +8,7 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "Sofas",
+    categoryName: "Sofa",
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/dandridge-sofa/dandridge-sofa-1.png",
     description:
@@ -16,7 +16,7 @@ export const categories = [
   },
   {
     _id: uuid(),
-    categoryName: "Chairs",
+    categoryName: "Chair",
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/hadley-dining-chair/hadley-dining-chair-1.png",
     description:
@@ -24,7 +24,7 @@ export const categories = [
   },
   {
     _id: uuid(),
-    categoryName: "Beds",
+    categoryName: "Bed",
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/isadora-i-bed/isadora-i-bed-1.png",
     description:
@@ -32,7 +32,7 @@ export const categories = [
   },
   {
     _id: uuid(),
-    categoryName: "Tables",
+    categoryName: "Table",
     image:
       "https://essentialhome.eu/images/products/product-page/casegoods/sidney-dining-table/sidney-dining-table-1.png",
     description:
