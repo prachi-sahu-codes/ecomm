@@ -143,8 +143,13 @@
 
 .home-best-sell-link {
   text-transform: uppercase;
-  color: var(--secondary);
+  color: var(--primary);
   font-weight: 500;
+}
+
+.home-best-sell-link:hover {
+  text-decoration: none;
+  color: var(--secondary);
 }
 
 .hot-products {
@@ -180,10 +185,16 @@
 }
 
 .see-catg-link {
+  display: inline-block;
   font-size: 1rem;
   text-transform: uppercase;
   color: var(--primary);
   font-weight: 500;
+}
+
+.see-catg-link:hover {
+  text-decoration: none;
+  color: var(--secondary);
 }
 .catg-phone {
   display: none;

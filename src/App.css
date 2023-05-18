@@ -365,9 +365,13 @@ input[type="radio"] {
   padding-bottom: 3rem;
 }
 
-.footer-li-a {
+.footer-live-link {
   color: var(--tertiary);
   font-size: 0.8rem;
   text-decoration: none;
   cursor: pointer;
+}
+
+.footer-live-link:hover {
+  color: var(--light-gray);
 }

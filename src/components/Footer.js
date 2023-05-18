@@ -1,6 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { useData } from "../context/ProductContext";
+import { ACTION_TYPE } from "../backend/utils/actionType";
 
 export const Footer = () => {
+  const { dispatch } = useData();
   return (
     <div className="footer">
       <div className="footer-desc">
@@ -23,10 +27,63 @@ export const Footer = () => {
       <div className="footer-li">
         <h5 className="footer-head">CATALOG</h5>
         <ul className="footer-li">
-          <li>Sofa</li>
-          <li>Chair</li>
-          <li>Bed</li>
-          <li>Table</li>
+          <li>
+            <Link
+              className="footer-live-link"
+              to="./shop"
+              onClick={() =>
+                dispatch({
+                  type: ACTION_TYPE.CHECKBOX_CATG,
+                  payload: "Sofa",
+                })
+              }
+            >
+              Sofa
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              className="footer-live-link"
+              to="./shop"
+              onClick={() =>
+                dispatch({
+                  type: ACTION_TYPE.CHECKBOX_CATG,
+                  payload: "Chair",
+                })
+              }
+            >
+              Chair
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="footer-live-link"
+              to="./shop"
+              onClick={() =>
+                dispatch({
+                  type: ACTION_TYPE.CHECKBOX_CATG,
+                  payload: "Bed",
+                })
+              }
+            >
+              Bed
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="footer-live-link"
+              to="./shop"
+              onClick={() =>
+                dispatch({
+                  type: ACTION_TYPE.CHECKBOX_CATG,
+                  payload: "Table",
+                })
+              }
+            >
+              Table
+            </Link>
+          </li>
         </ul>
       </div>
       <div className="footer-li">
@@ -45,7 +102,7 @@ export const Footer = () => {
             <a
               href="https://github.com/prachi-sahu-codes/"
               target="_blank"
-              className="footer-li-a"
+              className="footer-live-link"
             >
               GitHub
             </a>
@@ -54,7 +111,7 @@ export const Footer = () => {
             <a
               href="https://twitter.com/_prachi_sahu"
               target="_blank"
-              className="footer-li-a"
+              className="footer-live-link"
             >
               Twitter
             </a>
@@ -63,7 +120,7 @@ export const Footer = () => {
             <a
               href="https://www.linkedin.com/in/prachi-sahu-96b228200/"
               target="_blank"
-              className="footer-li-a"
+              className="footer-live-link"
             >
               LinkedIn
             </a>
