@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { BsBag, BsSearch, BsPerson, BsHeart } from "react-icons/bs";
 import { useData } from "../context/ProductContext";
 import { ACTION_TYPE } from "../backend/utils/actionType";
@@ -12,6 +12,7 @@ const styleLinks = ({ isActive }) => ({
 
 export const NavBar = () => {
   const { state, dispatch } = useData();
+  const navigate = useNavigate();
   return (
     <div className="nav-flex">
       <Link to="/" className="nav-logo">
@@ -24,9 +25,10 @@ export const NavBar = () => {
           type="text"
           className="nav-search"
           value={state.searchTerm}
-          onChange={(e) =>
-            dispatch({ type: ACTION_TYPE.SEARCH, payload: e.target.value })
-          }
+          onChange={(e) => {
+            navigate("/shop");
+            dispatch({ type: ACTION_TYPE.SEARCH, payload: e.target.value });
+          }}
         />
       </div>
 
