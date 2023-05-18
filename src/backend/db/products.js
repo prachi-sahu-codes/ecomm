@@ -307,6 +307,37 @@ export const products = [
   },
   {
     _id: uuid(),
+    name: "Roxy Dining Chair",
+    description:
+      "he glam rock band Roxy Music is one of Draga's favorites and Roxanne by The Police is a song she loves. As well as the club, Symbol of the London punk scene in the late Seventies, the Roxy provided a platform for bands such as The Clash, The Police, and Siouxsie and the Banshees that made the history of music. Those eclectic vibes inspired the creative process behind the Roxy dining chair, a sleek furniture piece that can suit any project style.",
+    price: 17299.99,
+    category: "Chair",
+    dimensions: {
+      width: "20.9 inches",
+      height: "33.9 inches",
+      length: "23.9 inches",
+    },
+    image:
+      "https://essentialhome.eu/images/products/product-page/upholstery/roxy-dining-chair/roxy-dining-chair-1.png",
+    rating: 5.0,
+    reviewsCount: "81.5k",
+    sales: 81650,
+    reviews: [
+      {
+        author: "Tom Wilson",
+        text: "Absolutely stunning chair, great craftsmanship.",
+        rating: 5,
+      },
+      {
+        author: "Emily Green",
+        text: "This chair is perfect for my home office. It is comfortable and looks great.",
+        rating: 4,
+      },
+    ],
+  },
+
+  {
+    _id: uuid(),
     name: "Mansfield Sofa",
     description:
       "A contemporary mid-century modern style sofa featuring strong shapes and hard edges along with a rich velvet fabric.",
@@ -490,7 +521,7 @@ export const products = [
     name: "Russle Dining Chair",
     description:
       "Part of a larger design collection for the living room but it can also be used as a side chair. Its curved low back has some stitched seam accents that give it a stylish look. It features a round polished brass swivel base that contrasts with the dreamy cotton velvet.",
-    price: 16099.99,
+    price: 15099.99,
     category: "Chair",
     dimensions: {
       width: "20.9 inches",
@@ -561,7 +592,7 @@ export const products = [
       "https://essentialhome.eu/images/products/product-page/upholstery/dandridge-sofa/dandridge-sofa-1.png",
     rating: 5.0,
     reviewsCount: "42.5k",
-    sales: 43000,
+    sales: 23000,
     reviews: [
       {
         author: "Tom Wilson",
@@ -713,7 +744,7 @@ export const products = [
       "https://essentialhome.eu/images/products/product-page/upholstery/minelli-bed/minelli-bed-1.png",
     rating: 5.0,
     reviewsCount: "42.5k",
-    sales: 44000,
+    sales: 4000,
     reviews: [
       {
         author: "Tom Wilson",
@@ -822,7 +853,7 @@ export const products = [
     name: "Franco Bed",
     description:
       "A true display of handskill, this bed’s immense headboard is a testament to craftsmanship.With Polished Brass, Varnished Walnut, Straw and Leds on the sides of the headboard.",
-    price: 16499.99,
+    price: 18499.99,
     category: "Bed",
     dimensions: {
       width: "80.7 inches",
@@ -1043,8 +1074,8 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/novak-sofa/novak-sofa-1.png",
     rating: 5.0,
-    reviewsCount: "4.5k",
-    sales: 6125,
+    reviewsCount: "43.5k",
+    sales: 44125,
     reviews: [
       {
         author: "Tom Wilson",
@@ -1255,7 +1286,7 @@ export const products = [
       "https://essentialhome.eu/images/products/product-page/upholstery/gable-single-sofa/gable-single-sofa-3.png",
     rating: 5.0,
     reviewsCount: "41.5k",
-    sales: 43520,
+    sales: 23520,
     reviews: [
       {
         author: "Tom Wilson",
@@ -1375,8 +1406,8 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/thumbnails/casegoods/wormley-dining-table-qv.png",
     rating: 5.0,
-    reviewsCount: "4.5k",
-    sales: 8600,
+    reviewsCount: "14.5k",
+    sales: 15600,
     reviews: [
       {
         author: "Tom Wilson",

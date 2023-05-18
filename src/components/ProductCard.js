@@ -16,6 +16,7 @@ export const ProductCard = ({
   image,
   rating,
   reviews,
+  noDetail,
 }) => {
   return (
     <>
@@ -30,7 +31,7 @@ export const ProductCard = ({
 
           {/* <button className="card-btn">Add to Bag</button> */}
         </div>
-        <button className="card-btn">Add to Bag</button>
+        {!noDetail && <button className="card-btn">Add to Bag</button>}
         {/* <button className="card-btn" style={{width:"100%"}}>Add to Cart</button> */}
       </div>
     </>

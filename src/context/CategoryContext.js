@@ -19,8 +19,6 @@ export const CategoryProvider = ({ children }) => {
     getData();
   }, []);
 
-  console.log(categories);
-
   return (
     <CategoryContext.Provider value={{ categories }}>
       {children}
