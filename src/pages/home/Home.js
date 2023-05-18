@@ -74,7 +74,7 @@ export const Home = () => {
             </p>
           </div>
         </div>
-        {/* <h2 className="home-title">Hot Products</h2> */}
+        <h2 className="home-title">Hot Products</h2>
         <h2 className="home-title title-catalog">Catalogs</h2>
         <div>
           {categories.map((item, index) => (
