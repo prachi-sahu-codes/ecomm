@@ -17,7 +17,7 @@ export const Home = () => {
   const { categories } = useCatg();
 
   const hotProducts = [...data].sort((a, b) => b.sales - a.sales).slice(0, 3);
-  console.log(data);
+
   return (
     <div className="container">
       <img src={home} alt="Hero sofa" className="hero-img" />

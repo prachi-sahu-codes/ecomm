@@ -1,0 +1,122 @@
+@import "../../App.css";
+
+:root {
+  --gray-line: #4f4f4f55;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+
+.detail-image {
+  width: 500px;
+  margin-top: 3rem;
+}
+
+.detail-content {
+  width: 500px;
+}
+
+.detail-title-icon {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--gray-line);
+}
+
+.detail-rating {
+  display: flex;
+}
+
+.detail-icon-heart {
+  font-size: 1.2rem;
+}
+.detail-title {
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 1rem 0;
+  line-height: 3rem;
+}
+
+.qty-rating-head {
+  padding-right: 1.7rem;
+}
+
+.detail-quantity-title {
+  font-size: 1.1rem;
+  padding: 1rem 0 0;
+  font-weight: 500;
+}
+
+.detail-quantity {
+  display: inline-block;
+  border: 1px solid var(--gray-line);
+  margin: 1rem 0;
+}
+
+.detail-quantity-btn {
+  padding: 0.4rem 1rem;
+  font-size: 1.4rem;
+  border: none;
+  background-color: transparent;
+  border-radius: 2px;
+}
+
+.detail-desc {
+  color: var(--gray);
+  padding: 1rem 0;
+}
+
+/***************bottom-content******************/
+
+.detail-subHead {
+  font-weight: 500;
+  padding: 2rem 0;
+}
+
+.bottom-content {
+  width: 82%;
+  margin: 0 auto 2rem;
+}
+
+/****************table*****************/
+
+.table-container {
+  border-collapse: collapse;
+  margin: 1rem auto;
+  width: 100%;
+}
+
+.table-head {
+  color: var(--primary);
+  background-color: var(--light-gray);
+}
+
+.table-row {
+  border-collapse: collapse;
+}
+
+.table-cell {
+  padding: 1rem;
+  border: 1px solid var(--gray-line);
+}
+
+/*************reviews**************/
+
+.rating-strong-num,
+.rating-author {
+  font-weight: 500;
+}
+
+.rating-strong-num {
+  color: var(--primary);
+}
+
+.review-box {
+  border: 1px solid var(--gray-line);
+  padding: 2rem 2rem 1rem;
+  margin: 1rem 0;
+  list-style: none;
+}

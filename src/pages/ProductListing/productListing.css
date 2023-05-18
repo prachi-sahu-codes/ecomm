@@ -12,6 +12,11 @@
   margin-bottom: 1rem;
   border-radius: 2px;
   box-shadow: 0 1px 5px rgb(228, 228, 228);
+  transition: all 0.3s ease-in-out;
+}
+
+.product-card:hover {
+  box-shadow: 0 2px 7px rgb(203, 203, 203);
 }
 
 .products-grid-list {
@@ -32,6 +37,7 @@
   width: calc(100vw - 230px);
   top: 3rem;
   background-color: #fff;
+  justify-content: flex-end; /*to be removed when add breadcrumb*/
 }
 
 .listing-main-head > select {

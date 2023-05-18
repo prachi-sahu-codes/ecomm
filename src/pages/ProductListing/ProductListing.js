@@ -6,7 +6,11 @@ import { ProductCard } from "../../components/ProductCard";
 import { ACTION_TYPE } from "../../backend/utils/actionType";
 
 export const ProductListing = () => {
-  const { sortedList, dispatch, state } = useData();
+  const { loading, sortedList, dispatch, state } = useData();
+
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
 
   return (
     <div className="product-listing-whole">
@@ -14,7 +18,7 @@ export const ProductListing = () => {
         <Filters />
         <div className="listing-main-body">
           <div className="flex-center listing-main-head">
-            <span>Breadcrumbs</span>
+            {/* <span>Breadcrumbs</span> */}
             <select
               className="wrapper"
               onChange={(e) =>
