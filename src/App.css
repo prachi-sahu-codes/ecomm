@@ -67,6 +67,21 @@
   font-size: 1.3rem;
 }
 
+@media screen and (max-width: 800px) {
+  .nav-search {
+    width: 130px;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .nav-flex {
+    padding: 0.5rem 1rem;
+  }
+  .nav-search {
+    width: 100px;
+  }
+}
+
 /****************filters*****************/
 
 .filters-box {
