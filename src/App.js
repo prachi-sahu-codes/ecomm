@@ -7,8 +7,10 @@ import { NavBar } from "./components/NavBar";
 import { Wishlist } from "./pages/wishlist/Wishlist";
 import { Cart } from "./pages/cart/Cart";
 import { Account } from "./pages/account/Account";
+import { Signup } from "./pages/account/signup";
 import { ProductListing } from "./pages/ProductListing/ProductListing";
 import { ProductDetail } from "./pages/productDetail/ProductDetail";
+import { NotFound } from "./pages/notFound/NotFound";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/shop" element={<ProductListing />} />
         <Route path="/detail/:productId" element={<ProductDetail />} />
+        <Route path="/signUp" element={<Signup />} />
+        <Route path="*" element={<NotFound />} />
         <Route path="/mockman" element={<Mockman />} />
       </Routes>
     </div>

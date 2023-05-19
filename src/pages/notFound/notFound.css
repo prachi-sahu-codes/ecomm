@@ -1,0 +1,17 @@
+@import "../../App.css";
+
+.notFound-content {
+  padding: 7rem 2rem 2rem;
+  text-align: center;
+}
+
+.notFound-content > h1 {
+  padding-bottom: 1rem;
+}
+
+.notFound-link {
+  color: var(--secondary);
+  font-weight: 500;
+  padding-left: 0.5rem;
+  font-size: 1.1rem;
+}
