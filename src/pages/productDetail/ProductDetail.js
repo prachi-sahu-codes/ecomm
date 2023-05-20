@@ -1,6 +1,5 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useData } from "../../context/ProductContext";
 import { BsHeart } from "react-icons/bs";
 import { DetailRating } from "../../components/DetailRating";
 
@@ -8,10 +7,21 @@ import "./productDetail.css";
 
 export const ProductDetail = () => {
   const { productId } = useParams();
-  const { sortedList } = useData();
+  const [findItem, setFindItem] = useState({});
 
-  const findItem = sortedList.find((item) => item._id === productId);
-  const rating = findItem?.rating;
+  const getData = async () => {
+    try {
+      const res = await fetch(`/api/products/${productId}`);
+      const dataFetched = await res.json();
+      setFindItem(dataFetched?.product);
+    } catch (e) {
+      console.error("Error:", e);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   const pageRef = useRef();
 
@@ -24,6 +34,8 @@ export const ProductDetail = () => {
   useEffect(() => {
     scrollToTop();
   }, []);
+
+  const rating = findItem?.rating;
 
   return (
     <>
@@ -83,13 +95,13 @@ export const ProductDetail = () => {
             </tr>
             <tr className="table-row">
               <td className="table-cell">
-                Width: {findItem?.dimensions.width}
+                Width: {findItem?.dimensions?.width}
               </td>
               <td className="table-cell">
-                Height: {findItem?.dimensions.height}
+                Height: {findItem?.dimensions?.height}
               </td>
               <td className="table-cell">
-                Length: {findItem?.dimensions.length}
+                Length: {findItem?.dimensions?.length}
               </td>
             </tr>
           </tbody>
@@ -109,7 +121,7 @@ export const ProductDetail = () => {
         </p>
 
         <ul>
-          {findItem?.reviews.map(({ author, text, rating }) => (
+          {findItem?.reviews?.map(({ author, text, rating }) => (
             <li key={author} className="review-box">
               <div className="flex-center">
                 <strong className="rating-author">{author}</strong>
