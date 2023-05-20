@@ -69,7 +69,7 @@ export const Signup = () => {
         </button>
         <div>
           <span>Don't have an account? </span>
-          <Link to="/account" className="sign-link">
+          <Link to="/login" className="sign-link">
             Sign In
           </Link>
         </div>

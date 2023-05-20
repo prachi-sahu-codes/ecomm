@@ -1,26 +1,34 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [categories, setCategories] = useState([]);
+  const [userDetail, setUserDetail] = useState({ email: "", password: "" });
+  const navigate = useNavigate();
 
-  const getData = async () => {
+  const loginUser = async (input) => {
     try {
-      const res = await fetch("./api/auth/login");
-      const dataFetched = await res.json();
-      setCategories(dataFetched?.categories);
+      const res = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(input),
+      });
+      if (res.status === 200) {
+        const data = await res.json();
+        const token = data.encodedToken;
+        localStorage.setItem("token", token);
+        navigate("../shop");
+      }
     } catch (e) {
-      console.error(e);
+      console.error("Error:", e);
     }
   };
 
-  useEffect(() => {
-    getData();
-  }, []);
-
   return (
-    <AuthContext.Provider value={{ categories }}>
+    <AuthContext.Provider value={{ userDetail, setUserDetail, loginUser }}>
       {children}
     </AuthContext.Provider>
   );

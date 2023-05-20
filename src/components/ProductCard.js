@@ -5,7 +5,7 @@ import { BsHeart } from "react-icons/bs";
 //BsHeart, BsPerson, BsSearch, BsSliders2(phone filter), BsChevronDown, BsChevronUp, BsDashLg, BsDash, BsPlusLg, BsPlus, BsJustify(hamburger), BsFillBagPlusFill, BsFillHeartFill
 
 export const ProductCard = ({
-  id,
+  _id,
   name,
   decription,
   price,
@@ -20,7 +20,7 @@ export const ProductCard = ({
 }) => {
   const navigate = useNavigate();
   return (
-    <div onClick={() => navigate(`/detail/${id}`)}>
+    <div onClick={() => navigate(`/detail/${_id}`)}>
       <img src={image} alt={name} className="card-image" />
       <div className="card-heart">
         <BsHeart />

@@ -38,7 +38,7 @@ export const ProductListing = () => {
           <ul className="products-grid-list">
             {sortedList.length > 0 ? (
               sortedList.map((item) => (
-                <li key={item?.id} className="product-card">
+                <li key={item?._id} className="product-card">
                   <ProductCard {...item} />
                 </li>
               ))

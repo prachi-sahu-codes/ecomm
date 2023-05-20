@@ -11,6 +11,7 @@ import { Signup } from "./pages/account/signup";
 import { ProductListing } from "./pages/ProductListing/ProductListing";
 import { ProductDetail } from "./pages/productDetail/ProductDetail";
 import { NotFound } from "./pages/notFound/NotFound";
+import { Login } from "./pages/account/login";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/shop" element={<ProductListing />} />
         <Route path="/detail/:productId" element={<ProductDetail />} />
         <Route path="/signUp" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/mockman" element={<Mockman />} />
       </Routes>

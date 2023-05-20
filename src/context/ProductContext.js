@@ -11,17 +11,13 @@ const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
   const getData = async () => {
     try {
-      setLoading(true);
-      const res = await fetch("./api/products");
+      const res = await fetch("/api/products");
       const dataFetched = await res.json();
       setData(dataFetched?.products);
-      setLoading(false);
     } catch (e) {
-      console.error(e);
-      setLoading(false);
+      console.error("Error:", e);
     }
   };
 
@@ -66,7 +62,13 @@ export const ProductProvider = ({ children }) => {
 
   return (
     <ProductContext.Provider
-      value={{ data, loading, state, dispatch, filteredList, sortedList }}
+      value={{
+        data,
+        state,
+        dispatch,
+        filteredList,
+        sortedList,
+      }}
     >
       {children}
     </ProductContext.Provider>

@@ -7,11 +7,11 @@ export const CategoryProvider = ({ children }) => {
 
   const getData = async () => {
     try {
-      const res = await fetch("./api/categories");
+      const res = await fetch("/api/categories");
       const dataFetched = await res.json();
       setCategories(dataFetched?.categories);
     } catch (e) {
-      console.error(e);
+      console.error("Error:", e);
     }
   };
 

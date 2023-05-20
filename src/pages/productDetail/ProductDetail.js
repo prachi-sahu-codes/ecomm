@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useData } from "../../context/ProductContext";
 import { BsHeart } from "react-icons/bs";
@@ -10,13 +10,24 @@ export const ProductDetail = () => {
   const { productId } = useParams();
   const { sortedList } = useData();
 
-  const findItem = sortedList.find((item) => item.id === productId);
-
+  const findItem = sortedList.find((item) => item._id === productId);
   const rating = findItem?.rating;
+
+  const pageRef = useRef();
+
+  const scrollToTop = () => {
+    if (pageRef.current) {
+      pageRef.current.scrollIntoView();
+    }
+  };
+
+  useEffect(() => {
+    scrollToTop();
+  }, []);
 
   return (
     <>
-      <div className="detail">
+      <div className="detail" ref={pageRef}>
         <img
           src={findItem?.image}
           className="detail-image"
@@ -119,8 +130,3 @@ export const ProductDetail = () => {
     </>
   );
 };
-
-// rating,
-// reviewsCount,
-// sales,
-// reviews,

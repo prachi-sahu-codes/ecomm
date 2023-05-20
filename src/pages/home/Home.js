@@ -84,7 +84,7 @@ export const Home = () => {
         <h2 className="home-title">Hot Products</h2>
         <div className="hot-products">
           {hotProducts.map((item) => (
-            <li key={item?.id} className="product-card">
+            <li key={item?._id} className="product-card">
               <ProductCard {...item} noDetail />
             </li>
           ))}
@@ -101,7 +101,7 @@ export const Home = () => {
         <h2 className="home-title catg-head">Catalogs</h2>
         <div>
           {categories.map((item, index) => (
-            <div className="catg-single" key={item.id}>
+            <div className="catg-single" key={item._id}>
               {index % 2 === 0 ? (
                 <>
                   <img
@@ -155,7 +155,7 @@ export const Home = () => {
           ))}
 
           {categories.map((item, index) => (
-            <div className="catg-phone" key={item.id}>
+            <div className="catg-phone" key={item._id}>
               <>
                 <img
                   className="catg-image"
