@@ -6,6 +6,7 @@ import {
   useState,
 } from "react";
 import { productReducer } from "../reducer/ProductReducer";
+import { toast } from "react-toastify";
 
 const ProductContext = createContext();
 
@@ -60,6 +61,17 @@ export const ProductProvider = ({ children }) => {
         })
       : filteredList;
 
+  //TOAST
+  const notifyToast = (type, msg) => {
+    if (type === "success") {
+      toast.success(msg);
+    } else if (type === "warning") {
+      toast.warning(msg);
+    } else {
+      toast.error(msg);
+    }
+  };
+
   return (
     <ProductContext.Provider
       value={{
@@ -68,6 +80,7 @@ export const ProductProvider = ({ children }) => {
         dispatch,
         filteredList,
         sortedList,
+        notifyToast,
       }}
     >
       {children}

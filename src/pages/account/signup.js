@@ -2,9 +2,30 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { BsEyeSlashFill, BsEyeFill } from "react-icons/bs";
 import "./account.css";
+import { useAuth } from "../../context/AuthContext";
 
 export const Signup = () => {
+  const { signUpUser } = useAuth();
   const [passVisible, setPassVisible] = useState("password");
+  const [userInfo, setUserInfo] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  });
+
+  const clickSubmit = () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isEmail = emailRegex.test(userInfo.email);
+    if (
+      userInfo.firstName &&
+      userInfo.lastName &&
+      userInfo.password &&
+      isEmail
+    ) {
+      signUpUser(userInfo);
+    }
+  };
   return (
     <div className="sign">
       <h3 className="sign-title">Sign Up</h3>
@@ -18,6 +39,9 @@ export const Signup = () => {
               id="first"
               name="first"
               className="sign-input"
+              onChange={(e) =>
+                setUserInfo((u) => ({ ...u, firstName: e.target.value }))
+              }
               required
             />
           </div>
@@ -30,6 +54,9 @@ export const Signup = () => {
               id="last"
               name="last"
               className="sign-input"
+              onChange={(e) =>
+                setUserInfo((u) => ({ ...u, lastName: e.target.value }))
+              }
               required
             />
           </div>
@@ -42,6 +69,9 @@ export const Signup = () => {
             id="email"
             name="email"
             className="sign-input"
+            onChange={(e) =>
+              setUserInfo((u) => ({ ...u, email: e.target.value }))
+            }
             required
           />
         </div>
@@ -53,6 +83,9 @@ export const Signup = () => {
             id="pwd"
             name="pwd"
             className="sign-input "
+            onChange={(e) =>
+              setUserInfo((u) => ({ ...u, password: e.target.value }))
+            }
             required
           />
           <div className="pwd-eye-icon">
@@ -64,7 +97,11 @@ export const Signup = () => {
           </div>
         </div>
 
-        <button type="submit" className="card-btn">
+        <button
+          type="submit"
+          className="card-btn"
+          onClick={() => clickSubmit(userInfo)}
+        >
           Create new account
         </button>
         <div>
