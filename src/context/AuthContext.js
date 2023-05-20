@@ -5,11 +5,17 @@ import { useData } from "./ProductContext";
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [userDetail, setUserDetail] = useState({ email: "", password: "" });
   const navigate = useNavigate();
   const { notifyToast } = useData();
 
+  const [userDetail, setUserDetail] = useState({ email: "", password: "" });
+
+  const localStorageToken = JSON.parse(localStorage.getItem("authItems"));
+  const [token, setToken] = useState(localStorageToken?.token);
+  const [loggedUser, setLoggedUser] = useState(localStorageToken?.user);
+
   const loginUser = async (input) => {
+    console.log(input);
     try {
       const res = await fetch("/api/auth/login", {
         method: "POST",
@@ -18,10 +24,15 @@ export const AuthProvider = ({ children }) => {
         },
         body: JSON.stringify(input),
       });
-      if (res.status === 200) {
+      if (res.status === 200 || res.status === 201) {
         const data = await res.json();
-        const token = data.encodedToken;
-        localStorage.setItem("token", token);
+        const { foundUser, encodedToken } = data;
+        localStorage.setItem(
+          "authItems",
+          JSON.stringify({ token: encodedToken, user: foundUser })
+        );
+        setToken(encodedToken);
+        setLoggedUser(foundUser);
         navigate("../shop");
         notifyToast("success", "Succesfully Logged In!");
       } else {
@@ -30,6 +41,13 @@ export const AuthProvider = ({ children }) => {
     } catch (e) {
       console.error("Error:", e);
     }
+  };
+
+  const logoutHandler = () => {
+    localStorage.removeItem("authItems");
+    setToken(null);
+    setLoggedUser(null);
+    navigate("/");
   };
 
   const signUpUser = async (input) => {
@@ -42,10 +60,15 @@ export const AuthProvider = ({ children }) => {
         },
         body: JSON.stringify(input),
       });
-      if (res.status === 201) {
+      if (res.status === 200 || res.status === 201) {
         const data = await res.json();
-        const token = data.encodedToken;
-        localStorage.setItem("token", token);
+        const { foundUser, encodedToken } = data;
+        localStorage.setItem(
+          "authItems",
+          JSON.stringify({ token: encodedToken, user: foundUser })
+        );
+        setToken(encodedToken);
+        setLoggedUser(foundUser);
         navigate("../shop");
         notifyToast("success", "Succesfully Signed Up!");
       } else {
@@ -58,7 +81,15 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ userDetail, setUserDetail, loginUser, signUpUser }}
+      value={{
+        userDetail,
+        setUserDetail,
+        loginUser,
+        logoutHandler,
+        signUpUser,
+        token,
+        loggedUser,
+      }}
     >
       {children}
     </AuthContext.Provider>
