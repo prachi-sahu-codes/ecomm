@@ -14,6 +14,7 @@ import { NotFound } from "./pages/notFound/NotFound";
 import { Login } from "./pages/account/login";
 import { RequiresAuth } from "./components/RequiresAuth";
 import "react-toastify/dist/ReactToastify.css";
+import { Checkout } from "./pages/checkout/Checkout";
 
 function App() {
   return (
@@ -33,13 +34,20 @@ function App() {
       />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/account" element={<Account />} />
         <Route path="/shop" element={<ProductListing />} />
         <Route path="/detail/:productId" element={<ProductDetail />} />
         <Route path="/signUp" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/mockman" element={<Mockman />} />
+        <Route
+          path="/account"
+          element={
+            <RequiresAuth>
+              <Account />
+            </RequiresAuth>
+          }
+        />
         <Route
           path="/wishlist"
           element={
@@ -53,6 +61,14 @@ function App() {
           element={
             <RequiresAuth>
               <Cart />
+            </RequiresAuth>
+          }
+        />
+        <Route
+          path="/checkout"
+          element={
+            <RequiresAuth>
+              <Checkout />
             </RequiresAuth>
           }
         />
