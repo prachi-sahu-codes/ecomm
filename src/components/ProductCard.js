@@ -20,21 +20,21 @@ export const ProductCard = ({
 }) => {
   const navigate = useNavigate();
   return (
-    <div onClick={() => navigate(`/detail/${_id}`)}>
-      <img src={image} alt={name} className="card-image" />
-      <div className="card-heart">
-        <BsHeart />
-      </div>
-      <div className="card-content">
-        <h4 className="card-title">{name}</h4>
-        <div>
-          <span className="card-price">${price}</span>
-
-          {/* <button className="card-btn">Add to Bag</button> */}
+    <div>
+      <div onClick={() => navigate(`/detail/${_id}`)}>
+        <img src={image} alt={name} className="card-image" />
+        <div className="card-heart">
+          <BsHeart />
         </div>
-        {!noDetail && <button className="card-btn">Add to Bag</button>}
-        {/* <button className="card-btn" style={{width:"100%"}}>Add to Cart</button> */}
+        <div className="card-content">
+          <h4 className="card-title">{name}</h4>
+          <div>
+            <span className="card-price">${price}</span>
+          </div>
+        </div>
       </div>
+
+      <div>{!noDetail && <button className="card-btn">Add to Bag</button>}</div>
     </div>
   );
 };

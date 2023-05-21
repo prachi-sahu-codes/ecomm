@@ -19,8 +19,7 @@ export const ProductProvider = ({ children }) => {
       const res = await fetch("/api/products");
       const dataFetched = await res.json();
       setData(dataFetched?.products);
-      // setTimeout(() => setLoading(false), 4000);
-      setLoading(false);
+      setTimeout(() => setLoading(false), 2000);
     } catch (e) {
       console.error("Error:", e);
       setLoading(false);

@@ -277,7 +277,7 @@ input[type="radio"] {
 }
 
 .card-content {
-  padding: 0.5rem 1rem 1rem;
+  padding: 0.5rem 1rem 0;
 }
 
 .card-title {
@@ -308,7 +308,7 @@ input[type="radio"] {
 
 .card-btn {
   background-color: var(--secondary);
-  width: 100%;
+  width: calc(100% - 2rem);
   margin-top: 0.5rem;
   background-image: linear-gradient(to bottom, #661f1e, #852827);
   color: var(--white);
@@ -316,6 +316,7 @@ input[type="radio"] {
   border-radius: 2px;
   padding: 0.4rem 0.9rem;
   transition: all 0.3s ease-in-out;
+  margin: 1rem;
 }
 
 .card-btn:hover {
