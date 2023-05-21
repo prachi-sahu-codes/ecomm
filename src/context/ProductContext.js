@@ -14,8 +14,8 @@ export const ProductProvider = ({ children }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const getData = async () => {
-    setLoading(true);
     try {
+      setLoading(true);
       const res = await fetch("/api/products");
       const dataFetched = await res.json();
       setData(dataFetched?.products);

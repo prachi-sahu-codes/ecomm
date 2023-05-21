@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { BsHeart } from "react-icons/bs";
+import { useClick } from "../context/ClickContext";
 
 //BsHeart, BsPerson, BsSearch, BsSliders2(phone filter), BsChevronDown, BsChevronUp, BsDashLg, BsDash, BsPlusLg, BsPlus, BsJustify(hamburger), BsFillBagPlusFill, BsFillHeartFill
 
@@ -19,6 +20,8 @@ export const ProductCard = ({
   noDetail,
 }) => {
   const navigate = useNavigate();
+  const { cartData, postCartData } = useClick();
+  const isItemPresent = cartData.find((item) => item._id === _id);
   return (
     <div>
       <div onClick={() => navigate(`/detail/${_id}`)}>
@@ -35,7 +38,37 @@ export const ProductCard = ({
       </div>
 
       <div className="product-card-btn-div">
-        {!noDetail && <button className="card-btn">Add to Bag</button>}
+        {!noDetail && (
+          <div>
+            {" "}
+            {isItemPresent ? (
+              <button className="card-btn" onClick={() => navigate("../cart")}>
+                Go to Cart
+              </button>
+            ) : (
+              <button
+                className="card-btn"
+                onClick={() =>
+                  postCartData({
+                    _id,
+                    name,
+                    decription,
+                    price,
+                    category,
+                    dimensions,
+                    image,
+                    rating,
+                    reviewsCount,
+                    sales,
+                    reviews,
+                  })
+                }
+              >
+                Add to Cart
+              </button>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

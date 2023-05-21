@@ -1,8 +1,5 @@
 @import "../../App.css";
 
-.title {
-  font-size: 1.6rem;
-  font-weight: 500;
-  padding-bottom: 2rem;
-  line-height: 3rem;
+.cart-subtitle-product {
+  min-width: 230px;
 }

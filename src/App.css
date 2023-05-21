@@ -23,6 +23,10 @@
   align-items: center;
 }
 
+.div-padding {
+  padding: 6rem 2rem 2rem;
+}
+
 /******************NavBar*********************/
 
 .nav-flex {
@@ -32,7 +36,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: var(--primary);
-  color: var(--white);
+  color: var(--light-gray);
   padding: 0.5rem 5rem;
   height: 3rem;
   z-index: 1000;
@@ -41,16 +45,19 @@
 .nav-logo {
   color: var(--white);
   text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
 }
 
 .nav-search {
   width: 200px;
   margin-left: 0.5rem;
   background-color: var(--primary);
-  color: var(--white);
+  color: var(--light-gray);
   font-size: 1rem;
   border: none;
-  border-bottom: 1px solid var(--white);
+  border-bottom: 1px solid var(--light-gray);
 }
 .nav-search:focus {
   outline: none;
@@ -60,7 +67,7 @@
   text-decoration: none;
   text-transform: uppercase;
   margin: 0rem 1rem;
-  color: var(--white);
+  color: var(--light-gray);
 }
 
 .nav-acc {
@@ -378,4 +385,28 @@ input[type="radio"] {
 
 .footer-live-link:hover {
   color: var(--light-gray);
+}
+
+/********************cart and wishlist********************/
+
+.page-content {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.page-title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding-bottom: 2rem;
+  line-height: 3rem;
+}
+
+.page-subtitle {
+  display: flex;
+  border-bottom: 1px solid var(--gray-line);
+}
+
+.page-subtitle > p {
+  color: var(--gray);
+  font-size: 1rem;
 }

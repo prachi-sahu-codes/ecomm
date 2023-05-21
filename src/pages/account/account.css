@@ -3,14 +3,14 @@
 /**************************account page***************************/
 
 .account {
-  padding: 6rem 2rem;
+  padding: 6rem 2rem 2rem;
 }
 
 .account-content {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  max-width: 800px;
+  max-width: 1000px;
   gap: 3rem;
   margin: auto;
 }
@@ -20,7 +20,7 @@
 }
 
 .acc-title {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 500;
   padding-bottom: 2rem;
   line-height: 3rem;

@@ -16,7 +16,7 @@ export const NavBar = () => {
   return (
     <div className="nav-flex">
       <Link to="/" className="nav-logo">
-        <h2>FURN</h2>
+        <p>FURN</p>
       </Link>
 
       <div className="flex-center">

@@ -7,6 +7,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { ProductProvider } from "./context/ProductContext";
 import { CategoryProvider } from "./context/CategoryContext";
 import { AuthProvider } from "./context/AuthContext";
+import { ClickProvider } from "./context/ClickContext";
 
 // Call make Server
 makeServer();
@@ -17,7 +18,9 @@ ReactDOM.render(
       <ProductProvider>
         <CategoryProvider>
           <AuthProvider>
-            <App />
+            <ClickProvider>
+              <App />
+            </ClickProvider>
           </AuthProvider>
         </CategoryProvider>
       </ProductProvider>

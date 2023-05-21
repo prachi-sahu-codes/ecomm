@@ -1,16 +1,32 @@
 import React, { useRef, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { BsHeart } from "react-icons/bs";
 import { DetailRating } from "../../components/DetailRating";
 
 import "./productDetail.css";
 import { Loader } from "../../assets/loader/loader";
+import { useClick } from "../../context/ClickContext";
+import { useData } from "../../context/ProductContext";
 
 export const ProductDetail = () => {
   const { productId } = useParams();
-  const [findItem, setFindItem] = useState({});
-  const [loading, setLoading] = useState(false);
+  const { cartData, postCartData, updateCartDataQty } = useClick();
+  const { loading, setLoading } = useData();
 
+  const navigate = useNavigate();
+
+  const [findItem, setFindItem] = useState({});
+  const [quantity, setQuantity] = useState({
+    value: 1,
+    quantityUpdated: false,
+    qtyType: "",
+  });
+
+  const rating = findItem?.rating;
+  const isItemPresent = cartData.find((item) => item._id === productId);
+
+  //getting data
   const getData = async () => {
     try {
       setLoading(true);
@@ -24,12 +40,7 @@ export const ProductDetail = () => {
     }
   };
 
-  useEffect(() => {
-    getData();
-  }, []);
-
   const pageRef = useRef();
-
   const scrollToTop = () => {
     if (pageRef.current) {
       pageRef.current.scrollIntoView();
@@ -37,10 +48,29 @@ export const ProductDetail = () => {
   };
 
   useEffect(() => {
+    getData();
     scrollToTop();
   }, []);
 
-  const rating = findItem?.rating;
+  const qtyHandler = (type) => {
+    if (type === "incre") {
+      setQuantity((q) => ({
+        value: q.value + 1,
+        quantityUpdated: !q.quantityUpdated,
+        qtyType: "increment",
+      }));
+    } else if (type === "decre") {
+      return quantity.value <= 1
+        ? quantity.value
+        : setQuantity((q) => ({
+            value: q.value - 1,
+            quantityUpdated: !q.quantityUpdated,
+            qtyType: "decrement",
+          }));
+    } else {
+      return quantity;
+    }
+  };
 
   return (
     <>
@@ -68,9 +98,20 @@ export const ProductDetail = () => {
           </div>
           <div className="flex-center">
             <div className="detail-quantity">
-              <button className="detail-quantity-btn"> &#x2013;</button>
-              <span>{findItem?.quantity}</span>
-              <button className="detail-quantity-btn">+ </button>
+              <button
+                className="detail-quantity-btn"
+                onClick={() => qtyHandler("decre")}
+              >
+                {" "}
+                &#x2013;
+              </button>
+              <span>{quantity.value}</span>
+              <button
+                className="detail-quantity-btn"
+                onClick={() => qtyHandler("incre")}
+              >
+                +{" "}
+              </button>
             </div>
 
             <div className="detail-rating">
@@ -78,7 +119,39 @@ export const ProductDetail = () => {
             </div>
           </div>
 
-          <button className="card-btn">Add to Bag</button>
+          <button
+            className="card-btn"
+            onClick={() => {
+              if (!isItemPresent) {
+                postCartData(findItem);
+                if (quantity.quantityUpdated) {
+                  updateCartDataQty(findItem._id, quantity.qtyType);
+                  setQuantity((q) => ({
+                    ...q,
+                    quantityUpdated: !q.quantityUpdated,
+                  }));
+                }
+              } else {
+                if (quantity.quantityUpdated) {
+                  updateCartDataQty(findItem._id, quantity.qtyType);
+                  setQuantity((q) => ({
+                    ...q,
+                    quantityUpdated: !q.quantityUpdated,
+                  }));
+                }
+              }
+            }}
+          >
+            Add to Cart
+          </button>
+
+          <div>
+            {isItemPresent && (
+              <button className="card-btn" onClick={() => navigate("../cart")}>
+                Go to Cart
+              </button>
+            )}
+          </div>
         </div>
       </div>
 
