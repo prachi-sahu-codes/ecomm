@@ -11,15 +11,17 @@ import { useCatg } from "../../context/CategoryContext";
 import { useData } from "../../context/ProductContext";
 import { ProductCard } from "../../components/ProductCard";
 import { ACTION_TYPE } from "../../backend/utils/actionType";
+import { Loader } from "../../assets/loader/loader";
 
 export const Home = () => {
-  const { data, dispatch } = useData();
+  const { data, dispatch, loading } = useData();
   const { categories } = useCatg();
 
   const hotProducts = [...data].sort((a, b) => b.sales - a.sales).slice(0, 3);
 
   return (
     <div className="container">
+      {loading && <Loader />}
       <img src={home} alt="Hero sofa" className="hero-img" />
       <div className="hero-img-content">
         <h1 className="hero-title">Artisanal Furniture For Elevated Spaces</h1>

@@ -4,18 +4,23 @@ import { BsHeart } from "react-icons/bs";
 import { DetailRating } from "../../components/DetailRating";
 
 import "./productDetail.css";
+import { Loader } from "../../assets/loader/loader";
 
 export const ProductDetail = () => {
   const { productId } = useParams();
   const [findItem, setFindItem] = useState({});
+  const [loading, setLoading] = useState(false);
 
   const getData = async () => {
     try {
+      setLoading(true);
       const res = await fetch(`/api/products/${productId}`);
       const dataFetched = await res.json();
       setFindItem(dataFetched?.product);
+      setLoading(false);
     } catch (e) {
       console.error("Error:", e);
+      setLoading(false);
     }
   };
 
@@ -39,6 +44,7 @@ export const ProductDetail = () => {
 
   return (
     <>
+      {loading && <Loader />}
       <div className="detail" ref={pageRef}>
         <img
           src={findItem?.image}

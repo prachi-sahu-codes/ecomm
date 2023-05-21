@@ -1,0 +1,18 @@
+@import "../../App.css";
+
+.loader {
+  position: absolute;
+  width: 99.3vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #ffffff51;
+  z-index: 2000;
+}
+
+.loader-page {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3000;
+}

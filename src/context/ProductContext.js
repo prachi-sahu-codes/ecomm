@@ -12,13 +12,18 @@ const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
   const getData = async () => {
+    setLoading(true);
     try {
       const res = await fetch("/api/products");
       const dataFetched = await res.json();
       setData(dataFetched?.products);
+      // setTimeout(() => setLoading(false), 4000);
+      setLoading(false);
     } catch (e) {
       console.error("Error:", e);
+      setLoading(false);
     }
   };
 
@@ -76,6 +81,8 @@ export const ProductProvider = ({ children }) => {
     <ProductContext.Provider
       value={{
         data,
+        loading,
+        setLoading,
         state,
         dispatch,
         filteredList,

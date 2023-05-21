@@ -4,16 +4,14 @@ import { useData } from "../../context/ProductContext";
 import { Filters } from "../../components/Filters";
 import { ProductCard } from "../../components/ProductCard";
 import { ACTION_TYPE } from "../../backend/utils/actionType";
+import { Loader } from "../../assets/loader/loader";
 
 export const ProductListing = () => {
-  const { loading, sortedList, dispatch, state } = useData();
-
-  if (loading) {
-    return <h1>Loading...</h1>;
-  }
+  const { sortedList, dispatch, state, loading } = useData();
 
   return (
     <div className="product-listing-whole">
+      {loading && <Loader />}
       <div className="product-grid">
         <Filters />
         <div className="listing-main-body">
@@ -36,15 +34,13 @@ export const ProductListing = () => {
             </select>
           </div>
           <ul className="products-grid-list">
-            {sortedList.length > 0 ? (
-              sortedList.map((item) => (
-                <li key={item?._id} className="product-card">
-                  <ProductCard {...item} />
-                </li>
-              ))
-            ) : (
-              <h2 className="no-data">No Products Found</h2>
-            )}
+            {sortedList.length > 0
+              ? sortedList.map((item) => (
+                  <li key={item?._id} className="product-card">
+                    <ProductCard {...item} />
+                  </li>
+                ))
+              : !loading && <h2 className="no-data">No Products Found</h2>}
           </ul>
         </div>
       </div>
