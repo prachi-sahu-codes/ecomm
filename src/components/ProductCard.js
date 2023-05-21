@@ -34,7 +34,9 @@ export const ProductCard = ({
         </div>
       </div>
 
-      <div>{!noDetail && <button className="card-btn">Add to Bag</button>}</div>
+      <div className="product-card-btn-div">
+        {!noDetail && <button className="card-btn">Add to Bag</button>}
+      </div>
     </div>
   );
 };

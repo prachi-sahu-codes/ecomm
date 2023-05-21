@@ -306,9 +306,13 @@ input[type="radio"] {
   cursor: pointer;
 }
 
+.product-card-btn-div {
+  padding: 1rem;
+}
+
 .card-btn {
   background-color: var(--secondary);
-  width: calc(100% - 2rem);
+  width: 100%;
   margin-top: 0.5rem;
   background-image: linear-gradient(to bottom, #661f1e, #852827);
   color: var(--white);
@@ -316,7 +320,6 @@ input[type="radio"] {
   border-radius: 2px;
   padding: 0.4rem 0.9rem;
   transition: all 0.3s ease-in-out;
-  margin: 1rem;
 }
 
 .card-btn:hover {
