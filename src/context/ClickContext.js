@@ -1,10 +1,12 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useAuth } from "./AuthContext";
+import { useData } from "./ProductContext";
 
 const ClickContext = createContext();
 
 export const ClickProvider = ({ children }) => {
   const [cartData, setCartData] = useState([]);
+  const { notifyToast } = useData();
 
   const { token } = useAuth();
 
@@ -40,9 +42,11 @@ export const ClickProvider = ({ children }) => {
       if (res.status === 200 || res.status === 201) {
         const dataFetched = await res.json();
         setCartData(dataFetched?.cart);
+        notifyToast("success", "Added to Cart!");
       }
     } catch (e) {
       console.error("Error:", e);
+      notifyToast("error", "An error occurred. Please try again later!");
     }
   };
 
@@ -62,8 +66,11 @@ export const ClickProvider = ({ children }) => {
       }
     } catch (e) {
       console.error("Error:", e);
+      notifyToast("error", "An error occurred. Please try again later!");
     }
   };
+
+  console.log(cartData);
 
   return (
     <ClickContext.Provider

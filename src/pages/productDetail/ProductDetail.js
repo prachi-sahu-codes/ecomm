@@ -12,7 +12,7 @@ import { useData } from "../../context/ProductContext";
 export const ProductDetail = () => {
   const { productId } = useParams();
   const { cartData, postCartData, updateCartDataQty } = useClick();
-  const { loading, setLoading } = useData();
+  const { loading, setLoading, notifyToast } = useData();
 
   const navigate = useNavigate();
 
@@ -138,6 +138,7 @@ export const ProductDetail = () => {
                     ...q,
                     quantityUpdated: !q.quantityUpdated,
                   }));
+                  notifyToast("success", "Cart Updated!");
                 }
               }
             }}

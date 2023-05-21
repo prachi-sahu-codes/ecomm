@@ -11,6 +11,7 @@ export const Cart = () => {
           <p>Quantity</p>
           <p>Total</p>
         </div>
+        <div></div>
       </div>
     </div>
   );
