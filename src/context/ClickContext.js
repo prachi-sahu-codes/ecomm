@@ -5,10 +5,19 @@ import { useData } from "./ProductContext";
 const ClickContext = createContext();
 
 export const ClickProvider = ({ children }) => {
-  const [cartData, setCartData] = useState([]);
+  const { token } = useAuth();
   const { notifyToast } = useData();
 
-  const { token } = useAuth();
+  const [cartData, setCartData] = useState([]);
+  const localStorageCart = JSON.parse(localStorage.getItem("cartItems"));
+
+  useEffect(() => {
+    if (!token) {
+      setCartData(null);
+    } else {
+      setCartData(() => localStorageCart);
+    }
+  }, [token]);
 
   const getCartData = async () => {
     try {
@@ -19,6 +28,7 @@ export const ClickProvider = ({ children }) => {
       if (res.status === 200 || res.status === 201) {
         const dataFetched = await res.json();
         setCartData(dataFetched?.cart);
+        localStorage.setItem("cartItems", JSON.stringify(dataFetched?.cart));
       }
     } catch (e) {
       console.error("Error:", e);
@@ -28,12 +38,6 @@ export const ClickProvider = ({ children }) => {
   useEffect(() => {
     getCartData();
   }, []);
-
-  useEffect(() => {
-    if (!token) {
-      setCartData(null);
-    }
-  }, [token]);
 
   const postCartData = async (input) => {
     try {
@@ -49,6 +53,7 @@ export const ClickProvider = ({ children }) => {
         const dataFetched = await res.json();
         setCartData(dataFetched?.cart);
         notifyToast("success", "Added to Cart!");
+        localStorage.setItem("cartItems", JSON.stringify(dataFetched?.cart));
       }
     } catch (e) {
       console.error("Error:", e);
@@ -56,7 +61,7 @@ export const ClickProvider = ({ children }) => {
     }
   };
 
-  const updateCartDataQty = async (id, typeClicked) => {
+  const updateCartItemQty = async (id, typeClicked) => {
     try {
       const res = await fetch(`/api/user/cart/${id}`, {
         method: "POST",
@@ -69,6 +74,28 @@ export const ClickProvider = ({ children }) => {
       if (res.status === 200 || res.status === 201) {
         const dataFetched = await res.json();
         setCartData(dataFetched?.cart);
+        localStorage.setItem("cartItems", JSON.stringify(dataFetched?.cart));
+      }
+    } catch (e) {
+      console.error("Error:", e);
+      notifyToast("error", "An error occurred. Please try again later!");
+    }
+  };
+
+  const deleteCartItem = async (id) => {
+    try {
+      const res = await fetch(`/api/user/cart/${id}`, {
+        method: "DELETE",
+        headers: {
+          authorization: token,
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (res.status === 200 || res.status === 201) {
+        const dataFetched = await res.json();
+        setCartData(dataFetched?.cart);
+        localStorage.setItem("cartItems", JSON.stringify(dataFetched?.cart));
       }
     } catch (e) {
       console.error("Error:", e);
@@ -78,7 +105,13 @@ export const ClickProvider = ({ children }) => {
 
   return (
     <ClickContext.Provider
-      value={{ cartData, setCartData, postCartData, updateCartDataQty }}
+      value={{
+        cartData,
+        setCartData,
+        postCartData,
+        updateCartItemQty,
+        deleteCartItem,
+      }}
     >
       {children}
     </ClickContext.Provider>

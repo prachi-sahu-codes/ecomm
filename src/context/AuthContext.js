@@ -15,7 +15,6 @@ export const AuthProvider = ({ children }) => {
   const [loggedUser, setLoggedUser] = useState(localStorageToken?.user);
 
   const loginUser = async (input) => {
-    console.log(input);
     try {
       const res = await fetch("/api/auth/login", {
         method: "POST",

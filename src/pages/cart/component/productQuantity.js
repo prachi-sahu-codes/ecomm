@@ -2,25 +2,23 @@ import React, { useState } from "react";
 import { useClick } from "../../../context/ClickContext";
 
 export const ProductQuantity = ({ _id }) => {
-  const { updateCartDataQty } = useClick();
-  const [quantity, setQuantity] = useState({
-    value: 1,
-    qtyType: "",
-  });
+  const { updateCartItemQty, deleteCartItem } = useClick();
+  const [quantity, setQuantity] = useState(1);
 
   const qtyHandler = (type) => {
-    if (type === "incre") {
-      setQuantity((q) => ({
-        value: q.value + 1,
-        qtyType: "increment",
-      }));
-    } else if (type === "decre") {
-      return quantity.value <= 1
-        ? quantity.value
-        : setQuantity((q) => ({
-            value: q.value - 1,
-            qtyType: "decrement",
-          }));
+    if (type === "increment") {
+      setQuantity((q) => q + 1);
+      updateCartItemQty(_id, "increment");
+    } else if (type === "decrement") {
+      if (quantity > 1) {
+        setQuantity((q) => q - 1);
+        updateCartItemQty(_id, "decrement");
+      } else if (quantity === 1) {
+        deleteCartItem(_id);
+        console.log("at 1");
+      } else {
+        return quantity;
+      }
     } else {
       return quantity;
     }
@@ -30,21 +28,15 @@ export const ProductQuantity = ({ _id }) => {
       <div className="detail-quantity">
         <button
           className="detail-quantity-btn"
-          onClick={() => {
-            qtyHandler("decre");
-            updateCartDataQty(_id, quantity.qtyType);
-          }}
+          onClick={() => qtyHandler("decrement")}
         >
           {" "}
           &#x2013;
         </button>
-        <span>{quantity.value}</span>
+        <span>{quantity}</span>
         <button
           className="detail-quantity-btn"
-          onClick={() => {
-            qtyHandler("incre");
-            updateCartDataQty(_id, quantity.qtyType);
-          }}
+          onClick={() => qtyHandler("increment")}
         >
           +{" "}
         </button>

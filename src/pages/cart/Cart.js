@@ -5,7 +5,6 @@ import { ProductQuantity } from "./component/productQuantity";
 
 export const Cart = () => {
   const { cartData } = useClick();
-  console.log(cartData);
   return (
     <div className="div-padding">
       <div className="page-content">
@@ -17,7 +16,7 @@ export const Cart = () => {
         </div>
         <ul>
           {cartData?.map((item) => (
-            <li className="flex-center cart-card-single">
+            <li className="flex-center cart-card-single" key={item._id}>
               <div className="cart-card-detail flex-center">
                 <img src={item?.image} className="cart-img" alt={item?.name} />
                 <div className="cart-card-title-price">
@@ -26,9 +25,9 @@ export const Cart = () => {
                   <p className="cart-price">${item?.price}</p>
                 </div>
               </div>
-              <p className="cart-qty">
-                <ProductQuantity _id={item?.id} />
-              </p>
+              <div className="cart-qty">
+                <ProductQuantity _id={item?._id} />
+              </div>
               <p className="cart-price">${item?.price * item?.qty}</p>
             </li>
           ))}
