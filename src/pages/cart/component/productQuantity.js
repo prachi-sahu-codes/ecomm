@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useClick } from "../../../context/ClickContext";
+import { useData } from "../../../context/ProductContext";
 
-export const ProductQuantity = ({ _id }) => {
+export const ProductQuantity = ({ _id, qty }) => {
   const { updateCartItemQty, deleteCartItem } = useClick();
-  const [quantity, setQuantity] = useState(1);
+  const { notifyToast } = useData();
+  const [quantity, setQuantity] = useState(qty);
 
   const qtyHandler = (type) => {
     if (type === "increment") {
@@ -15,7 +17,7 @@ export const ProductQuantity = ({ _id }) => {
         updateCartItemQty(_id, "decrement");
       } else if (quantity === 1) {
         deleteCartItem(_id);
-        console.log("at 1");
+        notifyToast("error", "Removed from Cart!");
       } else {
         return quantity;
       }
@@ -23,6 +25,7 @@ export const ProductQuantity = ({ _id }) => {
       return quantity;
     }
   };
+
   return (
     <div>
       <div className="detail-quantity">
