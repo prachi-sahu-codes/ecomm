@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { BsHeart } from "react-icons/bs";
+import { BsHeart, BsFillHeartFill } from "react-icons/bs";
 import { useClick } from "../context/ClickContext";
 import { useData } from "../context/ProductContext";
 import { useAuth } from "../context/AuthContext";
@@ -22,17 +22,57 @@ export const ProductCard = ({
   noDetail,
 }) => {
   const navigate = useNavigate();
-  const { cartData, postCartData } = useClick();
+  const { cartData, postCartData, wishlistData, postWishData, deleteWishItem } =
+    useClick();
   const { notifyToast } = useData();
   const { token } = useAuth();
   const isItemPresent = cartData?.find((item) => item._id === _id);
+  const isItemWishlisted = wishlistData?.find((item) => item._id === _id);
   return (
     <div>
       <div onClick={() => navigate(`/detail/${_id}`)}>
         <img src={image} alt={name} className="card-image" />
-        <div className="card-heart">
-          <BsHeart />
-        </div>
+        {!noDetail && (
+          <div className="card-heart">
+            {isItemWishlisted ? (
+              <BsFillHeartFill
+                color="#661f1e"
+                onClick={(e) => {
+                  if (!token) {
+                    notifyToast("error", "Please Log in to continue!");
+                  } else {
+                    deleteWishItem(_id);
+                    e.stopPropagation();
+                  }
+                }}
+              />
+            ) : (
+              <BsHeart
+                color="#661f1e"
+                onClick={(e) => {
+                  if (!token) {
+                    notifyToast("error", "Please Log in to continue!");
+                  } else {
+                    postWishData({
+                      _id,
+                      name,
+                      decription,
+                      price,
+                      category,
+                      dimensions,
+                      image,
+                      rating,
+                      reviewsCount,
+                      sales,
+                      reviews,
+                    });
+                    e.stopPropagation();
+                  }
+                }}
+              />
+            )}
+          </div>
+        )}
         <div className="card-content">
           <h4 className="card-title">{name}</h4>
           <div>

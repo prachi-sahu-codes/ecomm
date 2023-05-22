@@ -2,6 +2,12 @@
 
 .cart-subtitle-product {
   min-width: 230px;
+  padding: 0 0 0.5rem;
+}
+
+.cart-subtitle-quantity,
+.cart-subtitle-total {
+  padding: 0 0 0.5rem;
 }
 
 .cart-card-single {

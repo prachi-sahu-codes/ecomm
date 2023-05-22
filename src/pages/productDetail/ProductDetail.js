@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { BsHeart } from "react-icons/bs";
+import { BsHeart, BsFillHeartFill } from "react-icons/bs";
 import { DetailRating } from "../../components/DetailRating";
 
 import "./productDetail.css";
@@ -12,7 +12,8 @@ import { useAuth } from "../../context/AuthContext";
 
 export const ProductDetail = () => {
   const { productId } = useParams();
-  const { cartData, postCartData } = useClick();
+  const { cartData, postCartData, wishlistData, postWishData, deleteWishItem } =
+    useClick();
   const { loading, setLoading, notifyToast } = useData();
   const { token } = useAuth();
 
@@ -21,7 +22,8 @@ export const ProductDetail = () => {
   const [findItem, setFindItem] = useState({});
 
   const rating = findItem?.rating;
-  const isItemPresent = cartData.find((item) => item._id === productId);
+  const isItemPresent = cartData?.find((item) => item._id === productId);
+  const isItemWishlisted = wishlistData?.find((item) => item._id === productId);
 
   const getData = async () => {
     try {
@@ -64,7 +66,31 @@ export const ProductDetail = () => {
               {findItem?.name} <br /> ${findItem?.price}
             </h2>
 
-            <BsHeart className="detail-icon-heart" />
+            <div className="detail-icon-heart">
+              {isItemWishlisted ? (
+                <BsFillHeartFill
+                  color="#661f1e"
+                  onClick={(e) => {
+                    if (!token) {
+                      notifyToast("error", "Please Log in to continue!");
+                    } else {
+                      deleteWishItem(productId);
+                    }
+                  }}
+                />
+              ) : (
+                <BsHeart
+                  color="#661f1e"
+                  onClick={(e) => {
+                    if (!token) {
+                      notifyToast("error", "Please Log in to continue!");
+                    } else {
+                      postWishData(findItem);
+                    }
+                  }}
+                />
+              )}
+            </div>
           </div>
 
           <p className="detail-desc">{findItem?.description}</p>

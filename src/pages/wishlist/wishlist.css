@@ -1,0 +1,46 @@
+@import "../../App.css";
+
+.wishlist-subtitle-product {
+  padding: 0 0 0.5rem;
+}
+
+.cross-icon-wishlist {
+  font-size: 0.9rem;
+  color: var(--gray);
+}
+
+.wishlist-card-single {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.5fr;
+  padding: 1rem 0;
+}
+
+.wishlist-icon-btn {
+  text-align: right;
+}
+
+.move-cart-div {
+  text-align: center;
+  margin: auto 0;
+}
+
+.move-cart-btn {
+  color: var(--secondary);
+  width: 70%;
+  background-color: var(--white);
+  margin-top: 1.2rem;
+  font-weight: 600;
+  border: 1px solid var(--gray-line);
+  border-radius: 2px;
+  padding: 0.4rem 0.9rem;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.move-cart-btn:hover {
+  border: 1px solid var(--primary);
+}
+
+.move-cart-btn:active {
+  border: 1px solid var(--gray-line);
+}
