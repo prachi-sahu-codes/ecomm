@@ -3,25 +3,33 @@ import { Link } from "react-router-dom";
 import { BsEyeSlashFill, BsEyeFill } from "react-icons/bs";
 import "./account.css";
 import { useAuth } from "../../context/AuthContext";
+import { useData } from "../../context/ProductContext";
 
 export const Signup = () => {
   const { signUpUser } = useAuth();
+  const { notifyToast } = useData();
   const [passVisible, setPassVisible] = useState("password");
   const [userInfo, setUserInfo] = useState({
     firstName: "",
     lastName: "",
     email: "",
     password: "",
+    confirm_password: "",
   });
 
   const clickSubmit = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const isEmail = emailRegex.test(userInfo.email);
+    const checkPassword = userInfo.password === userInfo.confirm_password;
+    if (!checkPassword) {
+      notifyToast("error", "Passwords didn't match!");
+    }
     if (
       userInfo.firstName &&
       userInfo.lastName &&
       userInfo.password &&
-      isEmail
+      isEmail &&
+      checkPassword
     ) {
       signUpUser(userInfo);
     }
@@ -85,6 +93,28 @@ export const Signup = () => {
             className="sign-input "
             onChange={(e) =>
               setUserInfo((u) => ({ ...u, password: e.target.value }))
+            }
+            required
+          />
+          <div className="pwd-eye-icon">
+            {passVisible === "password" ? (
+              <BsEyeSlashFill onClick={() => setPassVisible(() => "text")} />
+            ) : (
+              <BsEyeFill onClick={() => setPassVisible(() => "password")} />
+            )}
+          </div>
+        </div>
+
+        <div className="sign-input-label pwd-input">
+          <label for="cnfrmpwd">Confirm password:</label>
+          <input
+            type={passVisible}
+            placeholder="********"
+            id="cnfrmpwd"
+            name="cnfrmpwd"
+            className="sign-input "
+            onChange={(e) =>
+              setUserInfo((u) => ({ ...u, confirm_password: e.target.value }))
             }
             required
           />
