@@ -5,7 +5,7 @@ import { BsXLg } from "react-icons/bs";
 import { useClick } from "../../context/ClickContext";
 
 export const Wishlist = () => {
-  const { wishlistData, deleteWishItem } = useClick();
+  const { wishlistData, deleteWishItem, postCartData } = useClick();
   return (
     <div className="div-padding">
       <div className="page-content">
@@ -27,7 +27,15 @@ export const Wishlist = () => {
                 </div>
               </div>
               <div className="move-cart-div">
-                <button className="move-cart-btn">Move to Cart</button>
+                <button
+                  className="move-cart-btn"
+                  onClick={() => {
+                    postCartData(item);
+                    setTimeout(() => deleteWishItem(item._id), 500);
+                  }}
+                >
+                  Move to Cart
+                </button>
               </div>
 
               <div className="wishlist-icon-btn">
