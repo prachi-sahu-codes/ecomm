@@ -74,6 +74,31 @@
   font-size: 1.3rem;
 }
 
+.nav-wishList-icon,
+.nav-cartList-icon {
+  position: relative;
+}
+
+.icon-dot {
+  position: absolute;
+  top: 0.09rem;
+  left: 1.8rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 7px;
+  background-color: var(--light-gray);
+}
+
+.icon-dot2 {
+  position: absolute;
+  top: 0.09rem;
+  left: 1.7rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 7px;
+  background-color: var(--light-gray);
+}
+
 @media screen and (max-width: 800px) {
   .nav-search {
     width: 130px;

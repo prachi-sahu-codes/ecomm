@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { BsBag, BsSearch, BsPerson, BsHeart } from "react-icons/bs";
 import { useData } from "../context/ProductContext";
 import { ACTION_TYPE } from "../reducer/actionType";
@@ -14,12 +14,12 @@ const styleLinks = ({ isActive }) => ({
 export const NavBar = () => {
   const { state, dispatch } = useData();
   const navigate = useNavigate();
-  const {} = useClick();
+  const { cartData, wishlistData } = useClick();
   return (
     <div className="nav-flex">
-      <Link to="/" className="nav-logo">
+      <NavLink to="/" className="nav-logo">
         <p>FURN</p>
-      </Link>
+      </NavLink>
 
       <div className="flex-center">
         <BsSearch />
@@ -38,15 +38,17 @@ export const NavBar = () => {
         <NavLink style={styleLinks} to="/shop" className="nav-link">
           Shop
         </NavLink>
-        <Link to="/account">
+        <NavLink to="/account">
           <BsPerson className="nav-link nav-acc" />
-        </Link>
-        <Link to="/wishlist">
-          <BsHeart className="nav-link " />
-        </Link>
-        <Link to="/cart">
+        </NavLink>
+        <NavLink to="/wishlist" className="nav-wishList-icon">
+          <BsHeart className="nav-link" />
+          {wishlistData?.length > 0 ? <div className="icon-dot"></div> : ""}
+        </NavLink>
+        <NavLink to="/cart" className="nav-cartList-icon">
           <BsBag className="nav-link" />
-        </Link>
+          {cartData?.length > 0 ? <div className="icon-dot2"></div> : ""}
+        </NavLink>
       </div>
     </div>
   );
