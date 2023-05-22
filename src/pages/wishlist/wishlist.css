@@ -9,6 +9,12 @@
   color: var(--gray);
 }
 
+.wish-card-detail {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .wishlist-card-single {
   display: grid;
   grid-template-columns: 1fr 1fr 0.5fr;

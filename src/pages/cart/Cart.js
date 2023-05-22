@@ -1,14 +1,28 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./cart.css";
 import { BsXLg } from "react-icons/bs";
 import { useClick } from "../../context/ClickContext";
 import { ProductQuantity } from "./component/productQuantity";
 
 export const Cart = () => {
-  const { cartData, deleteCartItem } = useClick();
+  const { cartData, deleteCartItem, wishlistData, postWishData } = useClick();
+  const navigate = useNavigate();
   const totalPrice = cartData
     ?.reduce((acc, item) => acc + item.price * item.qty, 0)
     .toFixed(2);
+
+  const moveToWishlist = (input) => {
+    const isItemWishlisted = wishlistData?.find(
+      (item) => item._id === input._id
+    );
+    if (isItemWishlisted) {
+      deleteCartItem(input._id);
+    } else {
+      postWishData(input);
+      setTimeout(() => deleteCartItem(input._id), 500);
+    }
+  };
 
   return (
     <div className="div-padding">
@@ -28,7 +42,10 @@ export const Cart = () => {
             {cartData?.map((item, index) => (
               <tr key={item._id}>
                 <td>
-                  <div className="cart-card-detail">
+                  <div
+                    className="cart-card-detail"
+                    onClick={() => navigate(`/detail/${item._id}`)}
+                  >
                     <img
                       src={item?.image}
                       className="cart-img"
@@ -49,11 +66,17 @@ export const Cart = () => {
                 <td className="cart-item-total-price">
                   ${(item?.price * item?.qty).toFixed(2)}
                 </td>
-                <td>
+                <td className="cross-icon-btn">
                   <BsXLg
                     className="cross-icon"
                     onClick={() => deleteCartItem(item._id)}
                   />
+                  <button
+                    className="move-cart-btn"
+                    onClick={() => moveToWishlist(item)}
+                  >
+                    Move to Wishlist
+                  </button>
                 </td>
               </tr>
             ))}

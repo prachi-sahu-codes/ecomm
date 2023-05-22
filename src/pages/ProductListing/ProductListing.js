@@ -16,7 +16,6 @@ export const ProductListing = () => {
         <Filters />
         <div className="listing-main-body">
           <div className="flex-center listing-main-head">
-            {/* <span>Breadcrumbs</span> */}
             <select
               className="wrapper"
               onChange={(e) =>
