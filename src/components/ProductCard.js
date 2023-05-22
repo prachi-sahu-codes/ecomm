@@ -2,6 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { BsHeart } from "react-icons/bs";
 import { useClick } from "../context/ClickContext";
+import { useData } from "../context/ProductContext";
+import { useAuth } from "../context/AuthContext";
 
 //BsHeart, BsPerson, BsSearch, BsSliders2(phone filter), BsChevronDown, BsChevronUp, BsDashLg, BsDash, BsPlusLg, BsPlus, BsJustify(hamburger), BsFillBagPlusFill, BsFillHeartFill
 
@@ -21,7 +23,9 @@ export const ProductCard = ({
 }) => {
   const navigate = useNavigate();
   const { cartData, postCartData } = useClick();
-  const isItemPresent = cartData.find((item) => item._id === _id);
+  const { notifyToast } = useData();
+  const { token } = useAuth();
+  const isItemPresent = cartData?.find((item) => item._id === _id);
   return (
     <div>
       <div onClick={() => navigate(`/detail/${_id}`)}>
@@ -48,21 +52,25 @@ export const ProductCard = ({
             ) : (
               <button
                 className="card-btn"
-                onClick={() =>
-                  postCartData({
-                    _id,
-                    name,
-                    decription,
-                    price,
-                    category,
-                    dimensions,
-                    image,
-                    rating,
-                    reviewsCount,
-                    sales,
-                    reviews,
-                  })
-                }
+                onClick={() => {
+                  if (!token) {
+                    notifyToast("error", "Please Log in to continue!");
+                  } else {
+                    postCartData({
+                      _id,
+                      name,
+                      decription,
+                      price,
+                      category,
+                      dimensions,
+                      image,
+                      rating,
+                      reviewsCount,
+                      sales,
+                      reviews,
+                    });
+                  }
+                }}
               >
                 Add to Cart
               </button>

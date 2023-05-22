@@ -8,25 +8,21 @@ import "./productDetail.css";
 import { Loader } from "../../assets/loader/loader";
 import { useClick } from "../../context/ClickContext";
 import { useData } from "../../context/ProductContext";
+import { useAuth } from "../../context/AuthContext";
 
 export const ProductDetail = () => {
   const { productId } = useParams();
-  const { cartData, postCartData, updateCartDataQty } = useClick();
+  const { cartData, postCartData } = useClick();
   const { loading, setLoading, notifyToast } = useData();
+  const { token } = useAuth();
 
   const navigate = useNavigate();
 
   const [findItem, setFindItem] = useState({});
-  const [quantity, setQuantity] = useState({
-    value: 1,
-    quantityUpdated: false,
-    qtyType: "",
-  });
 
   const rating = findItem?.rating;
   const isItemPresent = cartData.find((item) => item._id === productId);
 
-  //getting data
   const getData = async () => {
     try {
       setLoading(true);
@@ -52,26 +48,6 @@ export const ProductDetail = () => {
     scrollToTop();
   }, []);
 
-  const qtyHandler = (type) => {
-    if (type === "incre") {
-      setQuantity((q) => ({
-        value: q.value + 1,
-        quantityUpdated: !q.quantityUpdated,
-        qtyType: "increment",
-      }));
-    } else if (type === "decre") {
-      return quantity.value <= 1
-        ? quantity.value
-        : setQuantity((q) => ({
-            value: q.value - 1,
-            quantityUpdated: !q.quantityUpdated,
-            qtyType: "decrement",
-          }));
-    } else {
-      return quantity;
-    }
-  };
-
   return (
     <>
       {loading && <Loader />}
@@ -92,67 +68,32 @@ export const ProductDetail = () => {
           </div>
 
           <p className="detail-desc">{findItem?.description}</p>
-          <div className="flex-center qty-rating-head">
-            <h3 className="detail-quantity-title">Quantity</h3>
-            <h3 className="detail-quantity-title">Rating</h3>
-          </div>
-          <div className="flex-center">
-            <div className="detail-quantity">
-              <button
-                className="detail-quantity-btn"
-                onClick={() => qtyHandler("decre")}
-              >
-                {" "}
-                &#x2013;
-              </button>
-              <span>{quantity.value}</span>
-              <button
-                className="detail-quantity-btn"
-                onClick={() => qtyHandler("incre")}
-              >
-                +{" "}
-              </button>
-            </div>
+          <div className=" rating-whole">
+            <h3 className="detail-rating-title">Rating</h3>
 
             <div className="detail-rating">
               <DetailRating ratingvalue={rating} />
             </div>
           </div>
 
-          <button
-            className="card-btn"
-            onClick={() => {
-              if (!isItemPresent) {
-                postCartData(findItem);
-                if (quantity.quantityUpdated) {
-                  updateCartDataQty(findItem._id, quantity.qtyType);
-                  setQuantity((q) => ({
-                    ...q,
-                    quantityUpdated: !q.quantityUpdated,
-                  }));
+          {isItemPresent ? (
+            <button className="card-btn" onClick={() => navigate("../cart")}>
+              Go to Cart
+            </button>
+          ) : (
+            <button
+              className="card-btn"
+              onClick={() => {
+                if (!token) {
+                  notifyToast("error", "Please Log in to continue!");
+                } else {
+                  postCartData(findItem);
                 }
-              } else {
-                if (quantity.quantityUpdated) {
-                  updateCartDataQty(findItem._id, quantity.qtyType);
-                  setQuantity((q) => ({
-                    ...q,
-                    quantityUpdated: !q.quantityUpdated,
-                  }));
-                  notifyToast("success", "Cart Updated!");
-                }
-              }
-            }}
-          >
-            Add to Cart
-          </button>
-
-          <div>
-            {isItemPresent && (
-              <button className="card-btn" onClick={() => navigate("../cart")}>
-                Go to Cart
-              </button>
-            )}
-          </div>
+              }}
+            >
+              Add to Cart
+            </button>
+          )}
         </div>
       </div>
 

@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { Home } from "./pages/home/Home";
 import Mockman from "mockman-js";
-import { NavBar } from "./components/NavBar";
+import { NavBar } from "./layout/NavBar";
 import { Wishlist } from "./pages/wishlist/Wishlist";
 import { Cart } from "./pages/cart/Cart";
 import { Account } from "./pages/account/Account";

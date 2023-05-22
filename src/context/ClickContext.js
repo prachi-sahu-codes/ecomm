@@ -29,6 +29,12 @@ export const ClickProvider = ({ children }) => {
     getCartData();
   }, []);
 
+  useEffect(() => {
+    if (!token) {
+      setCartData(null);
+    }
+  }, [token]);
+
   const postCartData = async (input) => {
     try {
       const res = await fetch("/api/user/cart", {
@@ -70,11 +76,9 @@ export const ClickProvider = ({ children }) => {
     }
   };
 
-  console.log(cartData);
-
   return (
     <ClickContext.Provider
-      value={{ cartData, postCartData, updateCartDataQty }}
+      value={{ cartData, setCartData, postCartData, updateCartDataQty }}
     >
       {children}
     </ClickContext.Provider>

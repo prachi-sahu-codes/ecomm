@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./home.css";
 import home from "../../backend/utils/images/home.jpg";
@@ -6,16 +6,21 @@ import dt from "../../backend/utils/images/dt.png";
 import waran from "../../backend/utils/images/waran.png";
 import quality from "../../backend/utils/images/quality.png";
 import goal from "../../backend/utils/images/goal.png";
-import { Footer } from "../../components/Footer";
-import { useCatg } from "../../context/CategoryContext";
+import { Footer } from "../../layout/Footer";
 import { useData } from "../../context/ProductContext";
 import { ProductCard } from "../../components/ProductCard";
 import { ACTION_TYPE } from "../../backend/utils/actionType";
 import { Loader } from "../../assets/loader/loader";
+import { getData } from "./service/categoryApi";
 
 export const Home = () => {
   const { data, dispatch, loading } = useData();
-  const { categories } = useCatg();
+
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    getData(setCategories);
+  }, []);
 
   const hotProducts = [...data].sort((a, b) => b.sales - a.sales).slice(0, 3);
 

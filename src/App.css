@@ -321,8 +321,10 @@ input[type="radio"] {
   background-color: var(--secondary);
   width: 100%;
   margin-top: 0.5rem;
+  font-weight: 600;
   background-image: linear-gradient(to bottom, #661f1e, #852827);
   color: var(--white);
+  cursor: pointer;
   border: none;
   border-radius: 2px;
   padding: 0.4rem 0.9rem;
@@ -331,11 +333,31 @@ input[type="radio"] {
 
 .card-btn:hover {
   background-image: linear-gradient(to bottom, #852827, #661f1e);
-  cursor: pointer;
 }
 
 .card-btn:active {
   background-image: linear-gradient(to bottom, #661f1e, #852827);
+}
+
+.go-cart-btn {
+  color: var(--secondary);
+  width: 100%;
+  background-color: var(--white);
+  margin-top: 1.2rem;
+  font-weight: 600;
+  border: 1px solid var(--gray-line);
+  border-radius: 2px;
+  padding: 0.4rem 0.9rem;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.go-cart-btn:hover {
+  border: 1px solid var(--primary);
+}
+
+.go-cart-btn:active {
+  border: 1px solid var(--gray-line);
 }
 
 /******************* Footer ************************/

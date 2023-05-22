@@ -13,6 +13,7 @@ const ProductContext = createContext();
 export const ProductProvider = ({ children }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+  
   const getData = async () => {
     try {
       setLoading(true);

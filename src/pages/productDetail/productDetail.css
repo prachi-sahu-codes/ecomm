@@ -28,10 +28,6 @@
   border-bottom: 1px solid var(--gray-line);
 }
 
-.detail-rating {
-  display: flex;
-}
-
 .detail-icon-heart {
   font-size: 1.2rem;
 }
@@ -42,13 +38,13 @@
   line-height: 3rem;
 }
 
-.qty-rating-head {
-  padding-right: 1.7rem;
+.rating-whole {
+  padding: 1rem 0;
 }
 
-.detail-quantity-title {
+.detail-rating-title {
   font-size: 1.1rem;
-  padding: 1rem 0 0;
+  padding-bottom: 0.5rem;
   font-weight: 500;
 }
 
