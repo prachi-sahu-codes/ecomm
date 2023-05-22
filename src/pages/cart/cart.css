@@ -1,26 +1,10 @@
 @import "../../App.css";
 
-.cart-subtitle-product {
-  min-width: 230px;
-  padding: 0 0 0.5rem;
-}
-
-.cart-subtitle-quantity,
-.cart-subtitle-total {
-  padding: 0 0 0.5rem;
-}
-
-.cart-card-single {
-  padding: 1rem 0;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr 1.2fr;
-}
-
 .cart-card-detail {
   display: flex;
   align-items: center;
   gap: 1rem;
+  padding: 1rem 0 1rem;
 }
 
 .cart-img {
@@ -37,7 +21,8 @@
 
 .cart-item-name,
 .cart-item-price,
-.cart-item-total-price {
+.cart-item-total-price,
+.cart-final-price {
   font-weight: 500;
 }
 .cart-item-catg {
@@ -48,7 +33,59 @@
 }
 
 .cross-icon {
-  align-self: flex-start;
   font-size: 0.9rem;
   color: var(--gray);
+  margin-bottom: 4rem;
+}
+
+/****************table****************/
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-title {
+  text-align: left;
+  color: var(--gray);
+  border-bottom: 1px solid var(--gray);
+}
+.table-title > tr > th {
+  font-weight: 400;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.thead-product {
+  width: 50%;
+}
+
+.thead-price {
+  width: 20%;
+}
+
+.thead-empty {
+  width: 3%;
+}
+
+.cart-final > td {
+  border-top: 1px solid var(--light-gray);
+}
+
+.cart-final-price {
+  padding: 2rem 0 0;
+}
+
+.check-btn-div {
+  text-align: right;
+  margin: 1rem 0;
+}
+
+.check-btn {
+  padding: 0.6rem 0;
+  display: inline-block;
+  font-size: 0.9rem;
+  letter-spacing: 0.03rem;
+  max-width: 400px;
+  font-weight: 500;
 }

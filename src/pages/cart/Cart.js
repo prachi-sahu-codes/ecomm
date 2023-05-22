@@ -6,43 +6,70 @@ import { ProductQuantity } from "./component/productQuantity";
 
 export const Cart = () => {
   const { cartData, deleteCartItem } = useClick();
+  const totalPrice = cartData
+    ?.reduce((acc, item) => acc + item.price * item.qty, 0)
+    .toFixed(2);
 
   return (
     <div className="div-padding">
       <div className="page-content">
         <h1 className="page-title">Cart</h1>
-
-        <div className="page-subtitle flex-center">
-          <p className="cart-subtitle-product">Product</p>
-          <p className="cart-subtitle-quantity">Quantity</p>
-          <p className="cart-subtitle-total">Total</p>
-        </div>
-
-        <ul>
-          {cartData?.map((item) => (
-            <li className=" cart-card-single" key={item._id}>
-              <div className="cart-card-detail">
-                <img src={item?.image} className="cart-img" alt={item?.name} />
-                <div className="cart-card-title-price">
-                  <p className="cart-item-name">{item?.name}</p>
-                  <p className="cart-item-catg">{item?.category}</p>
-                  <p className="cart-item-price">${item?.price}</p>
-                </div>
-              </div>
-
-              <div className="cart-qty-price">
-                <ProductQuantity _id={item?._id} qty={item?.qty} />
-                <p className="cart-item-total-price">
+        <table className="cart-table">
+          <thead className="table-title">
+            <tr>
+              <th className="thead-product">Product</th>
+              <th>Quantity</th>
+              <th className="thead-price">Total</th>
+              <th className="thead-empty"></th>{" "}
+              {/* Empty column for the delete icon */}
+            </tr>
+          </thead>
+          <tbody className="cart-table-body">
+            {cartData?.map((item, index) => (
+              <tr key={item._id}>
+                <td>
+                  <div className="cart-card-detail">
+                    <img
+                      src={item?.image}
+                      className="cart-img"
+                      alt={item?.name}
+                    />
+                    <div className="cart-card-title-price">
+                      <p className="cart-item-name">{item?.name}</p>
+                      <p className="cart-item-catg">{item?.category}</p>
+                      <p className="cart-item-price">${item?.price}</p>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div className="cart-qty-price">
+                    <ProductQuantity _id={item?._id} qty={item?.qty} />
+                  </div>
+                </td>
+                <td className="cart-item-total-price">
                   ${(item?.price * item?.qty).toFixed(2)}
-                </p>
-                <BsXLg
-                  className="cross-icon"
-                  onClick={() => deleteCartItem(item._id)}
-                />
-              </div>
-            </li>
-          ))}
-        </ul>
+                </td>
+                <td>
+                  <BsXLg
+                    className="cross-icon"
+                    onClick={() => deleteCartItem(item._id)}
+                  />
+                </td>
+              </tr>
+            ))}
+            <tr className="cart-final">
+              <td></td>
+              <td></td>
+              <td>
+                <p className="cart-final-price">Total: ${totalPrice}</p>
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <div className="check-btn-div">
+          <button className="card-btn check-btn">Checkout</button>
+        </div>
       </div>
     </div>
   );
