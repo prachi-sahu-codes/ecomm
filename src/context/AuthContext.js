@@ -1,12 +1,13 @@
 import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useData } from "./ProductContext";
+import { ACTION_TYPE } from "../reducer/actionType";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
-  const { notifyToast } = useData();
+  const { dispatch, notifyToast } = useData();
 
   const [userDetail, setUserDetail] = useState({ email: "", password: "" });
 
@@ -46,7 +47,8 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem("authItems");
     setToken(null);
     setLoggedUser(null);
-    navigate("/");
+    navigate("/shop");
+    dispatch({ type: ACTION_TYPE.CLEAR_FILTER });
   };
 
   const signUpUser = async (input) => {

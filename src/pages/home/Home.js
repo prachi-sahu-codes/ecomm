@@ -9,9 +9,9 @@ import goal from "../../backend/utils/images/goal.png";
 import { Footer } from "../../layout/Footer";
 import { useData } from "../../context/ProductContext";
 import { ProductCard } from "../../components/ProductCard";
-import { ACTION_TYPE } from "../../backend/utils/actionType";
 import { Loader } from "../../assets/loader/loader";
 import { getData } from "./service/categoryApi";
+import { ACTION_TYPE } from "../../reducer/actionType";
 
 export const Home = () => {
   const { data, dispatch, loading } = useData();

@@ -2,7 +2,8 @@ import React from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { BsBag, BsSearch, BsPerson, BsHeart } from "react-icons/bs";
 import { useData } from "../context/ProductContext";
-import { ACTION_TYPE } from "../backend/utils/actionType";
+import { ACTION_TYPE } from "../reducer/actionType";
+import { useClick } from "../context/ClickContext";
 
 //BsHeart, BsPerson, BsSearch, BsSliders2(phone filter), BsChevronDown, BsChevronUp, BsDashLg, BsDash, BsPlusLg, BsPlus, BsJustify(hamburger)
 
@@ -13,6 +14,7 @@ const styleLinks = ({ isActive }) => ({
 export const NavBar = () => {
   const { state, dispatch } = useData();
   const navigate = useNavigate();
+  const {} = useClick();
   return (
     <div className="nav-flex">
       <Link to="/" className="nav-logo">

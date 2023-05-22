@@ -88,6 +88,12 @@
     width: 100px;
   }
 }
+/*******************Items Count*******************/
+
+.head-count {
+  color: var(--gray);
+  font-size: 1.2rem;
+}
 
 /****************filters*****************/
 

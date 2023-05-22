@@ -12,6 +12,8 @@ export const Cart = () => {
     ?.reduce((acc, item) => acc + item.price * item.qty, 0)
     .toFixed(2);
 
+  const count = cartData?.reduce((acc, item) => acc + item.qty, 0);
+
   const moveToWishlist = (input) => {
     const isItemWishlisted = wishlistData?.find(
       (item) => item._id === input._id
@@ -27,7 +29,12 @@ export const Cart = () => {
   return (
     <div className="div-padding">
       <div className="page-content">
-        <h1 className="page-title">Cart</h1>
+        <div className="flex-center">
+          <h1 className="page-title">Cart</h1>
+          <span className="head-count">
+            ({count} Item{count > 1 ? "s" : ""})
+          </span>
+        </div>
         <table className="cart-table">
           <thead className="table-title">
             <tr>
@@ -91,7 +98,12 @@ export const Cart = () => {
           </tbody>
         </table>
         <div className="check-btn-div">
-          <button className="card-btn check-btn">Checkout</button>
+          <button
+            className="card-btn check-btn"
+            onClick={() => navigate(`/checkout`)}
+          >
+            Checkout
+          </button>
         </div>
       </div>
     </div>

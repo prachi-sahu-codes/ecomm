@@ -31,7 +31,12 @@ export const Wishlist = () => {
   return (
     <div className="div-padding">
       <div className="page-content">
-        <h1 className="page-title">Wishlist</h1>
+        <div className="flex-center">
+          <h1 className="page-title">Wishlist </h1>
+          <span className="head-count">
+            ({wishlistData?.length} Item{wishlistData?.length > 1 ? "s" : ""})
+          </span>
+        </div>
 
         <div className="page-subtitle flex-center">
           <p className="wishlist-subtitle-product">Products</p>

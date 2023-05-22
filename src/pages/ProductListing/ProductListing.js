@@ -3,8 +3,8 @@ import "./productListing.css";
 import { useData } from "../../context/ProductContext";
 import { Filters } from "../../components/Filters";
 import { ProductCard } from "../../components/ProductCard";
-import { ACTION_TYPE } from "../../backend/utils/actionType";
 import { Loader } from "../../assets/loader/loader";
+import { ACTION_TYPE } from "../../reducer/actionType";
 
 export const ProductListing = () => {
   const { sortedList, dispatch, state, loading } = useData();

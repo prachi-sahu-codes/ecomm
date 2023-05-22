@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useData } from "../context/ProductContext";
-import { ACTION_TYPE } from "../backend/utils/actionType";
+import { ACTION_TYPE } from "../reducer/actionType";
 
 const categoryArray = ["Sofa", "Chair", "Bed", "Table"];
 const ratingArray = [4, 3, 2, 1];

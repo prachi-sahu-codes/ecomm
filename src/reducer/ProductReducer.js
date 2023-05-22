@@ -1,4 +1,4 @@
-import { ACTION_TYPE } from "../backend/utils/actionType";
+import { ACTION_TYPE } from "./actionType";
 
 export const productReducer = (state, action) => {
   switch (action.type) {

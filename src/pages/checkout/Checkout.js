@@ -1,5 +1,13 @@
 import React from "react";
+import { Address } from "../../components/address/Address";
 
 export const Checkout = () => {
-  return <div>Checkout</div>;
+  return (
+    <div className="div-padding">
+      <div className="page-content">
+        <h1 className="page-title">Checkout</h1>
+        <Address />
+      </div>
+    </div>
+  );
 };

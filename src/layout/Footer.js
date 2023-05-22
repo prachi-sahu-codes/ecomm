@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useData } from "../context/ProductContext";
-import { ACTION_TYPE } from "../backend/utils/actionType";
+import { ACTION_TYPE } from "../reducer/actionType";
 
 export const Footer = () => {
   const { dispatch } = useData();
