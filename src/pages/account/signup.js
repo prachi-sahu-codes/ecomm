@@ -20,6 +20,9 @@ export const Signup = () => {
   const clickSubmit = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const isEmail = emailRegex.test(userInfo.email);
+    if (!isEmail) {
+      notifyToast("error", "Please enter a valid email!");
+    }
     const checkPassword = userInfo.password === userInfo.confirm_password;
     if (!checkPassword) {
       notifyToast("error", "Passwords didn't match!");
@@ -40,10 +43,10 @@ export const Signup = () => {
       <form className="sign-form" onSubmit={(e) => e.preventDefault()}>
         <div className="flex-center">
           <div className="sign-input-label">
-            <label for="first">First name:</label>
+            <label htmlFor="first">First name:</label>
             <input
               type="text"
-              placeholder="Josh"
+              placeholder="Prachi"
               id="first"
               name="first"
               className="sign-input"
@@ -55,10 +58,10 @@ export const Signup = () => {
           </div>
 
           <div className="sign-input-label">
-            <label for="last">Last name:</label>
+            <label htmlFor="last">Last name:</label>
             <input
               type="text"
-              placeholder="Dun"
+              placeholder="Sahu"
               id="last"
               name="last"
               className="sign-input"
@@ -70,10 +73,10 @@ export const Signup = () => {
           </div>
         </div>
         <div className="sign-input-label">
-          <label for="email">Email address:</label>
+          <label htmlFor="email">Email:</label>
           <input
             type="email"
-            placeholder="josh@gmail.com"
+            placeholder="prachi@gmail.com"
             id="email"
             name="email"
             className="sign-input"
@@ -84,7 +87,7 @@ export const Signup = () => {
           />
         </div>
         <div className="sign-input-label pwd-input">
-          <label for="pwd">Password:</label>
+          <label htmlFor="pwd">Password:</label>
           <input
             type={passVisible}
             placeholder="********"
@@ -106,7 +109,7 @@ export const Signup = () => {
         </div>
 
         <div className="sign-input-label pwd-input">
-          <label for="cnfrmpwd">Confirm password:</label>
+          <label htmlFor="cnfrmpwd">Confirm password:</label>
           <input
             type={passVisible}
             placeholder="********"
