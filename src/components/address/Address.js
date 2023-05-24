@@ -1,7 +1,9 @@
 import React, { useReducer } from "react";
+import {} from "react-icons/bs";
 import { AddressReducer } from "./component/AddressReducer";
 import { AddressForm } from "./component/addressForm/AddressForm";
 import { FORM_ACTION_TYPE } from "../../reducer/actionType";
+import "../../App.css";
 
 export const Address = () => {
   const initialStateAddress = {
@@ -31,6 +33,7 @@ export const Address = () => {
 
   return (
     <div>
+      <h2 className="page-subhead">Shipping Address</h2>
       <button
         onClick={() =>
           addressDispatch({ type: FORM_ACTION_TYPE.SHOW_ADDRESS_FORM })
@@ -38,7 +41,6 @@ export const Address = () => {
       >
         Click me
       </button>
-      <h2>Shipping Address</h2>
 
       <div style={{ display: addressState.openedAddressForm ? "" : "none" }}>
         <AddressForm addressDispatch={addressDispatch} />

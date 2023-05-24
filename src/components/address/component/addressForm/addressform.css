@@ -47,6 +47,11 @@
   border-radius: 2px;
 }
 
+.form-input:focus,
+.form-textarea:focus {
+  outline-color: var(--secondary);
+}
+
 .form-textarea {
   height: 65px;
   border: 1px solid var(--gray-line);

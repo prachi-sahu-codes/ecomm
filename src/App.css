@@ -27,6 +27,11 @@
   padding: 6rem 2rem 2rem;
 }
 
+.page-subhead {
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
 /******************NavBar*********************/
 
 .nav-flex {

@@ -3,8 +3,10 @@ import { faker } from "@faker-js/faker/locale/en_IN";
 import "./addressform.css";
 import { BsXLg } from "react-icons/bs";
 import { FORM_ACTION_TYPE } from "../../../../reducer/actionType";
+import { useData } from "../../../../context/ProductContext";
 
 export const AddressForm = ({ addressDispatch }) => {
+  const { notifyToast } = useData();
   const formFields = {
     firstname: "",
     lastname: "",
@@ -47,7 +49,14 @@ export const AddressForm = ({ addressDispatch }) => {
         type: FORM_ACTION_TYPE.ADD_ADDRESS,
         payload: formData,
       });
+
       setFormData(formFields);
+
+      addressDispatch({
+        type: FORM_ACTION_TYPE.SHOW_ADDRESS_FORM,
+      });
+
+      notifyToast("success", "New address added!");
     }
   };
 

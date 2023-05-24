@@ -98,6 +98,10 @@
   border-radius: 2px;
 }
 
+.sign-input:focus {
+  outline-color: var(--secondary);
+}
+
 .sign-link {
   display: inline-block;
   color: var(--secondary);
