@@ -102,6 +102,7 @@ export const Footer = () => {
             <a
               href="https://github.com/prachi-sahu-codes/"
               target="_blank"
+              rel="noreferrer"
               className="footer-live-link"
             >
               GitHub
@@ -111,6 +112,7 @@ export const Footer = () => {
             <a
               href="https://twitter.com/_prachi_sahu"
               target="_blank"
+              rel="noreferrer"
               className="footer-live-link"
             >
               Twitter
@@ -120,6 +122,7 @@ export const Footer = () => {
             <a
               href="https://www.linkedin.com/in/prachi-sahu-96b228200/"
               target="_blank"
+              rel="noreferrer"
               className="footer-live-link"
             >
               LinkedIn

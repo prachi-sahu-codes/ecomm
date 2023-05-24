@@ -15,6 +15,7 @@ export const ClickProvider = ({ children }) => {
     localStorage.getItem("wishlistItems")
   );
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (!token) {
       setCartData(null);
@@ -41,6 +42,7 @@ export const ClickProvider = ({ children }) => {
     }
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     getCartData();
   }, []);
@@ -131,6 +133,7 @@ export const ClickProvider = ({ children }) => {
     }
   };
 
+  // eslint-disable-next-line
   useEffect(() => {
     getCartData();
   }, []);

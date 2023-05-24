@@ -64,8 +64,8 @@ export const Login = () => {
             className="card-btn"
             onClick={() =>
               loginUser({
-                email: "adarshbalika@gmail.com",
-                password: "adarshbalika",
+                email: "aditya66r@gmail.com",
+                password: "aditya66r",
               })
             }
           >

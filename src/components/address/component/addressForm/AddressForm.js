@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { faker } from "@faker-js/faker/locale/en_IN";
 import "./addressform.css";
+import { BsXLg } from "react-icons/bs";
+import { FORM_ACTION_TYPE } from "../../../../reducer/actionType";
 
-export const AddressForm = () => {
+export const AddressForm = ({ addressDispatch }) => {
   const formFields = {
     firstname: "",
     lastname: "",
@@ -22,7 +24,7 @@ export const AddressForm = () => {
       firstname: faker.person.firstName(),
       lastname: faker.person.lastName(),
       email: faker.internet.email(),
-      phone: faker.number.int({ min: 1000000000, max: 9999999999 }),
+      phone: String(faker.number.int({ min: 1000000000, max: 9999999999 })),
       address: faker.location.streetAddress(),
       pincode: faker.location.zipCode("######"),
       city: faker.location.city(),
@@ -35,12 +37,33 @@ export const AddressForm = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  console.log(formData);
+  const submitHandler = (formData) => {
+    const isFormFilled = Object.values(formData).every(
+      (value) => typeof value === "string" && value.trim() !== ""
+    );
+
+    if (isFormFilled) {
+      addressDispatch({
+        type: FORM_ACTION_TYPE.ADD_ADDRESS,
+        payload: formData,
+      });
+      setFormData(formFields);
+    }
+  };
 
   return (
     <div className="form-bg-blur">
       <div className=" address-block">
-        <h3 className="form-title">New Address</h3>
+        <div className="flex-center">
+          <h3 className="form-title">New Address</h3>
+          <div
+            onClick={() =>
+              addressDispatch({ type: FORM_ACTION_TYPE.SHOW_ADDRESS_FORM })
+            }
+          >
+            <BsXLg />
+          </div>
+        </div>
 
         <form className="form" onSubmit={(e) => e.preventDefault()}>
           <div className="flex-center">
@@ -89,7 +112,7 @@ export const AddressForm = () => {
               <label htmlFor="phone">Phone no:</label>
               <input
                 className="form-input"
-                placeholder=""
+                placeholder="8374432275"
                 type="number"
                 id="phone"
                 name="phone"
@@ -174,13 +197,23 @@ export const AddressForm = () => {
             </div>
           </div>
           <div className="form-btn">
-            <button className="form-btn-light">Reset</button>
-            <button className="form-btn-light">Random</button>
+            <button
+              className="form-btn-light"
+              onClick={() => setFormData(formFields)}
+            >
+              Reset
+            </button>
+            <button
+              className="form-btn-light"
+              onClick={() => generateRandomData()}
+            >
+              Random
+            </button>
 
             <button
               type="submit"
               className="form-btn-dark"
-              onClick={() => generateRandomData()}
+              onClick={() => submitHandler(formData)}
             >
               Add Address
             </button>

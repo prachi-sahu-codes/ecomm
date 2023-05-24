@@ -3,18 +3,24 @@
 .form-bg-blur {
   width: 100vw;
   height: 100vh;
-  background-color: #8529270f;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1500;
 }
 
 .address-block {
   width: 500px;
+  height: 550px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   background-color: #fff;
   box-shadow: 0 1px 5px rgb(208, 208, 208);
+  border-radius: 2px;
 }
 
 .form {
@@ -55,6 +61,7 @@
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  padding-top: 1rem;
 }
 
 .form-btn-light {
@@ -62,7 +69,7 @@
   width: 100%;
   background-color: var(--white);
   font-weight: 600;
-  border: 1px solid var(--gray-line);
+  border: 1px solid var(--tertiary);
   border-radius: 2px;
   padding: 0.4rem 0.9rem;
   transition: all 0.3s ease-in-out;
@@ -74,12 +81,11 @@
 }
 
 .form-btn-light:active {
-  border: 1px solid var(--gray-line);
+  border: 1px solid var(--tertiary);
 }
 
 .form-btn-dark {
   width: 100%;
-  margin-top: 0.5rem;
   font-weight: 600;
   background-image: linear-gradient(to bottom, #661f1e, #852827);
   color: var(--white);
