@@ -6,7 +6,8 @@ export const Checkout = () => {
     <div className="div-padding">
       <div className="page-content">
         <h1 className="page-title">Checkout</h1>
-        <Address />
+        <Address noDetail />
+        <h2 className="page-subhead">Delivery</h2>
       </div>
     </div>
   );

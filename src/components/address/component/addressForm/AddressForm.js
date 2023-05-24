@@ -39,7 +39,8 @@ export const AddressForm = ({ addressDispatch }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const submitHandler = (formData) => {
+  const submitHandler = (e, formData) => {
+    e.preventDefault();
     const isFormFilled = Object.values(formData).every(
       (value) => typeof value === "string" && value.trim() !== ""
     );
@@ -222,7 +223,7 @@ export const AddressForm = ({ addressDispatch }) => {
             <button
               type="submit"
               className="form-btn-dark"
-              onClick={() => submitHandler(formData)}
+              onClick={(e) => submitHandler(e, formData)}
             >
               Add Address
             </button>

@@ -1,46 +1,73 @@
-import React, { useReducer } from "react";
-import {} from "react-icons/bs";
-import { AddressReducer } from "./component/AddressReducer";
+import React from "react";
+import { BsPlusLg } from "react-icons/bs";
+import "./address.css";
 import { AddressForm } from "./component/addressForm/AddressForm";
 import { FORM_ACTION_TYPE } from "../../reducer/actionType";
-import "../../App.css";
+import { useClick } from "../../context/ClickContext";
 
-export const Address = () => {
-  const initialStateAddress = {
-    addresses: [
-      {
-        _id: "e6958a52-9b2b-4bb0-9d5d-1fbfafdcfa14",
-        firstname: "Aditya",
-        lastname: "Suthar",
-        email: "aditya66r@hotmail.com",
-        phone: 1090350443,
-        address: "6260 Umang Ridges",
-        pincode: "610229",
-        state: "Meghalaya",
-        city: "Warhapur",
-        country: "India",
-      },
-    ],
-    selectedAddress: null,
-    openedAddressForm: false,
-  };
-  const [addressState, addressDispatch] = useReducer(
-    AddressReducer,
-    initialStateAddress
-  );
-
+export const Address = ({ noDetail }) => {
+  const { addressState, addressDispatch } = useClick();
   console.log(addressState);
-
   return (
     <div>
-      <h2 className="page-subhead">Shipping Address</h2>
-      <button
+      <h2 className="page-subhead">Shipping Information</h2>
+
+      <ul>
+        {addressState.addresses.map(
+          ({
+            _id,
+            firstname,
+            lastname,
+            email,
+            phone,
+            address,
+            pincode,
+            state,
+            city,
+            country,
+          }) => (
+            <li
+              key={_id}
+              className="address-card"
+              onChange={() =>
+                addressDispatch({
+                  type: FORM_ACTION_TYPE.SELECT_ADDRESS_FORM,
+                  payload: _id,
+                })
+              }
+            >
+              {noDetail && <input id={_id} type="radio" name="address-radio" />}
+              <label htmlFor={_id}>
+                <p className="address-card-head">
+                  {firstname} {lastname}
+                </p>
+                <p>
+                  <span className="address-card-subhead">Address: </span>
+                  {address}, {state}, {city}, {pincode}, {country}
+                </p>
+                <p>
+                  <span className="address-card-subhead">Phone: </span>
+                  {phone}
+                </p>
+                <p>
+                  <span className="address-card-subhead">Email: </span>
+                  {email}
+                </p>
+              </label>
+            </li>
+          )
+        )}
+      </ul>
+
+      <div
+        className="new-address-block new-address-btn"
         onClick={() =>
           addressDispatch({ type: FORM_ACTION_TYPE.SHOW_ADDRESS_FORM })
         }
       >
-        Click me
-      </button>
+        <BsPlusLg className="new-address-icon " />
+        <span>Add new address</span>
+      </div>
 
       <div style={{ display: addressState.openedAddressForm ? "" : "none" }}>
         <AddressForm addressDispatch={addressDispatch} />

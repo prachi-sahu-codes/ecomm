@@ -41,8 +41,7 @@ export const Cart = () => {
               <th className="thead-product">Product</th>
               <th>Quantity</th>
               <th className="thead-price">Total</th>
-              <th className="thead-empty"></th>{" "}
-              {/* Empty column for the delete icon */}
+              <th className="thead-empty"></th>
             </tr>
           </thead>
           <tbody className="cart-table-body">

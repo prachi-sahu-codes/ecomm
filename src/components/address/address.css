@@ -1,0 +1,52 @@
+.address-card {
+  display: flex;
+  gap: 1.8rem;
+  align-items: center;
+  width: 400px;
+  padding-top: 2rem;
+}
+
+.address-card-head {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding-bottom: 0.5rem;
+}
+.address-card-subhead {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/***************new-address-block*******************/
+
+.new-address-btn {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  color: var(--secondary);
+  /* width: 70%; */
+  background-color: var(--white);
+  margin-top: 2rem;
+  font-weight: 600;
+  border: 1px solid var(--gray-line);
+  border-radius: 2px;
+  padding: 0.4rem 0.9rem;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.new-address-btn:hover {
+  border: 1px solid var(--primary);
+}
+
+.new-address-btn:active {
+  border: 1px solid var(--gray-line);
+}
+
+.new-address-icon {
+  font-size: 1.05rem;
+  border: none;
+  stroke-width: 1px;
+  background-color: transparent;
+  border-radius: 2px;
+}

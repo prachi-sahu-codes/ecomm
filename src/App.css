@@ -6,6 +6,7 @@
   --white: #fff;
   --gray: #4f4f4f;
   --light-gray: #eaeaea;
+  --card-bg: #f1f1f1;
 }
 
 * {
@@ -28,8 +29,10 @@
 }
 
 .page-subhead {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-weight: 500;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--gray-line);
 }
 
 /******************NavBar*********************/
@@ -316,7 +319,7 @@ input[type="radio"] {
 .card-image {
   /* position: relative; */
   width: 300px;
-  background-color: #661f1e0f;
+  background-color: var(--card-bg);
 }
 
 .card-content {

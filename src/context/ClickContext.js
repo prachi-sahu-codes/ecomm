@@ -1,6 +1,13 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
 import { useAuth } from "./AuthContext";
 import { useData } from "./ProductContext";
+import { AddressReducer } from "../components/address/component/AddressReducer";
 
 const ClickContext = createContext();
 
@@ -188,6 +195,32 @@ export const ClickProvider = ({ children }) => {
     }
   };
 
+  //checkout address
+
+  const initialStateAddress = {
+    addresses: [
+      {
+        _id: "e6958a52-9b2b-4bb0-9d5d-1fbfafdcfa14",
+        firstname: "Aditya",
+        lastname: "Suthar",
+        email: "aditya66r@hotmail.com",
+        phone: 1090350443,
+        address: "6260 Umang Ridges",
+        pincode: "610229",
+        state: "Meghalaya",
+        city: "Warhapur",
+        country: "India",
+      },
+    ],
+    selectedAddress: null,
+    openedAddressForm: false,
+  };
+
+  const [addressState, addressDispatch] = useReducer(
+    AddressReducer,
+    initialStateAddress
+  );
+
   return (
     <ClickContext.Provider
       value={{
@@ -201,6 +234,8 @@ export const ClickProvider = ({ children }) => {
         getWishData,
         postWishData,
         deleteWishItem,
+        addressState,
+        addressDispatch,
       }}
     >
       {children}
