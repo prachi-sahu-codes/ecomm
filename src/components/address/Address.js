@@ -7,7 +7,7 @@ import { useClick } from "../../context/ClickContext";
 
 export const Address = ({ noDetail }) => {
   const { addressState, addressDispatch } = useClick();
-  console.log(addressState);
+
   return (
     <div>
       <h2 className="page-subhead">Shipping Information</h2>
