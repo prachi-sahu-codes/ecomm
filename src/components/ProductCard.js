@@ -10,7 +10,7 @@ import { useAuth } from "../context/AuthContext";
 export const ProductCard = ({
   _id,
   name,
-  decription,
+  description,
   price,
   category,
   dimensions,
@@ -57,7 +57,7 @@ export const ProductCard = ({
                     postWishData({
                       _id,
                       name,
-                      decription,
+                      description,
                       price,
                       category,
                       dimensions,
@@ -100,7 +100,7 @@ export const ProductCard = ({
                     postCartData({
                       _id,
                       name,
-                      decription,
+                      description,
                       price,
                       category,
                       dimensions,
