@@ -13,7 +13,7 @@
 
 .cart-img {
   width: 100px;
-  background-color: #661f1e0f;
+  background-color: var(--card-bg);
 }
 
 .cart-qty-price {
@@ -80,12 +80,12 @@
 .table-title {
   text-align: left;
   color: var(--gray);
-  border-bottom: 1px solid var(--gray);
+  border-bottom: 1px solid var(--gray-line);
 }
 .table-title > tr > th {
   font-weight: 400;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--light-gray);
+  border-bottom: 1px solid var(--gray-line);
 }
 
 .thead-product {
@@ -102,7 +102,7 @@
 }
 
 .cart-final > td {
-  border-top: 1px solid var(--light-gray);
+  border-top: 1px solid var(--gray-line);
 }
 
 .cart-final-price {
