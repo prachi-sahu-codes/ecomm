@@ -41,15 +41,15 @@ export const Address = ({ noDetail }) => {
                 <p className="address-card-head">
                   {firstname} {lastname}
                 </p>
-                <p>
+                <p className="address-card-subhead-details">
                   <span className="address-card-subhead">Address: </span>
-                  {address}, {state}, {city}, {pincode}, {country}
+                  {address}, {city}, {state}, {pincode}, {country}
                 </p>
-                <p>
+                <p className="address-card-subhead-details">
                   <span className="address-card-subhead">Phone: </span>
                   {phone}
                 </p>
-                <p>
+                <p className="address-card-subhead-details">
                   <span className="address-card-subhead">Email: </span>
                   {email}
                 </p>
@@ -60,7 +60,7 @@ export const Address = ({ noDetail }) => {
       </ul>
 
       <div
-        className="new-address-block new-address-btn"
+        className="new-address-btn"
         onClick={() =>
           addressDispatch({ type: FORM_ACTION_TYPE.SHOW_ADDRESS_FORM })
         }

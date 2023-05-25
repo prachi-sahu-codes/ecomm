@@ -22,6 +22,7 @@ export const users = [
     lastName: "Suthar",
     email: "aditya66r@gmail.com",
     password: "aditya66r",
+    address: "6260 Umang Ridges, Warhapur, Meghalaya, 610229, India",
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },

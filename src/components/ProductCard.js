@@ -28,6 +28,7 @@ export const ProductCard = ({
   const { token } = useAuth();
   const isItemPresent = cartData?.find((item) => item._id === _id);
   const isItemWishlisted = wishlistData?.find((item) => item._id === _id);
+
   return (
     <div>
       <div onClick={() => navigate(`/detail/${_id}`)}>

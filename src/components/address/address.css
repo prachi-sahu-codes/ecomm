@@ -9,12 +9,18 @@
 .address-card-head {
   text-transform: uppercase;
   font-weight: 500;
-  font-size: 0.95rem;
-  padding-bottom: 0.5rem;
+  font-size: 1rem;
+  padding-bottom: 0.7rem;
 }
+
+.address-card-subhead-details {
+  color: var(--gray);
+}
+
 .address-card-subhead {
   font-weight: 500;
   font-size: 0.95rem;
+  color: black;
 }
 
 /***************new-address-block*******************/
@@ -26,7 +32,7 @@
   color: var(--secondary);
   /* width: 70%; */
   background-color: var(--white);
-  margin-top: 2rem;
+  margin: 2rem 0 3rem;
   font-weight: 600;
   border: 1px solid var(--gray-line);
   border-radius: 2px;

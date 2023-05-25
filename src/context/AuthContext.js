@@ -52,7 +52,6 @@ export const AuthProvider = ({ children }) => {
   };
 
   const signUpUser = async (input) => {
-    console.log("first");
     try {
       const res = await fetch("/api/auth/signup", {
         method: "POST",
@@ -63,13 +62,16 @@ export const AuthProvider = ({ children }) => {
       });
       if (res.status === 200 || res.status === 201) {
         const data = await res.json();
-        const { foundUser, encodedToken } = data;
+        const { createdUser, encodedToken } = data;
+
+        console.log(data);
+
         localStorage.setItem(
           "authItems",
-          JSON.stringify({ token: encodedToken, user: foundUser })
+          JSON.stringify({ token: encodedToken, user: createdUser })
         );
         setToken(encodedToken);
-        setLoggedUser(foundUser);
+        setLoggedUser(createdUser);
         navigate("../shop");
         notifyToast("success", "Succesfully Signed Up!");
       } else {
@@ -90,6 +92,7 @@ export const AuthProvider = ({ children }) => {
         signUpUser,
         token,
         loggedUser,
+        setLoggedUser,
       }}
     >
       {children}

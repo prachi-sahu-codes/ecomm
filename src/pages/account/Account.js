@@ -4,6 +4,7 @@ import { useAuth } from "../../context/AuthContext";
 
 export const Account = () => {
   const { logoutHandler, loggedUser } = useAuth();
+
   return (
     <div className="account">
       <div className="account-content">

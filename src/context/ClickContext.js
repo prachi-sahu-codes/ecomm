@@ -12,15 +12,12 @@ import { AddressReducer } from "../components/address/component/AddressReducer";
 const ClickContext = createContext();
 
 export const ClickProvider = ({ children }) => {
-  const { token } = useAuth();
+  const { token, loggedUser } = useAuth();
   const { notifyToast } = useData();
 
-  const [cartData, setCartData] = useState([]);
-  const [wishlistData, setWishlistData] = useState([]);
-  const localStorageCart = JSON.parse(localStorage.getItem("cartItems"));
-  const localStorageWishlist = JSON.parse(
-    localStorage.getItem("wishlistItems")
-  );
+  const [cartData, setCartData] = useState(loggedUser?.cart);
+  const [wishlistData, setWishlistData] = useState(loggedUser?.wishlist);
+  console.log("cartData", cartData);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
@@ -28,8 +25,8 @@ export const ClickProvider = ({ children }) => {
       setCartData(null);
       setWishlistData(null);
     } else {
-      setCartData(() => localStorageCart);
-      setWishlistData(() => localStorageWishlist);
+      getCartData();
+      getWishData();
     }
   }, [token]);
 
@@ -42,7 +39,6 @@ export const ClickProvider = ({ children }) => {
       if (res.status === 200 || res.status === 201) {
         const dataFetched = await res.json();
         setCartData(dataFetched?.cart);
-        localStorage.setItem("cartItems", JSON.stringify(dataFetched?.cart));
       }
     } catch (e) {
       console.error("Error:", e);
@@ -67,8 +63,8 @@ export const ClickProvider = ({ children }) => {
       if (res.status === 200 || res.status === 201) {
         const dataFetched = await res.json();
         setCartData(dataFetched?.cart);
+
         notifyToast("success", "Added to Cart!");
-        localStorage.setItem("cartItems", JSON.stringify(dataFetched?.cart));
       }
     } catch (e) {
       console.error("Error:", e);
@@ -89,7 +85,6 @@ export const ClickProvider = ({ children }) => {
       if (res.status === 200 || res.status === 201) {
         const dataFetched = await res.json();
         setCartData(dataFetched?.cart);
-        localStorage.setItem("cartItems", JSON.stringify(dataFetched?.cart));
       }
     } catch (e) {
       console.error("Error:", e);
@@ -110,7 +105,6 @@ export const ClickProvider = ({ children }) => {
       if (res.status === 200 || res.status === 201) {
         const dataFetched = await res.json();
         setCartData(dataFetched?.cart);
-        localStorage.setItem("cartItems", JSON.stringify(dataFetched?.cart));
         notifyToast("error", "Removed from Cart!");
       }
     } catch (e) {
@@ -130,10 +124,6 @@ export const ClickProvider = ({ children }) => {
       if (res.status === 200 || res.status === 201) {
         const dataFetched = await res.json();
         setWishlistData(dataFetched?.wishlist);
-        localStorage.setItem(
-          "wishlistItems",
-          JSON.stringify(dataFetched?.wishlist)
-        );
       }
     } catch (e) {
       console.error("Error:", e);
@@ -159,10 +149,6 @@ export const ClickProvider = ({ children }) => {
         const dataFetched = await res.json();
         setWishlistData(dataFetched?.wishlist);
         notifyToast("success", "Added to Wishlist!");
-        localStorage.setItem(
-          "wishlistItems",
-          JSON.stringify(dataFetched?.wishlist)
-        );
       }
     } catch (e) {
       console.error("Error:", e);
@@ -183,10 +169,7 @@ export const ClickProvider = ({ children }) => {
       if (res.status === 200 || res.status === 201) {
         const dataFetched = await res.json();
         setWishlistData(dataFetched?.wishlist);
-        localStorage.setItem(
-          "wishlistItems",
-          JSON.stringify(dataFetched?.wishlist)
-        );
+
         notifyToast("error", "Removed from Wishlist!");
       }
     } catch (e) {
