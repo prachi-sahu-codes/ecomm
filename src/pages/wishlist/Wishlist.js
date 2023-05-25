@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../cart/cart.css";
 import "./wishlist.css";
@@ -6,6 +6,7 @@ import { BsXLg } from "react-icons/bs";
 import { useClick } from "../../context/ClickContext";
 import { useData } from "../../context/ProductContext";
 import { DetailRating } from "../../components/DetailRating";
+import { Footer } from "../../layout/Footer";
 
 export const Wishlist = () => {
   const {
@@ -16,7 +17,7 @@ export const Wishlist = () => {
     updateCartItemQty,
   } = useClick();
 
-  const { notifyToast } = useData();
+  const { notifyToast, pageRef, scrollToTop } = useData();
 
   const navigate = useNavigate();
   const moveToCart = (input) => {
@@ -29,10 +30,15 @@ export const Wishlist = () => {
     }
     setTimeout(() => deleteWishItem(input._id), 500);
   };
+
+  useEffect(() => {
+    scrollToTop();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <>
       {wishlistData.length !== 0 ? (
-        <div className="div-padding">
+        <div className="div-padding" ref={pageRef}>
           <div className="page-content">
             <div className="flex-center">
               <h1 className="page-title">Wishlist </h1>
@@ -46,7 +52,7 @@ export const Wishlist = () => {
               <p className="wishlist-subtitle-product">Products</p>
             </div>
 
-            <ul>
+            <ul className="wishlist-list">
               {wishlistData?.map((item, index) => (
                 <li
                   className={` wishlist-card-single ${
@@ -90,11 +96,14 @@ export const Wishlist = () => {
           </div>
         </div>
       ) : (
-        <h2 className="no-data-page">
-          "Transform Your Space: Fill Your Empty Wishlist with Stunning
-          Furniture Picks!"
-        </h2>
+        <div className="no-data-page">
+          <h2 className="no-data-msg">
+            "Transform Your Space: Fill Your Empty Wishlist with Stunning
+            Furniture Picks!"
+          </h2>
+        </div>
       )}
+      <Footer />
     </>
   );
 };

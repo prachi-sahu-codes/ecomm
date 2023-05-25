@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../App.css";
 import "./cart.css";
 import { BsXLg } from "react-icons/bs";
 import { useClick } from "../../context/ClickContext";
 import { ProductQuantity } from "./component/productQuantity";
+import { useData } from "../../context/ProductContext";
+import { Footer } from "../../layout/Footer";
 
 export const Cart = () => {
   const { cartData, deleteCartItem, wishlistData, postWishData } = useClick();
+  const { pageRef, scrollToTop } = useData();
+
   const navigate = useNavigate();
   const totalPrice = cartData
     ?.reduce((acc, item) => acc + item.price * item.qty, 0)
@@ -27,10 +31,15 @@ export const Cart = () => {
     }
   };
 
+  useEffect(() => {
+    scrollToTop();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
       {cartData.length !== 0 ? (
-        <div className="div-padding">
+        <div className="div-padding" ref={pageRef}>
           <div className="page-content">
             <div className="flex-center">
               <h1 className="page-title">Cart</h1>
@@ -112,11 +121,14 @@ export const Cart = () => {
           </div>
         </div>
       ) : (
-        <h2 className="no-data-page">
-          "Discover the Art of Space: Your Empty Cart Awaits Your Perfect
-          Furniture Pieces!"
-        </h2>
+        <div className="no-data-page">
+          <h2 className="no-data-msg">
+            "Discover the Art of Space: Your Empty Cart Awaits Your Perfect
+            Furniture Pieces!"
+          </h2>
+        </div>
       )}
+      <Footer />
     </>
   );
 };

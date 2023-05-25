@@ -63,7 +63,23 @@
 
 .detail-desc {
   color: var(--gray);
-  padding: 1rem 0;
+  padding: 1rem 0 3rem;
+}
+
+.detail-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.detail-rating-star {
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.detail-rating > span {
+  font-size: 1.03rem;
+  font-weight: 500;
 }
 
 /***************bottom-content******************/
@@ -116,4 +132,13 @@
   padding: 2rem 2rem 1rem;
   margin: 1rem 0;
   list-style: none;
+}
+
+.human-icon {
+  font-size: 2rem;
+  border: 1px solid var(--gray-line);
+  padding: 0.3rem;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  color: var(--secondary);
 }

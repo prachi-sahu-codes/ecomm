@@ -9,7 +9,7 @@ import goal from "../../backend/utils/images/goal.png";
 import { Footer } from "../../layout/Footer";
 import { useData } from "../../context/ProductContext";
 import { ProductCard } from "../../components/ProductCard";
-import { Loader } from "../../assets/loader/loader";
+import { Loader } from "../../components/loader/loader";
 import { getData } from "./service/categoryApi";
 import { ACTION_TYPE } from "../../reducer/actionType";
 

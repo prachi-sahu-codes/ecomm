@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 240px auto;
   height: 100vh;
+  margin-bottom: 3rem;
 }
 
 .product-card {
@@ -51,11 +52,9 @@
 
 .no-data {
   position: absolute;
+  text-align: center;
   top: 50%;
   left: 50%;
-  translate: transform(-50%, -50%);
-}
-
-.product-listing-whole {
-  overflow: hidden;
+  transform: translate(-30%, -40%);
+  font-weight: 500;
 }

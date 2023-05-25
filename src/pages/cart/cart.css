@@ -106,7 +106,7 @@
 }
 
 .cart-final-price {
-  padding: 2rem 0 0;
+  padding: 3rem 0 0;
 }
 
 .check-btn-div {
@@ -121,4 +121,5 @@
   letter-spacing: 0.03rem;
   max-width: 400px;
   font-weight: 500;
+  margin-bottom: 2rem;
 }

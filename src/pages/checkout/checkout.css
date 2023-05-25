@@ -3,3 +3,7 @@
 .delivery-block {
   padding-bottom: 3rem;
 }
+
+.checkout-flex {
+  display: flex;
+}

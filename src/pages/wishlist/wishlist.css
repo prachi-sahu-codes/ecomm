@@ -66,3 +66,7 @@
 .move-cart-btn:active {
   border: 1px solid var(--gray-line);
 }
+
+.wishlist-list {
+  padding-bottom: 1rem;
+}

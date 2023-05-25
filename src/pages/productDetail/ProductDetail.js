@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { BsHeart, BsFillHeartFill } from "react-icons/bs";
+import { BsHeart, BsFillHeartFill, BsFillPersonFill } from "react-icons/bs";
 import { DetailRating } from "../../components/DetailRating";
 
 import "./productDetail.css";
-import { Loader } from "../../assets/loader/loader";
 import { useClick } from "../../context/ClickContext";
 import { useData } from "../../context/ProductContext";
 import { useAuth } from "../../context/AuthContext";
+import { Loader } from "../../components/loader/loader";
+import { Footer } from "../../layout/Footer";
 
 export const ProductDetail = () => {
   const { productId } = useParams();
@@ -89,10 +90,14 @@ export const ProductDetail = () => {
 
           <p className="detail-desc">{findItem?.description}</p>
           <div className=" rating-whole">
-            <h3 className="detail-rating-title">Rating</h3>
+            <h3 className="detail-rating-title">Average Rating</h3>
 
             <div className="detail-rating">
-              <DetailRating ratingvalue={rating} />
+              <span className="detail-rating-star">
+                <DetailRating ratingvalue={rating} />
+              </span>
+
+              <span>({rating}.0)</span>
             </div>
           </div>
 
@@ -152,10 +157,12 @@ export const ProductDetail = () => {
 
         <p className="detail-desc">
           The product has a rating of{" "}
-          <strong className="rating-strong-num">{findItem?.rating}</strong> and
-          have garnered{" "}
           <strong className="rating-strong-num">
-            {findItem?.reviewsCount}
+            "{findItem?.rating} stars"
+          </strong>{" "}
+          and have garnered{" "}
+          <strong className="rating-strong-num">
+            "{findItem?.reviewsCount}"
           </strong>{" "}
           reviews, and impressive sales performance. Below are the reviews from
           our valued customers:
@@ -165,7 +172,10 @@ export const ProductDetail = () => {
           {findItem?.reviews?.map(({ author, text, rating }) => (
             <li key={author} className="review-box">
               <div className="flex-center">
-                <strong className="rating-author">{author}</strong>
+                <div className="flex-center">
+                  <BsFillPersonFill className="human-icon" />{" "}
+                  <span className="rating-author">{author}</span>
+                </div>
 
                 <DetailRating ratingvalue={rating} />
               </div>
@@ -180,6 +190,7 @@ export const ProductDetail = () => {
           exploring our furniture collection today.
         </p>
       </div>
+      <Footer />
     </>
   );
 };
