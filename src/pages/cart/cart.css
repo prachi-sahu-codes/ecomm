@@ -4,7 +4,11 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 1rem 0 1rem;
+  padding-bottom: 1.5rem;
+}
+
+.first-card {
+  padding-top: 1.5rem;
 }
 
 .cart-img {

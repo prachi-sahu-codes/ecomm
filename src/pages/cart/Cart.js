@@ -49,7 +49,9 @@ export const Cart = () => {
               <tr key={item._id}>
                 <td>
                   <div
-                    className="cart-card-detail"
+                    className={`cart-card-detail ${
+                      index === 0 ? "first-card" : ""
+                    }`}
                     onClick={() => navigate(`/detail/${item._id}`)}
                   >
                     <img
