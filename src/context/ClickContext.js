@@ -181,20 +181,7 @@ export const ClickProvider = ({ children }) => {
   //checkout address
 
   const initialStateAddress = {
-    addresses: [
-      {
-        _id: "e6958a52-9b2b-4bb0-9d5d-1fbfafdcfa14",
-        firstname: "Aditya",
-        lastname: "Suthar",
-        email: "aditya66r@hotmail.com",
-        phone: 1090350443,
-        address: "6260 Umang Ridges",
-        pincode: "610229",
-        state: "Meghalaya",
-        city: "Warhapur",
-        country: "India",
-      },
-    ],
+    addresses: [],
     selectedAddress: null,
     openedAddressForm: false,
   };
