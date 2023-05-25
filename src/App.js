@@ -20,6 +20,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
+
       <ToastContainer
         position="top-right"
         autoClose={2000}
@@ -31,7 +32,9 @@ function App() {
         draggable
         pauseOnHover
         theme="light"
+        className="toast"
       />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<ProductListing />} />

@@ -1,11 +1,13 @@
 @import "../../App.css";
 
 .loader {
-  position: absolute;
-  width: 99.3vw;
-  height: 100vh;
-  overflow: hidden;
-  background-color: #ffffff51;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: show;
+  background-color: #ffffff75;
   z-index: 2000;
 }
 

@@ -19,7 +19,6 @@ export const ClickProvider = ({ children }) => {
   const [wishlistData, setWishlistData] = useState(loggedUser?.wishlist);
   console.log("cartData", cartData);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (!token) {
       setCartData(null);
@@ -28,6 +27,7 @@ export const ClickProvider = ({ children }) => {
       getCartData();
       getWishData();
     }
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token]);
 
   const getCartData = async () => {
@@ -45,9 +45,9 @@ export const ClickProvider = ({ children }) => {
     }
   };
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     getCartData();
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const postCartData = async (input) => {
@@ -130,9 +130,9 @@ export const ClickProvider = ({ children }) => {
     }
   };
 
-  // eslint-disable-next-line
   useEffect(() => {
     getCartData();
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const postWishData = async (input) => {

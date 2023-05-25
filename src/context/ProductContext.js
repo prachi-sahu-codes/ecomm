@@ -3,6 +3,7 @@ import {
   useContext,
   useEffect,
   useReducer,
+  useRef,
   useState,
 } from "react";
 import { productReducer } from "../reducer/ProductReducer";
@@ -13,14 +14,14 @@ const ProductContext = createContext();
 export const ProductProvider = ({ children }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
-  
+
   const getData = async () => {
     try {
       setLoading(true);
       const res = await fetch("/api/products");
       const dataFetched = await res.json();
       setData(dataFetched?.products);
-      setTimeout(() => setLoading(false), 2000);
+      setTimeout(() => setLoading(false), 1000);
     } catch (e) {
       console.error("Error:", e);
       setLoading(false);
@@ -63,6 +64,7 @@ export const ProductProvider = ({ children }) => {
           } else if (state.sortBy === "LTH") {
             return a.price - b.price;
           }
+          return 0;
         })
       : filteredList;
 
@@ -77,6 +79,15 @@ export const ProductProvider = ({ children }) => {
     }
   };
 
+  //scroll to top
+
+  const pageRef = useRef();
+  const scrollToTop = () => {
+    if (pageRef.current) {
+      pageRef.current.scrollIntoView();
+    }
+  };
+
   return (
     <ProductContext.Provider
       value={{
@@ -88,6 +99,8 @@ export const ProductProvider = ({ children }) => {
         filteredList,
         sortedList,
         notifyToast,
+        pageRef,
+        scrollToTop,
       }}
     >
       {children}

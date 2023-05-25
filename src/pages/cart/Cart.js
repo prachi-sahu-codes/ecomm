@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "../../App.css";
 import "./cart.css";
 import { BsXLg } from "react-icons/bs";
 import { useClick } from "../../context/ClickContext";
@@ -111,10 +112,10 @@ export const Cart = () => {
           </div>
         </div>
       ) : (
-        <div className="no-data-page">
-          Discover the Art of Space: Your Empty Cart Awaits Your Perfect
-          Furniture Pieces!
-        </div>
+        <h2 className="no-data-page">
+          "Discover the Art of Space: Your Empty Cart Awaits Your Perfect
+          Furniture Pieces!"
+        </h2>
       )}
     </>
   );

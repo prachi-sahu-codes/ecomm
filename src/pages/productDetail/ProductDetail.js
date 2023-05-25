@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { BsHeart, BsFillHeartFill } from "react-icons/bs";
@@ -14,7 +14,7 @@ export const ProductDetail = () => {
   const { productId } = useParams();
   const { cartData, postCartData, wishlistData, postWishData, deleteWishItem } =
     useClick();
-  const { loading, setLoading, notifyToast } = useData();
+  const { loading, setLoading, notifyToast, pageRef, scrollToTop } = useData();
   const { token } = useAuth();
 
   const navigate = useNavigate();
@@ -31,23 +31,17 @@ export const ProductDetail = () => {
       const res = await fetch(`/api/products/${productId}`);
       const dataFetched = await res.json();
       setFindItem(dataFetched?.product);
-      setLoading(false);
+      setTimeout(() => setLoading(false), 500);
     } catch (e) {
       console.error("Error:", e);
       setLoading(false);
     }
   };
 
-  const pageRef = useRef();
-  const scrollToTop = () => {
-    if (pageRef.current) {
-      pageRef.current.scrollIntoView();
-    }
-  };
-
   useEffect(() => {
     getData();
     scrollToTop();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

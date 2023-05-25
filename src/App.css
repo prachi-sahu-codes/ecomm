@@ -17,6 +17,10 @@
   scroll-behavior: smooth;
 }
 
+.App {
+  color: var(--primary);
+}
+
 /**********************************************/
 
 .flex-center {
@@ -34,6 +38,21 @@
   font-weight: 500;
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--gray-line);
+}
+
+.no-data-page {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-weight: 500;
+}
+
+/*******************toast***************************/
+
+.toast {
+  margin-top: 3.1rem;
 }
 
 /******************NavBar*********************/
