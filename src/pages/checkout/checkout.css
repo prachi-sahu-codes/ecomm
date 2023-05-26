@@ -1,15 +1,66 @@
 @import "../../App.css";
 
-.delivery-block {
-  padding: 2rem 0 3rem;
-}
-
 .checkout-flex {
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.delivery-block {
+  padding: 1rem 0 3rem;
 }
 
 .delivery-info {
   padding: 0.3rem 0;
   color: var(--gray);
   font-size: 0.9rem;
+}
+
+.delivery-label {
+  font-weight: 500;
+}
+
+.delivery-card {
+  display: flex;
+  gap: 1.8rem;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.checkout-cart-items {
+  width: 390px;
+  list-style: none;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--gray-line);
+}
+
+.checkout-item-img {
+  width: 50px;
+  background-color: var(--card-bg);
+}
+
+.item-individual {
+  padding: 0.7rem 0;
+}
+
+.pricing-block {
+  padding: 2rem 0;
+}
+
+.checkout-pricing {
+  font-weight: 500;
+  padding: 0.5rem 0;
+}
+
+.coupon-block {
+  border: 1px solid var(--gray);
+  padding: 0 1rem;
+  margin: 1rem 0;
+}
+
+.select-coupon {
+  border: none;
+  width: 245px;
+  outline: none;
 }

@@ -132,3 +132,30 @@ export const Cart = () => {
     </>
   );
 };
+
+// phone
+
+// <li>
+//   <div
+//     className={`cart-card-detail ${
+//       index === 0 ? "first-card" : ""
+//     }`}
+//   >
+//     <img
+//       src={item?.image}
+//       className="checkout-item-img"
+//       alt={item?.name}
+//     />
+//     <div className="cart-card-title-price">
+//       <p className="cart-item-name">{item?.name}</p>
+//       <p className="cart-item-catg">{item?.category}</p>
+//       <p className="cart-item-price">
+//         {" "}
+//         ${(item?.price * item?.qty).toFixed(2)}
+//       </p>
+//       <div className="cart-qty-price">
+//         <ProductQuantity _id={item?._id} qty={item?.qty} />
+//       </div>
+//     </div>
+//   </div>
+// </li>

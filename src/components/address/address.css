@@ -19,6 +19,8 @@
 
 .address-card-subhead-details {
   color: var(--gray);
+  font-size: 0.95rem;
+  padding: 0.2rem 0;
 }
 
 .address-card-subhead {
