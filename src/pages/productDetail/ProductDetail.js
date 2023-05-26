@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { BsHeart, BsFillHeartFill, BsFillPersonFill } from "react-icons/bs";
+import {
+  BsHeart,
+  BsFillHeartFill,
+  BsFillPersonFill,
+  BsGraphUpArrow,
+} from "react-icons/bs";
 import { DetailRating } from "../../components/DetailRating";
 
 import "./productDetail.css";
@@ -89,15 +94,27 @@ export const ProductDetail = () => {
           </div>
 
           <p className="detail-desc">{findItem?.description}</p>
-          <div className=" rating-whole">
-            <h3 className="detail-rating-title">Average Rating</h3>
+          <div className=" rating-whole flex-center">
+            <div>
+              <h3 className="detail-rating-title">Average Rating</h3>
 
-            <div className="detail-rating">
-              <span className="detail-rating-star">
-                <DetailRating ratingvalue={rating} />
-              </span>
-
-              <span>({rating}.0)</span>
+              <div className="div-center">
+                <span className="detail-rating-star">
+                  <DetailRating ratingvalue={rating} />
+                </span>
+                <span className="rating-number">({rating}.0)</span>
+              </div>
+              <p className="rating-desc">Average rating this year</p>
+            </div>
+            <div>
+              <h3 className="detail-rating-title">Total Reviews</h3>
+              <p className="rating-number div-center">
+                {findItem?.reviewsCount}{" "}
+                <span className="rating-hike">
+                  {findItem?.ratingHike}% <BsGraphUpArrow />
+                </span>
+              </p>
+              <p className="rating-desc">Growth in reviews on this year</p>
             </div>
           </div>
 

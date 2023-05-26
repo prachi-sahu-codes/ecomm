@@ -42,8 +42,8 @@
 }
 
 .detail-rating-title {
-  font-size: 1.1rem;
-  padding-bottom: 0.5rem;
+  font-size: 1.2rem;
+  padding-bottom: 0.8rem;
   font-weight: 500;
 }
 
@@ -63,7 +63,7 @@
 
 .detail-desc {
   color: var(--gray);
-  padding: 1rem 0 3rem;
+  padding: 1.5rem 0 1rem;
 }
 
 .detail-rating {
@@ -77,9 +77,25 @@
   margin-top: 0.5rem;
 }
 
-.detail-rating > span {
+.rating-number {
   font-size: 1.03rem;
   font-weight: 500;
+}
+
+.rating-hike {
+  font-size: 0.65rem;
+  font-weight: 500;
+  background-color: rgb(174, 255, 195);
+  color: rgb(0, 101, 0);
+  border-radius: 2px;
+  padding: 0.2rem 0.3rem;
+  stroke-width: 2px;
+}
+
+.rating-desc {
+  font-size: 0.8rem;
+  color: var(--gray);
+  padding: 0.5rem 0;
 }
 
 /***************bottom-content******************/

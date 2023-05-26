@@ -33,6 +33,12 @@
   padding: 6rem 2rem 2rem;
 }
 
+.div-center {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .page-subhead {
   font-size: 1.15rem;
   font-weight: 500;
