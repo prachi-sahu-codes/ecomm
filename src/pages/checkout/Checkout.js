@@ -31,9 +31,9 @@ export const Checkout = () => {
               <div>
                 <input type="radio" name="delivery" id="delivery" />
                 <label htmlFor="delivery" className="delivery-label">
-                  Standard shipping
+                  Express shipping
                 </label>
-                <p className="delivery-info">Delivery within 3-7 days</p>
+                <p className="delivery-info">Delivery within 1-3 days</p>
               </div>
             </div>
           </div>

@@ -60,6 +60,13 @@
   font-weight: 500;
 }
 
+.no-data-link {
+  color: var(--secondary);
+  font-weight: 500;
+  padding-left: 0.5rem;
+  font-size: 1.1rem;
+}
+
 /*******************toast***************************/
 
 .toast {

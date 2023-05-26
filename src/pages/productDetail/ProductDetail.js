@@ -27,6 +27,8 @@ export const ProductDetail = () => {
 
   const [findItem, setFindItem] = useState({});
 
+  console.log(findItem);
+
   const rating = findItem?.rating;
   const isItemPresent = cartData?.find((item) => item._id === productId);
   const isItemWishlisted = wishlistData?.find((item) => item._id === productId);
@@ -104,7 +106,7 @@ export const ProductDetail = () => {
                 </span>
                 <span className="rating-number">({rating}.0)</span>
               </div>
-              <p className="rating-desc">Average rating this year</p>
+              <p className="rating-desc">Average rating on this year</p>
             </div>
             <div>
               <h3 className="detail-rating-title">Total Reviews</h3>

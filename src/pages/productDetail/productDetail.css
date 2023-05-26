@@ -15,6 +15,8 @@
 .detail-image {
   width: 500px;
   margin-top: 3rem;
+  background-color: var(--card-bg);
+  border-radius: 2px;
 }
 
 .detail-content {

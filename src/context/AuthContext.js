@@ -64,8 +64,6 @@ export const AuthProvider = ({ children }) => {
         const data = await res.json();
         const { createdUser, encodedToken } = data;
 
-        console.log(data);
-
         localStorage.setItem(
           "authItems",
           JSON.stringify({ token: encodedToken, user: createdUser })

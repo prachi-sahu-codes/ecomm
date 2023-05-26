@@ -1,3 +1,7 @@
+.shipping-block {
+  width: 400px;
+}
+
 .address-card {
   display: flex;
   gap: 1.8rem;
@@ -10,7 +14,7 @@
   text-transform: uppercase;
   font-weight: 500;
   font-size: 1rem;
-  padding-bottom: 0.7rem;
+  padding-bottom: 0.6rem;
 }
 
 .address-card-subhead-details {
@@ -19,8 +23,27 @@
 
 .address-card-subhead {
   font-weight: 500;
-  font-size: 0.95rem;
-  color: black;
+  color: var(--primary);
+}
+
+.address-action-btn {
+  padding: 0.3rem 0.6rem;
+  margin-top: 1rem;
+  color: var(--secondary);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  background-color: var(--white);
+  border: 1px solid var(--gray-line);
+  border-radius: 2px;
+  font-weight: 500;
+}
+
+.address-action-btn:hover {
+  border: 1px solid var(--primary);
+}
+
+.address-action-btn:active {
+  border: 1px solid var(--gray-line);
 }
 
 /***************new-address-block*******************/

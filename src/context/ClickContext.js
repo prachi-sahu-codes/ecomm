@@ -8,6 +8,7 @@ import {
 import { useAuth } from "./AuthContext";
 import { useData } from "./ProductContext";
 import { AddressReducer } from "../components/address/component/AddressReducer";
+import { FORM_ACTION_TYPE } from "../reducer/actionType";
 
 const ClickContext = createContext();
 
@@ -17,7 +18,6 @@ export const ClickProvider = ({ children }) => {
 
   const [cartData, setCartData] = useState(loggedUser?.cart);
   const [wishlistData, setWishlistData] = useState(loggedUser?.wishlist);
-  console.log("cartData", cartData);
 
   useEffect(() => {
     if (!token) {
@@ -27,7 +27,7 @@ export const ClickProvider = ({ children }) => {
       getCartData();
       getWishData();
     }
-     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token]);
 
   const getCartData = async () => {
@@ -47,7 +47,7 @@ export const ClickProvider = ({ children }) => {
 
   useEffect(() => {
     getCartData();
-     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const postCartData = async (input) => {
@@ -132,7 +132,7 @@ export const ClickProvider = ({ children }) => {
 
   useEffect(() => {
     getCartData();
-     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const postWishData = async (input) => {
@@ -178,6 +178,23 @@ export const ClickProvider = ({ children }) => {
     }
   };
 
+  //address form
+
+  const formFields = {
+    _id: "",
+    firstname: "",
+    lastname: "",
+    email: "",
+    phone: "",
+    address: "",
+    pincode: "",
+    city: "",
+    state: "",
+    country: "",
+  };
+
+  const [formData, setFormData] = useState(formFields);
+
   //checkout address
 
   const initialStateAddress = {
@@ -190,6 +207,55 @@ export const ClickProvider = ({ children }) => {
     AddressReducer,
     initialStateAddress
   );
+
+  //submit address
+
+  const submitHandler = (e, formData) => {
+    e.preventDefault();
+    const isFormFilled = Object.values(formData).every(
+      (value) => typeof value === "string" && value.trim() !== ""
+    );
+
+    const idMatch = formData?._id;
+
+    if (isFormFilled && !idMatch) {
+      addressDispatch({
+        type: FORM_ACTION_TYPE.ADD_ADDRESS,
+        payload: formData,
+      });
+
+      setFormData(formFields);
+
+      addressDispatch({
+        type: FORM_ACTION_TYPE.SHOW_ADDRESS_FORM,
+      });
+
+      notifyToast("success", "New address added!");
+    } else {
+      addressDispatch({
+        type: FORM_ACTION_TYPE.UPDATE_ADDRESS,
+        payload: formData,
+      });
+
+      addressDispatch({
+        type: FORM_ACTION_TYPE.SHOW_ADDRESS_FORM,
+      });
+
+      notifyToast("success", "Address updated!");
+    }
+  };
+
+  //edit address
+
+  const editAddress = (id) => {
+    addressDispatch({
+      type: FORM_ACTION_TYPE.SHOW_ADDRESS_FORM,
+    });
+
+    const findAddress = addressState.addresses.find((item) => item._id === id);
+
+    setFormData(findAddress);
+  };
 
   return (
     <ClickContext.Provider
@@ -204,8 +270,13 @@ export const ClickProvider = ({ children }) => {
         getWishData,
         postWishData,
         deleteWishItem,
+        formFields,
+        formData,
+        setFormData,
         addressState,
         addressDispatch,
+        submitHandler,
+        editAddress,
       }}
     >
       {children}

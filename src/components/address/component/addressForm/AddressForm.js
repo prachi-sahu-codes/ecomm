@@ -1,25 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { faker } from "@faker-js/faker/locale/en_IN";
 import "./addressform.css";
 import { BsXLg } from "react-icons/bs";
 import { FORM_ACTION_TYPE } from "../../../../reducer/actionType";
-import { useData } from "../../../../context/ProductContext";
+import { useClick } from "../../../../context/ClickContext";
 
 export const AddressForm = ({ addressDispatch }) => {
-  const { notifyToast } = useData();
-  const formFields = {
-    firstname: "",
-    lastname: "",
-    email: "",
-    phone: "",
-    address: "",
-    pincode: "",
-    city: "",
-    state: "",
-    country: "",
-  };
-
-  const [formData, setFormData] = useState(formFields);
+  const { formFields, formData, setFormData, submitHandler } = useClick();
 
   const generateRandomData = () => {
     setFormData({
@@ -37,28 +24,6 @@ export const AddressForm = ({ addressDispatch }) => {
 
   const changeHandler = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const submitHandler = (e, formData) => {
-    e.preventDefault();
-    const isFormFilled = Object.values(formData).every(
-      (value) => typeof value === "string" && value.trim() !== ""
-    );
-
-    if (isFormFilled) {
-      addressDispatch({
-        type: FORM_ACTION_TYPE.ADD_ADDRESS,
-        payload: formData,
-      });
-
-      setFormData(formFields);
-
-      addressDispatch({
-        type: FORM_ACTION_TYPE.SHOW_ADDRESS_FORM,
-      });
-
-      notifyToast("success", "New address added!");
-    }
   };
 
   return (

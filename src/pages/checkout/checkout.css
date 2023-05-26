@@ -1,9 +1,15 @@
 @import "../../App.css";
 
 .delivery-block {
-  padding-bottom: 3rem;
+  padding: 2rem 0 3rem;
 }
 
 .checkout-flex {
   display: flex;
+}
+
+.delivery-info {
+  padding: 0.3rem 0;
+  color: var(--gray);
+  font-size: 0.9rem;
 }

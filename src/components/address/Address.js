@@ -4,50 +4,15 @@ import "./address.css";
 import { AddressForm } from "./component/addressForm/AddressForm";
 import { FORM_ACTION_TYPE } from "../../reducer/actionType";
 import { useClick } from "../../context/ClickContext";
-import { useAuth } from "../../context/AuthContext";
 
 export const Address = ({ noDetail }) => {
-  const { addressState, addressDispatch } = useClick();
-  const { loggedUser } = useAuth();
-  console.log(loggedUser?.address);
+  const { addressState, addressDispatch, editAddress } = useClick();
 
   return (
-    <div>
+    <div className="shipping-block">
       <h2 className="page-subhead">Shipping Information</h2>
 
       <ul>
-        {loggedUser?.address && (
-          <li
-            className="address-card"
-            onChange={() =>
-              addressDispatch({
-                type: FORM_ACTION_TYPE.SELECT_ADDRESS_FORM,
-                payload: "test-address",
-              })
-            }
-          >
-            {noDetail && (
-              <input id="test-address" type="radio" name="address-radio" />
-            )}
-            <label htmlFor="test-address">
-              <p className="address-card-head">
-                {loggedUser?.firstname} {loggedUser?.lastname}
-              </p>
-              <p className="address-card-subhead-details">
-                <span className="address-card-subhead">Address: </span>
-                {loggedUser?.address}
-              </p>
-              <p className="address-card-subhead-details">
-                <span className="address-card-subhead">Phone: </span>
-                1254
-              </p>
-              <p className="address-card-subhead-details">
-                <span className="address-card-subhead">Email: </span>
-                {loggedUser.email}
-              </p>
-            </label>
-          </li>
-        )}
         {addressState.addresses.map(
           ({
             _id,
@@ -88,6 +53,25 @@ export const Address = ({ noDetail }) => {
                   <span className="address-card-subhead">Email: </span>
                   {email}
                 </p>
+                <div className="div-center">
+                  <button
+                    className="address-action-btn"
+                    onClick={() => editAddress(_id)}
+                  >
+                    Edit
+                  </button>
+                  <button
+                    className="address-action-btn"
+                    onClick={() =>
+                      addressDispatch({
+                        type: FORM_ACTION_TYPE.DELETE_ADDRESS,
+                        payload: _id,
+                      })
+                    }
+                  >
+                    Remove
+                  </button>
+                </div>
               </label>
             </li>
           )
@@ -101,7 +85,9 @@ export const Address = ({ noDetail }) => {
         }
       >
         <BsPlusLg className="new-address-icon " />
-        <span>Add {loggedUser.address ? "new" : ""} address</span>
+        <span>
+          Add {addressState.addresses.length !== 0 ? "new" : ""} address
+        </span>
       </div>
 
       <div style={{ display: addressState.openedAddressForm ? "" : "none" }}>
