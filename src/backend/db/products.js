@@ -16,6 +16,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/gable-dining-chair/gable-dining-chair-1.png",
     rating: 2.0,
+    ratingHike: "10",
     reviewsCount: "1.5k",
     sales: 2000,
     reviews: [
@@ -46,6 +47,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/isadora-i-bed/isadora-i-bed-1.png",
     rating: 5.0,
+    ratingHike: "60",
     reviewsCount: "15k",
     sales: 20000,
     reviews: [
@@ -76,6 +78,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/thumbnails/upholstery/apollo-single-sofa.png",
     rating: 3.0,
+    ratingHike: "80",
     reviewsCount: "8.5k",
     sales: 9000,
     reviews: [
@@ -106,6 +109,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/thumbnails/upholstery/mansfield-dining-chair-qv.png",
     rating: 5.0,
+    ratingHike: "15",
     reviewsCount: "1.5k",
     sales: 2000,
     reviews: [
@@ -136,6 +140,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/thumbnails/upholstery/franco-bed-qv.png",
     rating: 5.0,
+    ratingHike: "18",
     reviewsCount: "25k",
     reviews: [
       {
@@ -165,6 +170,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/isadora-dining-chair/isadora-dining-chair-1.png",
     rating: 5.0,
+    ratingHike: "23",
     reviewsCount: "1.5k",
     sales: 2000,
     reviews: [
@@ -195,6 +201,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/collins-dining-chair/collins-dining-chair-1.png",
     rating: 5.0,
+    ratingHike: "45",
     reviewsCount: "1.5k",
     sales: 1800,
     reviews: [
@@ -225,6 +232,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/thumbnails/upholstery/loren-sofa-qv.png",
     rating: 4.5,
+    ratingHike: "17",
     reviewsCount: "6.5k",
     sales: 6900,
     reviews: [
@@ -255,6 +263,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/hadley-dining-chair/hadley-dining-chair-1.png",
     rating: 5.0,
+    ratingHike: "18",
     reviewsCount: "1.5k",
     sales: 1650,
     reviews: [
@@ -286,6 +295,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/doris-sofa/doris-sofa-1.png",
     rating: 4.5,
+    ratingHike: "5121",
     reviewsCount: "3.5k",
     reviews: [
       {
@@ -315,6 +325,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/roxy-dining-chair/roxy-dining-chair-1.png",
     rating: 5.0,
+    ratingHike: "51",
     reviewsCount: "81.5k",
     sales: 81650,
     reviews: [
@@ -346,6 +357,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/thumbnails/upholstery/mansfield-sofa-qv.png",
     rating: 2.0,
+    ratingHike: "15",
     reviewsCount: "1.5k",
     sales: 1701,
     reviews: [
@@ -376,6 +388,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/thumbnails/casegoods/maxime-dining-table-qv.png",
     rating: 4.5,
+    ratingHike: "8",
     reviewsCount: "4.5k",
     sales: 5500,
     reviews: [
@@ -406,6 +419,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/thumbnails/upholstery/sophia-sectional-sofa.png",
     rating: 4.0,
+    ratingHike: "11",
     reviewsCount: "6.5k",
     sales: 6800,
     reviews: [
@@ -436,6 +450,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/novak-sofa/novak-sofa-1.png",
     rating: 5.0,
+    ratingHike: "19",
     reviewsCount: "4.5k",
     sales: 4800,
     reviews: [
@@ -466,6 +481,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/thumbnails/upholstery/marco-sofa-qv.png",
     rating: 3.0,
+    ratingHike: "20",
     reviewsCount: "14.5k",
     sales: 15000,
     reviews: [
@@ -496,6 +512,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/curtis-sofa/curtis-sofa-1.png",
     rating: 2.0,
+    ratingHike: "60",
     reviewsCount: "49.5k",
     sales: 50000,
     reviews: [
@@ -526,6 +543,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/russel-dining-chair/russel-dining-chair-1.png",
     rating: 5.0,
+    ratingHike: "54",
     reviewsCount: "12.5k",
     sales: 13000,
     reviews: [
@@ -556,6 +574,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/romero-sofa/romero-sofa-1.png",
     rating: 3.0,
+    ratingHike: "12",
     reviewsCount: "23.5k",
     sales: 24000,
     reviews: [
@@ -586,6 +605,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/dandridge-sofa/dandridge-sofa-1.png",
     rating: 5.0,
+    ratingHike: "35",
     reviewsCount: "42.5k",
     sales: 23000,
     reviews: [
@@ -616,6 +636,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/thumbnails/upholstery/pierre-single-sofa.png",
     rating: 5.0,
+    ratingHike: "32",
     reviewsCount: "40.5k",
     sales: 41000,
     reviews: [
@@ -647,6 +668,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/gable-single-sofa/gable-single-sofa-3.png",
     rating: 5.0,
+    ratingHike: "61",
     reviewsCount: "62.5k",
     sales: 63000,
     reviews: [
@@ -678,6 +700,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/casegoods/sidney-dining-table/sidney-dining-table-1.png",
     rating: 5.0,
+    ratingHike: "13",
     reviewsCount: "9.5k",
     sales: 10000,
     reviews: [
@@ -708,6 +731,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/isadora-ii-bed/isadora-ii-bed-1.png",
     rating: 5.0,
+    ratingHike: "33",
     reviewsCount: "12.5k",
     sales: 14000,
     reviews: [
@@ -738,6 +762,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/minelli-bed/minelli-bed-1.png",
     rating: 5.0,
+    ratingHike: "34",
     reviewsCount: "42.5k",
     sales: 4000,
     reviews: [
@@ -768,6 +793,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/thumbnails/casegoods/wormley-dining-table-qv.png",
     rating: 5.0,
+    ratingHike: "41",
     reviewsCount: "5k",
     sales: 7520,
     reviews: [
@@ -798,6 +824,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/casegoods/ezra-dining-table/ezra-dining-table-1.png",
     rating: 2.0,
+    ratingHike: "12",
     reviewsCount: "25k",
     sales: 26000,
     reviews: [
@@ -828,6 +855,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/isadora-i-bed/isadora-i-bed-1.png",
     rating: 3.0,
+    ratingHike: "14",
     reviewsCount: "15k",
     sales: 16000,
     reviews: [
@@ -858,6 +886,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/thumbnails/upholstery/franco-bed-qv.png",
     rating: 5.0,
+    ratingHike: "54",
     reviewsCount: "25k",
     sales: 25900,
     reviews: [
@@ -888,6 +917,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/hadley-side-dining-chair/hadley-side-dining-chair-1.png",
     rating: 5.0,
+    ratingHike: "10",
     reviewsCount: "1.5k",
     sales: 2020,
     reviews: [
@@ -918,6 +948,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/thumbnails/upholstery/loren-sofa-qv.png",
     rating: 4.5,
+    ratingHike: "13",
     reviewsCount: "6.5k",
     sales: 7060,
     reviews: [
@@ -948,6 +979,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/doris-sofa/doris-sofa-1.png",
     rating: 4.5,
+    ratingHike: "26",
     reviewsCount: "33.5k",
     sales: 34000,
     reviews: [
@@ -978,6 +1010,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/thumbnails/upholstery/mansfield-sofa-qv.png",
     rating: 1.0,
+    ratingHike: "28",
     reviewsCount: "16.5k",
     sales: 17900,
     reviews: [
@@ -1008,6 +1041,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/thumbnails/casegoods/maxime-dining-table-qv.png",
     rating: 4.5,
+    ratingHike: "15",
     reviewsCount: "4.5k",
     sales: 9850,
     reviews: [
@@ -1039,6 +1073,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/thumbnails/upholstery/sophia-sectional-sofa.png",
     rating: 4.0,
+    ratingHike: "34",
     reviewsCount: "6.5k",
     sales: 9040,
     reviews: [
@@ -1069,6 +1104,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/novak-sofa/novak-sofa-1.png",
     rating: 5.0,
+    ratingHike: "56",
     reviewsCount: "43.5k",
     sales: 44125,
     reviews: [
@@ -1099,6 +1135,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/thumbnails/upholstery/marco-sofa-qv.png",
     rating: 3.0,
+    ratingHike: "10",
     reviewsCount: "4.5k",
     sales: 9900,
     reviews: [
@@ -1129,6 +1166,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/curtis-sofa/curtis-sofa-1.png",
     rating: 2.0,
+    ratingHike: "12",
     reviewsCount: "9.5k",
     sales: 9540,
     reviews: [
@@ -1160,6 +1198,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/romero-sofa/romero-sofa-1.png",
     rating: 1.0,
+    ratingHike: "10",
     reviewsCount: "3.5k",
     sales: 4250,
     reviews: [
@@ -1190,6 +1229,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/dandridge-sofa/dandridge-sofa-1.png",
     rating: 5.0,
+    ratingHike: "16",
     reviewsCount: "24.5k",
     sales: 28000,
     reviews: [
@@ -1220,6 +1260,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/thumbnails/upholstery/pierre-single-sofa.png",
     rating: 5.0,
+    ratingHike: "75",
     reviewsCount: "89.5k",
     sales: 90000,
     reviews: [
@@ -1250,6 +1291,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/thumbnails/upholstery/apollo-single-sofa.png",
     rating: 5.0,
+    ratingHike: "14",
     reviewsCount: "8.5k",
     sales: 9518,
     reviews: [
@@ -1280,6 +1322,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/gable-single-sofa/gable-single-sofa-3.png",
     rating: 5.0,
+    ratingHike: "68",
     reviewsCount: "41.5k",
     sales: 23520,
     reviews: [
@@ -1311,6 +1354,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/casegoods/sidney-dining-table/sidney-dining-table-1.png",
     rating: 5.0,
+    ratingHike: "80",
     reviewsCount: "65k",
     sales: 67000,
     reviews: [
@@ -1341,6 +1385,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/isadora-ii-bed/isadora-ii-bed-1.png",
     rating: 5.0,
+    ratingHike: "24",
     reviewsCount: "11.5k",
     sales: 12020,
     reviews: [
@@ -1371,6 +1416,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/minelli-bed/minelli-bed-1.png",
     rating: 5.0,
+    ratingHike: "40",
     reviewsCount: "42.5k",
     sales: 46020,
     reviews: [
@@ -1401,6 +1447,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/thumbnails/casegoods/wormley-dining-table-qv.png",
     rating: 5.0,
+    ratingHike: "16",
     reviewsCount: "14.5k",
     sales: 15600,
     reviews: [
@@ -1431,6 +1478,7 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/casegoods/ezra-dining-table/ezra-dining-table-1.png",
     rating: 2.0,
+    ratingHike: "65",
     reviewsCount: "54.5k",
     sales: 59000,
     reviews: [
