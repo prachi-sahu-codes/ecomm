@@ -145,20 +145,6 @@
   background-color: var(--light-gray);
 }
 
-@media screen and (max-width: 800px) {
-  .nav-search {
-    width: 130px;
-  }
-}
-
-@media screen and (max-width: 610px) {
-  .nav-flex {
-    padding: 0.5rem 1rem;
-  }
-  .nav-search {
-    width: 100px;
-  }
-}
 /*******************Items Count*******************/
 
 .head-count {
@@ -507,4 +493,51 @@ input[type="radio"] {
 .page-subtitle > p {
   color: var(--gray);
   font-size: 1rem;
+}
+
+/******************media query*********************/
+
+@media screen and (max-width: 800px) {
+  .nav-search {
+    width: 130px;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .nav-flex {
+    padding: 0.5rem 1rem;
+  }
+  .nav-search {
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .mb-hide {
+    display: block;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    margin: 0rem 1rem;
+  }
+
+  .nav-acc {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .mb-hide {
+    display: none;
+  }
+  .nav-link {
+    font-size: 0.8rem;
+    margin: 0rem 0.5rem;
+  }
+
+  .nav-acc {
+    font-size: 1rem;
+    margin-top: 0.2rem;
+  }
 }

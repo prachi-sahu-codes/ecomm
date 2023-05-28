@@ -21,7 +21,7 @@ export const ProductListing = () => {
     <div className="product-listing-whole">
       {loading && <Loader />}
       <div className="product-grid">
-        <Filters />
+        <Filters className="product-listing-filter-mb" />
         <div className="listing-main-body">
           <OnScrollHide />
           <ul className="products-grid-list">

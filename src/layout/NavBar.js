@@ -21,7 +21,7 @@ export const NavBar = () => {
         <p>FURN</p>
       </NavLink>
 
-      <div className="flex-center">
+      <div className="flex-center mb-hide">
         <BsSearch />
         <input
           type="text"
