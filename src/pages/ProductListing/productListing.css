@@ -86,10 +86,11 @@
 
 @media screen and (max-width: 450px) {
   .listing-main-head {
+    position: relative;
     top: 5rem;
     padding: 0.6rem 2rem;
   }
   .products-grid-list {
-    margin-top: 8.3rem;
+    margin-top: 5.3rem;
   }
 }
