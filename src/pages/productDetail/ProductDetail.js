@@ -27,8 +27,6 @@ export const ProductDetail = () => {
 
   const [findItem, setFindItem] = useState({});
 
-  console.log(findItem);
-
   const rating = findItem?.rating;
   const isItemPresent = cartData?.find((item) => item._id === productId);
   const isItemWishlisted = wishlistData?.find((item) => item._id === productId);

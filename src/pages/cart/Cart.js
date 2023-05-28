@@ -10,8 +10,7 @@ import { Footer } from "../../layout/Footer";
 
 export const Cart = () => {
   const { cartData, deleteCartItem, wishlistData, postWishData } = useClick();
-  const { notifyToast } = useData();
-  const { pageRef, scrollToTop } = useData();
+  const { pageRef, scrollToTop, notifyToast } = useData();
 
   const navigate = useNavigate();
 
