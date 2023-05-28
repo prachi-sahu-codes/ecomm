@@ -21,7 +21,9 @@ export const ProductListing = () => {
     <div className="product-listing-whole">
       {loading && <Loader />}
       <div className="product-grid">
-        <Filters className="product-listing-filter-mb" />
+        <div className="product-listing-mb">
+          <Filters />
+        </div>
         <div className="listing-main-body">
           <OnScrollHide />
           <ul className="products-grid-list">
@@ -39,6 +41,7 @@ export const ProductListing = () => {
           </ul>
         </div>
       </div>
+
       <Footer />
     </div>
   );

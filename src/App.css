@@ -145,6 +145,9 @@
   background-color: var(--light-gray);
 }
 
+.nav-search-mb-show {
+  display: none;
+}
 /*******************Items Count*******************/
 
 .head-count {
@@ -531,6 +534,7 @@ input[type="radio"] {
   .mb-hide {
     display: none;
   }
+
   .nav-link {
     font-size: 0.8rem;
     margin: 0rem 0.5rem;
@@ -539,5 +543,45 @@ input[type="radio"] {
   .nav-acc {
     font-size: 1rem;
     margin-top: 0.2rem;
+  }
+
+  .nav-search-mb-show {
+    display: block;
+    width: 90%;
+    padding: 0rem 0 0.5rem;
+  }
+
+  .nav-search {
+    width: 90%;
+  }
+  .nav-mb {
+    position: fixed;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--primary);
+    color: var(--light-gray);
+    padding: 0rem 1rem 0.5rem;
+    z-index: 1000;
+  }
+  .nav-flex {
+    position: relative;
+    padding: 0;
+    width: 100%;
+  }
+
+  .icon-dot {
+    top: 0.35rem;
+    left: 1.1rem;
+    width: 5px;
+    height: 5px;
+  }
+
+  .icon-dot2 {
+    top: 0.35rem;
+    left: 1rem;
+    width: 5px;
+    height: 5px;
   }
 }

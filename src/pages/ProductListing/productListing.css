@@ -32,6 +32,10 @@
   padding-bottom: 1rem;
 }
 
+.burger-mb {
+  display: none;
+}
+
 .listing-main-head {
   padding: 1rem 2rem;
   position: fixed;
@@ -39,7 +43,7 @@
   width: calc(100vw - 230px);
   top: 3rem;
   background-color: #fff;
-  justify-content: flex-end; /*to be removed when add breadcrumb*/
+  justify-content: flex-end;
 }
 
 .listing-main-head > select {
@@ -58,4 +62,34 @@
   left: 50%;
   transform: translate(-30%, -40%);
   font-weight: 500;
+}
+
+@media screen and (max-width: 600px) {
+  .product-grid {
+    display: grid;
+    grid-template-columns: auto;
+    margin-bottom: 3rem;
+  }
+  .product-listing-mb {
+    display: none;
+  }
+  .listing-main-head {
+    width: 100vw;
+    justify-content: space-between;
+  }
+
+  .burger-mb {
+    display: block;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .listing-main-head {
+    top: 5rem;
+    padding: 0.6rem 2rem;
+  }
+  .products-grid-list {
+    margin-top: 8.3rem;
+  }
 }

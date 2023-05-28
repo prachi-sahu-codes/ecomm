@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useData } from "../context/ProductContext";
 import { ACTION_TYPE } from "../reducer/actionType";
+import { BsJustify } from "react-icons/bs";
 
 export const OnScrollHide = () => {
   const { dispatch, state } = useData();
@@ -27,6 +28,10 @@ export const OnScrollHide = () => {
         ""
       ) : (
         <div className="flex-center listing-main-head">
+          <div className="burger-mb">
+            <BsJustify />
+          </div>
+
           <select
             className="wrapper"
             onChange={(e) =>
