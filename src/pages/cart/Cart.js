@@ -10,9 +10,16 @@ import { Footer } from "../../layout/Footer";
 
 export const Cart = () => {
   const { cartData, deleteCartItem, wishlistData, postWishData } = useClick();
+  const { notifyToast } = useData();
   const { pageRef, scrollToTop } = useData();
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    scrollToTop();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const totalPrice = cartData
     ?.reduce((acc, item) => acc + item.price * item.qty, 0)
     .toFixed(2);
@@ -25,16 +32,15 @@ export const Cart = () => {
     );
     if (isItemWishlisted) {
       deleteCartItem(input._id);
+      notifyToast("error", "Removed from Cart!");
     } else {
       postWishData(input);
-      setTimeout(() => deleteCartItem(input._id), 500);
+      setTimeout(() => {
+        deleteCartItem(input._id);
+        notifyToast("error", "Removed from Cart!");
+      }, 500);
     }
   };
-
-  useEffect(() => {
-    scrollToTop();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <>
@@ -89,7 +95,10 @@ export const Cart = () => {
                     <td className="cross-icon-btn">
                       <BsXLg
                         className="cross-icon"
-                        onClick={() => deleteCartItem(item._id)}
+                        onClick={() => {
+                          deleteCartItem(item._id);
+                          notifyToast("error", "Removed from Cart!");
+                        }}
                       />
                       <button
                         className="move-cart-btn"

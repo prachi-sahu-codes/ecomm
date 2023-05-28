@@ -4,9 +4,11 @@ import "./address.css";
 import { AddressForm } from "./component/addressForm/AddressForm";
 import { FORM_ACTION_TYPE } from "../../reducer/actionType";
 import { useClick } from "../../context/ClickContext";
+import { useData } from "../../context/ProductContext";
 
 export const Address = ({ noDetail }) => {
   const { addressState, addressDispatch, editAddress } = useClick();
+  const { notifyToast } = useData();
 
   return (
     <div className="shipping-block">
@@ -36,8 +38,10 @@ export const Address = ({ noDetail }) => {
                 })
               }
             >
-              {noDetail && <input id={_id} type="radio" name="address-radio" />}
-              <label htmlFor={_id}>
+              {noDetail && (
+                <input id={firstname} type="radio" name="address-radio" />
+              )}
+              <label htmlFor={firstname}>
                 <p className="address-card-head">
                   {firstname} {lastname}
                 </p>
@@ -62,12 +66,13 @@ export const Address = ({ noDetail }) => {
                   </button>
                   <button
                     className="address-action-btn"
-                    onClick={() =>
+                    onClick={() => {
                       addressDispatch({
                         type: FORM_ACTION_TYPE.DELETE_ADDRESS,
                         payload: _id,
-                      })
-                    }
+                      });
+                      notifyToast("error", "Address removed!");
+                    }}
                   >
                     Remove
                   </button>

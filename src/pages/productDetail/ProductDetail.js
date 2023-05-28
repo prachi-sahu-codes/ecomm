@@ -11,8 +11,8 @@ import { DetailRating } from "../../components/DetailRating";
 
 import "./productDetail.css";
 import { useClick } from "../../context/ClickContext";
-import { useData } from "../../context/ProductContext";
 import { useAuth } from "../../context/AuthContext";
+import { useData } from "../../context/ProductContext";
 import { Loader } from "../../components/loader/loader";
 import { Footer } from "../../layout/Footer";
 
@@ -20,8 +20,8 @@ export const ProductDetail = () => {
   const { productId } = useParams();
   const { cartData, postCartData, wishlistData, postWishData, deleteWishItem } =
     useClick();
-  const { loading, setLoading, notifyToast, pageRef, scrollToTop } = useData();
   const { token } = useAuth();
+  const { loading, setLoading, notifyToast, pageRef, scrollToTop } = useData();
 
   const navigate = useNavigate();
 
@@ -40,6 +40,9 @@ export const ProductDetail = () => {
       const dataFetched = await res.json();
       setFindItem(dataFetched?.product);
       setTimeout(() => setLoading(false), 500);
+      if (!dataFetched?.product) {
+        navigate("../shop");
+      }
     } catch (e) {
       console.error("Error:", e);
       setLoading(false);

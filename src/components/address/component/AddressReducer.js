@@ -1,10 +1,7 @@
 import { v4 as uuid } from "uuid";
 import { FORM_ACTION_TYPE } from "../../../reducer/actionType";
-import { useData } from "../../../context/ProductContext";
 
 export const AddressReducer = (state, action) => {
-  const { notifyToast } = useData();
-
   switch (action.type) {
     case FORM_ACTION_TYPE.ADD_ADDRESS: {
       return {
@@ -36,11 +33,10 @@ export const AddressReducer = (state, action) => {
     }
 
     case FORM_ACTION_TYPE.DELETE_ADDRESS: {
-      console.log("in delete");
       const filterAddress = state.addresses.filter(
         (item) => item._id !== action.payload
       );
-      notifyToast("error", "Address removed!");
+
       return { ...state, addresses: [...filterAddress] };
     }
 

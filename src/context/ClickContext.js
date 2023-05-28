@@ -9,15 +9,33 @@ import { useAuth } from "./AuthContext";
 import { useData } from "./ProductContext";
 import { AddressReducer } from "../components/address/component/AddressReducer";
 import { FORM_ACTION_TYPE } from "../reducer/actionType";
+import { useNavigate } from "react-router-dom";
 
 const ClickContext = createContext();
 
 export const ClickProvider = ({ children }) => {
+  const navigate = useNavigate();
   const { token, loggedUser } = useAuth();
   const { notifyToast } = useData();
-
   const [cartData, setCartData] = useState(loggedUser?.cart);
   const [wishlistData, setWishlistData] = useState(loggedUser?.wishlist);
+
+  //address form
+
+  const formFields = {
+    _id: "",
+    firstname: "",
+    lastname: "",
+    email: "",
+    phone: "",
+    address: "",
+    pincode: "",
+    city: "",
+    state: "",
+    country: "",
+  };
+
+  const [formData, setFormData] = useState(formFields);
 
   useEffect(() => {
     if (!token) {
@@ -105,7 +123,6 @@ export const ClickProvider = ({ children }) => {
       if (res.status === 200 || res.status === 201) {
         const dataFetched = await res.json();
         setCartData(dataFetched?.cart);
-        notifyToast("error", "Removed from Cart!");
       }
     } catch (e) {
       console.error("Error:", e);
@@ -131,7 +148,7 @@ export const ClickProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    getCartData();
+    getWishData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -178,27 +195,23 @@ export const ClickProvider = ({ children }) => {
     }
   };
 
-  //address form
-
-  const formFields = {
-    _id: "",
-    firstname: "",
-    lastname: "",
-    email: "",
-    phone: "",
-    address: "",
-    pincode: "",
-    city: "",
-    state: "",
-    country: "",
-  };
-
-  const [formData, setFormData] = useState(formFields);
-
   //checkout address
 
   const initialStateAddress = {
-    addresses: [],
+    addresses: [
+      {
+        _id: "e6958a52-9b2b-4bb0-9d5d-1fbfafdcfa14",
+        firstname: "Aditya",
+        lastname: "Suthar",
+        email: "aditya66r@hotmail.com",
+        phone: 1090350443,
+        address: "6260 Umang Ridges",
+        pincode: "610229",
+        state: "Meghalaya",
+        city: "Warhapur",
+        country: "India",
+      },
+    ],
     selectedAddress: null,
     openedAddressForm: false,
   };
@@ -257,6 +270,30 @@ export const ClickProvider = ({ children }) => {
     setFormData(findAddress);
   };
 
+  //final order
+
+  const [finalOrder, setFinalOrder] = useState({
+    delivery: "",
+    address: addressState.selectedAddress,
+  });
+
+  const orderSubmitHandler = () => {
+    if (finalOrder.delivery && finalOrder.address) {
+      cartData.map(({ _id }) => deleteCartItem(_id));
+      notifyToast("success", "Order placed successfully!");
+      setTimeout(() => {
+        navigate("../shop");
+      }, 2000);
+    } else if (!finalOrder.delivery) {
+      notifyToast("error", "Select delivery option to proceed!");
+    } else if (!finalOrder.address) {
+      notifyToast("error", "Select an address to proceed!");
+    } else {
+      console.log("Error");
+      notifyToast("error", "Something is wrong!");
+    }
+  };
+
   return (
     <ClickContext.Provider
       value={{
@@ -277,6 +314,8 @@ export const ClickProvider = ({ children }) => {
         addressDispatch,
         submitHandler,
         editAddress,
+        setFinalOrder,
+        orderSubmitHandler,
       }}
     >
       {children}

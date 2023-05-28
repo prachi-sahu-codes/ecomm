@@ -2,8 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { BsHeart, BsFillHeartFill } from "react-icons/bs";
 import { useClick } from "../context/ClickContext";
-import { useData } from "../context/ProductContext";
 import { useAuth } from "../context/AuthContext";
+import { useData } from "../context/ProductContext";
 
 //BsHeart, BsPerson, BsSearch, BsSliders2(phone filter), BsChevronDown, BsChevronUp, BsDashLg, BsDash, BsPlusLg, BsPlus, BsJustify(hamburger), BsFillBagPlusFill, BsFillHeartFill
 
@@ -24,8 +24,8 @@ export const ProductCard = ({
   const navigate = useNavigate();
   const { cartData, postCartData, wishlistData, postWishData, deleteWishItem } =
     useClick();
+    const { token } = useAuth();
   const { notifyToast } = useData();
-  const { token } = useAuth();
   const isItemPresent = cartData?.find((item) => item._id === _id);
   const isItemWishlisted = wishlistData?.find((item) => item._id === _id);
 

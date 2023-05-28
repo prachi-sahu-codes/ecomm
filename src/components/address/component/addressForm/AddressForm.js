@@ -23,7 +23,7 @@ export const AddressForm = ({ addressDispatch }) => {
   };
 
   const changeHandler = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData(() => ({ ...formData, [e.target.name]: e.target.value }));
   };
 
   return (
@@ -71,11 +71,11 @@ export const AddressForm = ({ addressDispatch }) => {
           </div>
           <div className="flex-center">
             <div className="form-input-label">
-              <label htmlFor="email">Email:</label>
+              <label htmlFor="useremail">Email:</label>
               <input
                 type="email"
                 placeholder="prachi@gmail.com"
-                id="email"
+                id="useremail"
                 name="email"
                 className="form-input"
                 value={formData.email}
@@ -84,12 +84,12 @@ export const AddressForm = ({ addressDispatch }) => {
               />
             </div>
             <div className="form-input-label">
-              <label htmlFor="phone">Phone no:</label>
+              <label htmlFor="phones">Phone no:</label>
               <input
                 className="form-input"
                 placeholder="8374432275"
                 type="number"
-                id="phone"
+                id="phones"
                 name="phone"
                 value={formData.phone}
                 onChange={changeHandler}
@@ -99,12 +99,12 @@ export const AddressForm = ({ addressDispatch }) => {
           </div>
 
           <div className="form-input-label">
-            <label htmlFor="address">Address:</label>
+            <label htmlFor="useraddress">Address:</label>
             <textarea
               className="form-textarea"
               placeholder="4589 Swapnil Groves"
+              id="useraddress"
               name="address"
-              id="address"
               type="text"
               rows="2"
               value={formData.address}
@@ -115,11 +115,11 @@ export const AddressForm = ({ addressDispatch }) => {
 
           <div className="flex-center">
             <div className="form-input-label">
-              <label htmlFor="pincode">Pincode:</label>
+              <label htmlFor="userpincode">Pincode:</label>
               <input
                 className="form-input"
                 placeholder="491228"
-                id="pincode"
+                id="userpincode"
                 type="number"
                 name="pincode"
                 value={formData.pincode}
@@ -128,12 +128,12 @@ export const AddressForm = ({ addressDispatch }) => {
               />
             </div>
             <div className="form-input-label">
-              <label htmlFor="city">City: </label>
+              <label htmlFor="usercity">City: </label>
               <input
                 type="text"
                 className="form-input form-input-select"
                 placeholder="Raipur"
-                id="city"
+                id="usercity"
                 name="city"
                 value={formData.city}
                 onChange={changeHandler}
@@ -144,12 +144,12 @@ export const AddressForm = ({ addressDispatch }) => {
 
           <div className="flex-center">
             <div className="form-input-label">
-              <label htmlFor="state">State:</label>
+              <label htmlFor="userstate">State:</label>
               <input
                 type="text"
                 className="form-input"
                 placeholder="Chhattisgarh"
-                id="state"
+                id="userstate"
                 name="state"
                 value={formData.state}
                 onChange={changeHandler}
@@ -158,12 +158,12 @@ export const AddressForm = ({ addressDispatch }) => {
             </div>
 
             <div className="form-input-label">
-              <label htmlFor="country">Country: </label>
+              <label htmlFor="usercountry">Country: </label>
               <input
                 type="text"
                 className="form-input form-input-select"
                 placeholder="India"
-                id="country"
+                id="usercountry"
                 name="country"
                 value={formData.country}
                 onChange={changeHandler}
@@ -174,7 +174,7 @@ export const AddressForm = ({ addressDispatch }) => {
           <div className="form-btn">
             <button
               className="form-btn-light"
-              onClick={() => setFormData(formFields)}
+              onClick={() => setFormData(() => formFields)}
             >
               Reset
             </button>
