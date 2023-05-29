@@ -53,6 +53,7 @@ export const ProductCard = ({
                 onClick={(e) => {
                   if (!token) {
                     notifyToast("error", "Please Log in to continue!");
+                    e.stopPropagation();
                   } else {
                     postWishData({
                       _id,
