@@ -531,14 +531,14 @@ input[type="radio"] {
   .mb-filter-show {
     position: absolute;
     background-color: var(--light-gray);
-    background-color: red;
     height: 100vh;
-    height: calc(100vh - 7rem);
+    height: calc(100vh - 8rem);
     top: 5.2rem;
     left: -280px;
     z-index: 90;
     overflow-y: scroll;
-    border: 1px solid var(--primary);
+    border-right: 1px solid var(--tertiary);
+    border-bottom: 1px solid var(--tertiary);
     transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
