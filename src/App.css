@@ -66,9 +66,6 @@
   padding-left: 0.5rem;
   font-size: 1.1rem;
 }
-.scroll-content {
-  transition: all 0.3s ease-in-out;
-}
 /*******************toast***************************/
 
 .toast {
@@ -533,18 +530,26 @@ input[type="radio"] {
 
   .mb-filter-show {
     position: absolute;
-    background-color: var(--white);
-    height: 390px;
+    background-color: var(--light-gray);
+    height: 420px;
     top: 5rem;
     left: -280px;
     z-index: 90;
     overflow-y: scroll;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
   }
 
   .mb-filter-show.show-filter {
     left: 0;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
   }
 }
 

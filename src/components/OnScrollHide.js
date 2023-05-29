@@ -32,7 +32,7 @@ export const OnScrollHide = () => {
         <div className="scroll-content">
           <div className="flex-center listing-main-head">
             <div className="burger-mb" onClick={() => setShowFilter((s) => !s)}>
-              <BsJustify />
+              <BsJustify className="burger-icon" />
             </div>
 
             <select
