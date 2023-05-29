@@ -116,6 +116,10 @@
   font-weight: 500;
 }
 
+.sign-up-whole {
+  margin: 2rem 0;
+}
+
 .pwd-input {
   position: relative;
 }
@@ -177,5 +181,35 @@
     font-size: 0.6rem;
     padding: 0.3rem 0.5rem;
     width: 70px;
+  }
+}
+
+/* sign up login */
+
+@media screen and (max-width: 546px) {
+  .sign {
+    width: 300px;
+    margin-top: 1rem;
+  }
+
+  .name-sign-up {
+    display: block;
+  }
+
+  .sign-input-first {
+    margin-bottom: 1rem;
+  }
+
+  .sign-up-whole {
+    margin: 5rem 0 2rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .sign {
+    margin-top: 2.5rem;
+  }
+  .sign-up-whole {
+    margin: 7rem 0 2rem;
   }
 }

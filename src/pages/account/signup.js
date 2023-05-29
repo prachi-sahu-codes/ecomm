@@ -38,10 +38,10 @@ export const Signup = () => {
     }
   };
   return (
-    <div className="sign">
+    <div className="sign sign-up-whole">
       <h3 className="sign-title">Sign Up</h3>
       <form className="sign-form" onSubmit={(e) => e.preventDefault()}>
-        <div className="flex-center">
+        <div className="flex-center name-sign-up">
           <div className="sign-input-label">
             <label htmlFor="first">First name:</label>
             <input
@@ -49,7 +49,7 @@ export const Signup = () => {
               placeholder="Prachi"
               id="first"
               name="first"
-              className="sign-input"
+              className="sign-input sign-input-first"
               onChange={(e) =>
                 setUserInfo((u) => ({ ...u, firstName: e.target.value }))
               }
