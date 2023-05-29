@@ -1,19 +1,20 @@
 import React from "react";
-import { ColorRing } from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 import "./loader.css";
 
 export const Loader = () => {
   return (
     <div className="loader">
       <div className="loader-page">
-        <ColorRing
-          visible={true}
+        <ThreeDots
           height="80"
           width="80"
-          ariaLabel="blocks-loading"
+          radius="9"
+          color="#661f1e"
+          ariaLabel="three-dots-loading"
           wrapperStyle={{}}
-          wrapperClass="blocks-wrapper"
-          colors={["#1c1b1b", "#661f1e", "#fff", "#661f1e", "#1c1b1b"]}
+          wrapperClassName=""
+          visible={true}
         />
       </div>
     </div>

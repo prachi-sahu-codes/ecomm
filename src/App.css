@@ -530,7 +530,7 @@ input[type="radio"] {
 
   .mb-filter-show {
     position: absolute;
-    background-color: #ffffffd2;
+    background-color: #ffffffe9;
     height: 100vh;
     height: calc(100vh - 8rem);
     top: 5.2rem;
