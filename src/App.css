@@ -530,15 +530,15 @@ input[type="radio"] {
 
   .mb-filter-show {
     position: absolute;
-    background-color: var(--light-gray);
+    background-color: #ffffffd2;
     height: 100vh;
     height: calc(100vh - 8rem);
     top: 5.2rem;
     left: -280px;
     z-index: 90;
     overflow-y: scroll;
-    border-right: 1px solid var(--tertiary);
-    border-bottom: 1px solid var(--tertiary);
+    border-right: 1px solid var(--light-gray);
+    border-bottom: 1px solid var(--light-gray);
     transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
@@ -553,6 +553,17 @@ input[type="radio"] {
     -webkit-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
     -ms-transition: all 0.5s ease-in-out;
+  }
+
+  input[type="range"] {
+    display: block;
+    margin-top: 0.8rem;
+  }
+
+  .filters-box {
+    padding: 0 1.2rem;
+    margin-top: 2.3rem;
+    border-right: none;
   }
 }
 
