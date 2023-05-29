@@ -16,11 +16,14 @@ export const OnScrollHide = () => {
 
       setIsHidden(() => scrollPosition > threshold);
     };
-
-    window.addEventListener("scroll", handleScroll);
+    if (window.innerWidth >= 600) {
+      window.addEventListener("scroll", handleScroll);
+    }
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      if (window.innerWidth >= 600) {
+        window.removeEventListener("scroll", handleScroll);
+      }
     };
   }, []);
 

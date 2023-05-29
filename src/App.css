@@ -531,7 +531,8 @@ input[type="radio"] {
   .mb-filter-show {
     position: absolute;
     background-color: var(--light-gray);
-    height: 420px;
+    height: 100vh;
+    height: calc(100vh - 6rem);
     top: 5rem;
     left: -280px;
     z-index: 90;
