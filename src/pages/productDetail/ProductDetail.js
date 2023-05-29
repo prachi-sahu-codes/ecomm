@@ -65,9 +65,9 @@ export const ProductDetail = () => {
 
         <div className="detail-content">
           <div className="flex-center detail-title-icon">
-            <h2 className="detail-title">
-              {findItem?.name} <br /> ${findItem?.price}
-            </h2>
+            <div className="detail-title">
+              <span>{findItem?.name}</span> <span> ${findItem?.price}</span>
+            </div>
 
             <div className="detail-icon-heart">
               {isItemWishlisted ? (
@@ -191,7 +191,7 @@ export const ProductDetail = () => {
         <ul>
           {findItem?.reviews?.map(({ author, text, rating }) => (
             <li key={author} className="review-box">
-              <div className="flex-center">
+              <div className="flex-center review-box-mb">
                 <div className="flex-center">
                   <BsFillPersonFill className="human-icon" />{" "}
                   <span className="rating-author">{author}</span>

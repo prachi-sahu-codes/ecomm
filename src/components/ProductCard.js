@@ -24,7 +24,7 @@ export const ProductCard = ({
   const navigate = useNavigate();
   const { cartData, postCartData, wishlistData, postWishData, deleteWishItem } =
     useClick();
-    const { token } = useAuth();
+  const { token } = useAuth();
   const { notifyToast } = useData();
   const isItemPresent = cartData?.find((item) => item._id === _id);
   const isItemWishlisted = wishlistData?.find((item) => item._id === _id);
@@ -76,9 +76,8 @@ export const ProductCard = ({
         )}
         <div className="card-content">
           <h4 className="card-title">{name}</h4>
-          <div>
-            <span className="card-price">${price}</span>
-          </div>
+
+          <p className="card-price">${price}</p>
         </div>
       </div>
 

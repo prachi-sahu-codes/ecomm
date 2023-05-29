@@ -360,6 +360,7 @@ input[type="radio"] {
   font-size: 0.9rem;
   color: var(--primary);
   margin-right: 0.6rem;
+  padding-top: 0.2rem;
 }
 
 .card-heart {
@@ -384,7 +385,7 @@ input[type="radio"] {
 
 .card-btn {
   width: 100%;
-  margin-top: 0.5rem;
+  margin-top: 0.3rem;
   font-weight: 600;
   background-image: linear-gradient(to bottom, #661f1e, #852827);
   color: var(--white);
@@ -530,7 +531,7 @@ input[type="radio"] {
 
   .mb-filter-show {
     position: absolute;
-    background-color: #ffffffe9;
+    background-color: #fffffff5;
     height: 100vh;
     height: calc(100vh - 8rem);
     top: 5.2rem;
@@ -564,6 +565,9 @@ input[type="radio"] {
     padding: 0 1.2rem;
     margin-top: 2.3rem;
     border-right: none;
+  }
+  .card-image {
+    width: 250px;
   }
 }
 
@@ -621,4 +625,9 @@ input[type="radio"] {
     width: 5px;
     height: 5px;
   }
+}
+
+/**************product card**************/
+
+@media screen and (min-width: 320px) and (max-width: 583px) {
 }
