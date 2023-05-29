@@ -81,3 +81,17 @@
   background-color: transparent;
   border-radius: 2px;
 }
+
+/* for account */
+
+@media screen and (max-width: 948px) {
+  .shipping-block {
+    margin: auto;
+    width: 90%;
+  }
+
+  .address-card {
+    margin: auto;
+    width: 90%;
+  }
+}

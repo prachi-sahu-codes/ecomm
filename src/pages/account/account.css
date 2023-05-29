@@ -5,7 +5,6 @@
 .account-content {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   gap: 3rem;
   margin: auto;
 }
@@ -14,6 +13,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 4rem;
 }
 
 .acc-user-icon {
@@ -41,7 +41,12 @@
   font-weight: 500;
 }
 
-.acc-logOut {
+.acc-logOut-mb {
+  display: none;
+}
+
+.acc-logOut,
+.acc-logOut-mb {
   background-color: var(--secondary);
   width: 100%;
   font-size: 0.9rem;
@@ -54,12 +59,14 @@
   transition: all 0.3s ease-in-out;
 }
 
-.acc-logOut:hover {
+.acc-logOut:hover,
+.acc-logOut-mb:hover {
   background-image: linear-gradient(to bottom, #852827, #661f1e);
   cursor: pointer;
 }
 
-.acc-logOut:active {
+.acc-logOut:active,
+.acc-logOut-mb:active {
   background-image: linear-gradient(to bottom, #661f1e, #852827);
 }
 
@@ -117,4 +124,58 @@
   position: absolute;
   right: 0.8rem;
   top: 1.9rem;
+}
+
+/* account page  */
+
+@media screen and (max-width: 948px) {
+  .account-user-detail {
+    margin: auto;
+    width: 90%;
+  }
+
+  .account-address {
+    width: 100%;
+    margin: auto;
+  }
+
+  .acc-logOut {
+    display: none;
+  }
+
+  .acc-logOut-mb {
+    display: inline-block;
+    width: 100px;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+
+  .account-whole {
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 529px) {
+  .account-content {
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .acc-user-icon {
+    font-size: 7rem;
+  }
+
+  .acc-info {
+    padding-bottom: 0.2rem;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .acc-user-icon {
+    display: none;
+  }
+  .acc-logOut-mb {
+    font-size: 0.6rem;
+    padding: 0.3rem 0.5rem;
+    width: 70px;
+  }
 }

@@ -10,9 +10,15 @@ export const Account = () => {
   return (
     <div className="div-padding">
       <div className="page-content">
-        <h2 className="acc-title">Account</h2>
+        <div className="account-head-log-btn flex-center">
+          <h2 className="acc-title">Account</h2>
+          <button className="acc-logOut-mb" onClick={() => logoutHandler()}>
+            Log Out
+          </button>
+        </div>
+
         <div className="account-whole">
-          <div>
+          <div className="account-user-detail">
             <h2 className="page-subhead">Personal Information</h2>
             <div className="account-content">
               <BsFillPersonFill className="acc-user-icon" />
@@ -36,7 +42,7 @@ export const Account = () => {
               Log Out
             </button>
           </div>
-          <div>
+          <div className="account-address">
             <Address />
           </div>
         </div>
