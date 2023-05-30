@@ -66,7 +66,7 @@ export const Filters = ({ name }) => {
               name={name}
               value={rating}
               checked={state.radioRating === rating}
-              onClick={(e) =>
+              onChange={(e) =>
                 dispatch({
                   type: ACTION_TYPE.RADIO_RATING,
                   payload: rating,
