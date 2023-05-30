@@ -517,7 +517,7 @@ input[type="radio"] {
 
 @media screen and (max-width: 640px) {
   .mb-hide {
-    /* display: block; */
+    display: block;
   }
 
   .nav-link {
@@ -627,6 +627,3 @@ input[type="radio"] {
 }
 
 /**************product card**************/
-
-@media screen and (min-width: 320px) and (max-width: 583px) {
-}

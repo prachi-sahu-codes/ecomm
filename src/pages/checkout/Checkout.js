@@ -59,49 +59,58 @@ export const Checkout = () => {
   return (
     <div ref={pageRef}>
       <div className="div-padding">
-        <div className="page-content ">
+        <div className="page-content">
           <h1 className="page-title">Checkout</h1>
 
           <div className="checkout-flex">
             <div className="checkout-delivery-whole">
-              <h2 className="page-subhead">Delivery</h2>
-              <div className="delivery-block">
-                <div className="delivery-card">
-                  <input
-                    type="radio"
-                    name="delivery"
-                    value="standard"
-                    id="standard"
-                    onChange={(e) =>
-                      setFinalOrder((f) => ({ ...f, delivery: e.target.value }))
-                    }
-                  />
-                  <label htmlFor="standard">
-                    <p className="delivery-label">Standard shipping</p>
-                    <p className="delivery-info">Delivery within 3-7 days</p>
-                  </label>
-                </div>
+              <div className="delivery-only-whole">
+                <h2 className="page-subhead">Delivery</h2>
+                <div className="delivery-block">
+                  <div className="delivery-card">
+                    <input
+                      type="radio"
+                      name="delivery"
+                      value="standard"
+                      id="standard"
+                      onChange={(e) =>
+                        setFinalOrder((f) => ({
+                          ...f,
+                          delivery: e.target.value,
+                        }))
+                      }
+                    />
+                    <label htmlFor="standard">
+                      <p className="delivery-label">Standard shipping</p>
+                      <p className="delivery-info">Delivery within 3-7 days</p>
+                    </label>
+                  </div>
 
-                <div className="delivery-card">
-                  <input
-                    type="radio"
-                    name="delivery"
-                    value="express"
-                    id="express"
-                    onChange={(e) =>
-                      setFinalOrder((f) => ({ ...f, delivery: e.target.value }))
-                    }
-                  />
-                  <label htmlFor="express">
-                    <p className="delivery-label">Express shipping</p>
-                    <p className="delivery-info">Delivery within 1-3 days</p>
-                  </label>
+                  <div className="delivery-card">
+                    <input
+                      type="radio"
+                      name="delivery"
+                      value="express"
+                      id="express"
+                      onChange={(e) =>
+                        setFinalOrder((f) => ({
+                          ...f,
+                          delivery: e.target.value,
+                        }))
+                      }
+                    />
+                    <label htmlFor="express">
+                      <p className="delivery-label">Express shipping</p>
+                      <p className="delivery-info">Delivery within 1-3 days</p>
+                    </label>
+                  </div>
                 </div>
               </div>
 
               <Address noDetail />
             </div>
-            <div>
+
+            <div className="order-summary-whole">
               <h2 className="page-subhead">Order Summary</h2>
               <ul className="checkout-cart-items">
                 {cartData.map((item, index) => (
@@ -127,7 +136,7 @@ export const Checkout = () => {
               </ul>
               <div className="pricing-block">
                 <p className="checkout-pricing flex-center">
-                  <span>Cart total </span>
+                  <span>Subtotal </span>
                   <span>${totalPrice}</span>
                 </p>
                 <p className="checkout-pricing flex-center">
@@ -161,13 +170,13 @@ export const Checkout = () => {
                   <p className="checkout-pricing">Apply Coupon</p>
                 </div>
 
-                <p className="checkout-pricing flex-center">
+                <p className="order-pricing flex-center">
                   <span>Order Total </span>
                   <span>${couponDiscount}</span>
                 </p>
               </div>
               <button
-                className="card-btn check-btn"
+                className="card-btn order-btn"
                 onClick={orderSubmitHandler}
               >
                 {" "}
