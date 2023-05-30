@@ -34,7 +34,18 @@ export const Address = ({ noDetail }) => {
               onChange={() =>
                 addressDispatch({
                   type: FORM_ACTION_TYPE.SELECT_ADDRESS_FORM,
-                  payload: _id,
+                  payload: {
+                    _id,
+                    firstname,
+                    lastname,
+                    email,
+                    phone,
+                    address,
+                    pincode,
+                    state,
+                    city,
+                    country,
+                  },
                 })
               }
             >

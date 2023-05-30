@@ -287,9 +287,21 @@ export const ClickProvider = ({ children }) => {
 
   const orderSubmitHandler = () => {
     if (finalOrder.delivery && finalOrder.address) {
+      setFinalSummary((f) => [
+        ...f,
+        {
+          delivery: finalOrder.delivery,
+          address: finalOrder.address,
+          cartitems: cartData,
+        },
+      ]);
+
       cartData.map(({ _id }) => deleteCartItem(_id));
+
       notifyToast("success", "Order placed successfully!");
+
       setCoupon(() => ({ code: "", discount: totalPrice }));
+
       setTimeout(() => {
         navigate("../shop");
       }, 500);
@@ -302,6 +314,10 @@ export const ClickProvider = ({ children }) => {
       notifyToast("error", "Something is wrong!");
     }
   };
+
+  //summary
+
+  const [finalSummary, setFinalSummary] = useState([]);
 
   return (
     <ClickContext.Provider
@@ -328,6 +344,7 @@ export const ClickProvider = ({ children }) => {
         setCoupon,
         setFinalOrder,
         orderSubmitHandler,
+        finalSummary,
       }}
     >
       {children}
