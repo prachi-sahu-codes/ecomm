@@ -63,7 +63,7 @@ export const Checkout = () => {
           <h1 className="page-title">Checkout</h1>
 
           <div className="checkout-flex">
-            <div>
+            <div className="checkout-delivery-whole">
               <h2 className="page-subhead">Delivery</h2>
               <div className="delivery-block">
                 <div className="delivery-card">

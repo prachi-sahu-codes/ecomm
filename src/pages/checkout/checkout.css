@@ -64,3 +64,10 @@
   width: 245px;
   outline: none;
 }
+
+@media screen and (max-width: 948px) {
+  .checkout-delivery-whole {
+    margin: auto;
+    width: 90%;
+  }
+}

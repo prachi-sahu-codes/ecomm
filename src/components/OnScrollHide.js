@@ -59,7 +59,7 @@ export const OnScrollHide = () => {
             <div
               className={`mb-filter-show ${showFilter ? "show-filter" : ""}`}
             >
-              <Filters />
+              <Filters name="mb-rating" />
             </div>
           )}
         </div>

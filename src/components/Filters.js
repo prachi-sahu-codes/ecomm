@@ -6,8 +6,9 @@ import { ACTION_TYPE } from "../reducer/actionType";
 const categoryArray = ["Sofa", "Chair", "Bed", "Table"];
 const ratingArray = [4, 3, 2, 1];
 
-export const Filters = () => {
+export const Filters = ({ name }) => {
   const { state, dispatch } = useData();
+  console.log(state);
   return (
     <div className="filters-box">
       <div className="filter-single">
@@ -63,10 +64,10 @@ export const Filters = () => {
           <label key={rating} className="radio-whole">
             <input
               type="radio"
-              name="rating"
-              value=""
+              name={name}
+              value={rating}
               checked={state.radioRating === rating}
-              onChange={(e) =>
+              onClick={(e) =>
                 dispatch({
                   type: ACTION_TYPE.RADIO_RATING,
                   payload: rating,

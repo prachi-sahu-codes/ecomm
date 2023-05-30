@@ -517,7 +517,7 @@ input[type="radio"] {
 
 @media screen and (max-width: 640px) {
   .mb-hide {
-    display: block;
+    /* display: block; */
   }
 
   .nav-link {
@@ -532,7 +532,6 @@ input[type="radio"] {
   .mb-filter-show {
     position: absolute;
     background-color: #fffffff5;
-    height: 100vh;
     height: calc(100vh - 8rem);
     top: 5.2rem;
     left: -280px;

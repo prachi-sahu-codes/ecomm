@@ -22,7 +22,7 @@ export const ProductListing = () => {
       {loading && <Loader />}
       <div className="product-grid">
         <div className="product-listing-mb">
-          <Filters />
+          <Filters name="wb-rating" />
         </div>
         <div className="listing-main-body">
           <OnScrollHide />
