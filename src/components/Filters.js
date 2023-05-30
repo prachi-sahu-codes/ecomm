@@ -8,7 +8,6 @@ const ratingArray = [4, 3, 2, 1];
 
 export const Filters = ({ name }) => {
   const { state, dispatch } = useData();
-  console.log(state);
   return (
     <div className="filters-box">
       <div className="filter-single">
