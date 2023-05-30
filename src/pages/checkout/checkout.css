@@ -50,8 +50,8 @@
 
 .checkout-item-img {
   width: 50px;
-  background-color: var(--card-bg);
   background-color: var(--white);
+  border-radius: 2px;
 }
 
 .item-individual {
@@ -72,9 +72,16 @@
   font-size: 1.1rem;
 }
 
+.coupon-icon {
+  margin-top: 0.4rem;
+  margin-right: 0.2rem;
+}
+
 .coupon-btn {
+  display: flex;
+  align-items: center;
+  width: max-content;
   font-size: 0.9rem;
-  display: inline-block;
   color: var(--secondary);
   font-weight: 600;
   border-bottom: 1px solid var(--secondary);
@@ -93,6 +100,28 @@
   border-bottom: 1px solid var(--secondary);
 }
 
+.coupon-applied {
+  margin-bottom: 1rem;
+}
+
+.coupon-code,
+.coupon-remove {
+  color: var(--secondary);
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.2rem 0;
+}
+
+.coupon-code {
+  display: flex;
+  align-items: center;
+}
+
+.coupon-remove {
+  stroke-width: 1.5px;
+  height: 1.5rem;
+}
+
 .order-btn {
   padding: 0.6rem 0;
   display: inline-block;
@@ -101,6 +130,12 @@
   max-width: 400px;
   font-weight: 500;
   margin-bottom: 1rem;
+}
+
+.order-pricing {
+  padding: 1rem 0;
+  border-top: 1px solid var(--gray-line);
+  border-bottom: 1px solid var(--gray-line);
 }
 
 /***************Coupon********************/

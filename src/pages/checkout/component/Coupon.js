@@ -35,7 +35,10 @@ export const Coupon = ({ setShowCoupon, selectCouponHandler }) => {
 
         <ul className="full-coupon-content">
           {couponDetailAvailable.map(({ title, info, code, percentage }) => (
-            <li key={code} onClick={() => selectCouponHandler(percentage)}>
+            <li
+              key={code}
+              onClick={() => selectCouponHandler(percentage, code)}
+            >
               <div className="coupon-whole design">
                 <div className="coupon-single ">
                   <h2 className="coupon-head">{title}</h2>

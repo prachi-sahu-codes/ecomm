@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BsXLg } from "react-icons/bs";
+import { BsXLg, BsFillTagFill } from "react-icons/bs";
 
 import "./checkout.css";
 import { Address } from "../../components/address/Address";
@@ -9,16 +9,18 @@ import { useClick } from "../../context/ClickContext";
 import { Coupon } from "./component/Coupon";
 
 export const Checkout = () => {
-  const { pageRef, scrollToTop, notifyToast } = useData();
-  const { cartData, addressState, orderSubmitHandler, setFinalOrder } =
-    useClick();
+  const { pageRef, scrollToTop } = useData();
+  const {
+    cartData,
+    addressState,
+    orderSubmitHandler,
+    setFinalOrder,
+    coupon,
+    setCoupon,
+    totalPrice,
+  } = useClick();
+
   const [showCoupon, setShowCoupon] = useState(false);
-
-  const totalPrice = cartData
-    ?.reduce((acc, item) => acc + item.price * item.qty, 0)
-    .toFixed(2);
-
-  const [couponDiscount, setCouponDiscount] = useState(totalPrice);
 
   useEffect(() => {
     setFinalOrder((prevOrder) => ({
@@ -33,17 +35,12 @@ export const Checkout = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const selectCouponHandler = (percentage) => {
+  const selectCouponHandler = (percentage, inputCode) => {
     console.log(percentage);
     setShowCoupon((s) => !s);
     const offPrice = totalPrice * (percentage / 100);
     const totalOffPrice = (totalPrice - offPrice).toFixed(2);
-    setCouponDiscount((c) => totalOffPrice);
-
-    notifyToast(
-      "success",
-      `Coupon Applied! You received ${percentage} off on your order!`
-    );
+    setCoupon((c) => ({ code: inputCode, discount: totalOffPrice }));
   };
 
   return (
@@ -129,7 +126,11 @@ export const Checkout = () => {
                   className="coupon-btn"
                   onClick={() => setShowCoupon(() => !showCoupon)}
                 >
-                  Apply coupon for discount
+                  <div>
+                    <BsFillTagFill className="coupon-icon" />
+                  </div>
+
+                  <div>Click Here To Apply Coupon</div>
                 </div>
 
                 <p className="checkout-pricing flex-center">
@@ -141,18 +142,25 @@ export const Checkout = () => {
                   <span>Free</span>
                 </p>
 
-                {
-                  <div>
-                    <p>Applied</p>
-                    <div onClick={() => setShowCoupon((s) => !s)}>
-                      <BsXLg />
+                {coupon.code && (
+                  <div className="flex-center coupon-applied">
+                    <p className="coupon-code">
+                      <BsFillTagFill className="coupon-icon" />
+                      Coupon Applied: {coupon.code}
+                    </p>
+                    <div
+                      onClick={() =>
+                        setCoupon((c) => ({ code: "", discount: totalPrice }))
+                      }
+                    >
+                      <BsXLg className="coupon-remove" />
                     </div>
                   </div>
-                }
+                )}
 
                 <p className="order-pricing flex-center">
                   <span>Order Total </span>
-                  <span>${couponDiscount}</span>
+                  <span>${coupon.code ? coupon.discount : totalPrice}</span>
                 </p>
               </div>
               <button

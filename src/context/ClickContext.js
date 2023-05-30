@@ -270,6 +270,14 @@ export const ClickProvider = ({ children }) => {
     setFormData(findAddress);
   };
 
+  //coupon
+
+  const totalPrice = cartData
+    ?.reduce((acc, item) => acc + item.price * item.qty, 0)
+    .toFixed(2);
+
+  const [coupon, setCoupon] = useState({ code: "", discount: totalPrice });
+
   //final order
 
   const [finalOrder, setFinalOrder] = useState({
@@ -281,9 +289,10 @@ export const ClickProvider = ({ children }) => {
     if (finalOrder.delivery && finalOrder.address) {
       cartData.map(({ _id }) => deleteCartItem(_id));
       notifyToast("success", "Order placed successfully!");
+      setCoupon(() => ({ code: "", discount: totalPrice }));
       setTimeout(() => {
         navigate("../shop");
-      }, 2000);
+      }, 500);
     } else if (!finalOrder.delivery) {
       notifyToast("error", "Select delivery option to proceed!");
     } else if (!finalOrder.address) {
@@ -314,6 +323,9 @@ export const ClickProvider = ({ children }) => {
         addressDispatch,
         submitHandler,
         editAddress,
+        totalPrice,
+        coupon,
+        setCoupon,
         setFinalOrder,
         orderSubmitHandler,
       }}
