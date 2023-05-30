@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
+import { BsXLg } from "react-icons/bs";
 
 import "./checkout.css";
 import { Address } from "../../components/address/Address";
 import { Footer } from "../../layout/Footer";
 import { useData } from "../../context/ProductContext";
 import { useClick } from "../../context/ClickContext";
+import { Coupon } from "./component/Coupon";
 
 export const Checkout = () => {
   const { pageRef, scrollToTop, notifyToast } = useData();
   const { cartData, addressState, orderSubmitHandler, setFinalOrder } =
     useClick();
+  const [showCoupon, setShowCoupon] = useState(false);
 
   const totalPrice = cartData
     ?.reduce((acc, item) => acc + item.price * item.qty, 0)
@@ -30,30 +33,17 @@ export const Checkout = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const couponOptions = [
-    { value: "10%", percentage: 10 },
-    { value: "15%", percentage: 15 },
-    { value: "8%", percentage: 8 },
-  ];
+  const selectCouponHandler = (percentage) => {
+    console.log(percentage);
+    setShowCoupon((s) => !s);
+    const offPrice = totalPrice * (percentage / 100);
+    const totalOffPrice = (totalPrice - offPrice).toFixed(2);
+    setCouponDiscount((c) => totalOffPrice);
 
-  const selectCouponHandler = (e) => {
-    const couponValue = e.target.value;
-    const selectedCoupon = couponOptions.find(
-      (option) => option.value === couponValue
+    notifyToast(
+      "success",
+      `Coupon Applied! You received ${percentage} off on your order!`
     );
-
-    if (selectedCoupon) {
-      const offPrice = totalPrice * (selectedCoupon.percentage / 100);
-      const totalOffPrice = (totalPrice - offPrice).toFixed(2);
-      setCouponDiscount((c) => totalOffPrice);
-
-      notifyToast(
-        "success",
-        `Coupon Applied! You received ${couponValue} off on your order!`
-      );
-    } else {
-      return couponDiscount;
-    }
   };
 
   return (
@@ -135,6 +125,13 @@ export const Checkout = () => {
                 ))}
               </ul>
               <div className="pricing-block">
+                <div
+                  className="coupon-btn"
+                  onClick={() => setShowCoupon(() => !showCoupon)}
+                >
+                  Apply coupon for discount
+                </div>
+
                 <p className="checkout-pricing flex-center">
                   <span>Subtotal </span>
                   <span>${totalPrice}</span>
@@ -143,32 +140,15 @@ export const Checkout = () => {
                   <span>Shipping </span>
                   <span>Free</span>
                 </p>
-                <div className="div-center coupon-block">
-                  <span>
-                    <select
-                      className="select-coupon"
-                      onChange={selectCouponHandler}
-                      defaultValue="Select your coupon"
-                      // value={}
-                    >
-                      <option value="Select your coupon" disabled>
-                        Select your coupon
-                      </option>
-                      <option value="10%">
-                        Get 10% off your entire order with coupon code FURN10.
-                      </option>
-                      <option value="15%">
-                        Get 15% off your first order with coupon code NEW15.{" "}
-                      </option>
-                      <option value="8%">
-                        Save 8% on orders over $500 and get a surprise Gift
-                        voucher upto 20% off with coupon code
-                        SurpriseSavings500.
-                      </option>
-                    </select>
-                  </span>
-                  <p className="checkout-pricing">Apply Coupon</p>
-                </div>
+
+                {
+                  <div>
+                    <p>Applied</p>
+                    <div onClick={() => setShowCoupon((s) => !s)}>
+                      <BsXLg />
+                    </div>
+                  </div>
+                }
 
                 <p className="order-pricing flex-center">
                   <span>Order Total </span>
@@ -185,6 +165,13 @@ export const Checkout = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div style={{ display: showCoupon ? "" : "none" }}>
+        <Coupon
+          setShowCoupon={setShowCoupon}
+          selectCouponHandler={selectCouponHandler}
+        />
       </div>
 
       <Footer />
