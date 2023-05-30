@@ -13,7 +13,7 @@
 
 .order-summary-whole {
   border: 1px solid var(--gray-line);
-  padding: 1rem;
+  padding: 1rem 2rem;
   height: max-content;
   background-color: #661f1e10;
   border-radius: 2px;
@@ -69,7 +69,10 @@
 
 .order-pricing {
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--gray-line);
+  border-bottom: 1px solid var(--gray-line);
 }
 
 .coupon-icon {
@@ -130,12 +133,6 @@
   max-width: 400px;
   font-weight: 500;
   margin-bottom: 1rem;
-}
-
-.order-pricing {
-  padding: 1rem 0;
-  border-top: 1px solid var(--gray-line);
-  border-bottom: 1px solid var(--gray-line);
 }
 
 /***************Coupon********************/
@@ -277,7 +274,7 @@
     width: 90%;
     margin: 0 auto 2rem;
     border: 1px solid var(--gray-line);
-    padding: 1rem;
+    padding: 1rem 2rem;
   }
 
   .order-btn,
@@ -322,6 +319,10 @@
   .gift-icon {
     font-size: 1.1rem;
   }
+
+  .order-summary-whole {
+    padding: 1rem;
+  }
 }
 
 @media screen and (max-width: 386px) {
@@ -342,6 +343,7 @@
 
   .order-summary-whole {
     width: 100%;
+    padding: 1rem;
   }
   .checkout-item-img {
     display: none;
