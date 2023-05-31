@@ -207,7 +207,7 @@ export const ClickProvider = ({ children }) => {
         email: "aditya66r@hotmail.com",
         phone: 1090350443,
         address: "6260 Umang Ridges",
-        pincode: "610229",
+        pincode: "210229",
         state: "Meghalaya",
         city: "Warhapur",
         country: "India",

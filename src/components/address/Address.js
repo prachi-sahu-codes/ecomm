@@ -61,7 +61,7 @@ export const Address = ({ noDetail }) => {
                 </p>
                 <p className="address-card-subhead-details">
                   <span className="address-card-subhead">Address: </span>
-                  {address}, {city}, {state}, {pincode}, {country}
+                  {address}, {city}, {state}, {country}, {pincode}
                 </p>
                 <p className="address-card-subhead-details">
                   <span className="address-card-subhead">Phone: </span>
