@@ -57,7 +57,7 @@ export const Checkout = () => {
                     <input
                       type="radio"
                       name="delivery"
-                      value="standard"
+                      value="Standard"
                       id="standard"
                       onChange={(e) =>
                         setFinalOrder((f) => ({
@@ -76,7 +76,7 @@ export const Checkout = () => {
                     <input
                       type="radio"
                       name="delivery"
-                      value="express"
+                      value="Express"
                       id="express"
                       onChange={(e) =>
                         setFinalOrder((f) => ({

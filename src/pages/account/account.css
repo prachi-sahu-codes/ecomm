@@ -117,7 +117,7 @@
 }
 
 .order-sum-items {
-  margin-bottom: 1rem;
+  margin: 1rem 0;
   max-height: 150px;
   overflow-y: scroll;
   padding-right: 0.3rem;
@@ -144,6 +144,10 @@
   color: var(--gray);
   font-weight: 500;
   padding-bottom: 0.5rem;
+}
+
+.status-border {
+  border-bottom: 1px solid var(--gray-line);
 }
 
 .order-saving {

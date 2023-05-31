@@ -55,7 +55,7 @@ export const OrderSummary = ({ item }) => {
             <p>{item?.address?.phone}</p>
           </div>
 
-          <p className="other-info">
+          <p className="other-info status-border">
             <span className="order-sum-subhead"> Status: </span>
             {item?.cartitems?.length} Item
             {item?.cartitems?.length > 1 && "s"} In Transit, Moving as Expected
