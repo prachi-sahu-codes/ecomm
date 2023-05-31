@@ -30,7 +30,7 @@ export const Footer = () => {
           <li>
             <Link
               className="footer-live-link"
-              to="./shop"
+              to="../shop"
               onClick={() =>
                 dispatch({
                   type: ACTION_TYPE.CHECKBOX_CATG,
@@ -45,7 +45,7 @@ export const Footer = () => {
           <li>
             <Link
               className="footer-live-link"
-              to="./shop"
+              to="../shop"
               onClick={() =>
                 dispatch({
                   type: ACTION_TYPE.CHECKBOX_CATG,
@@ -59,7 +59,7 @@ export const Footer = () => {
           <li>
             <Link
               className="footer-live-link"
-              to="./shop"
+              to="../shop"
               onClick={() =>
                 dispatch({
                   type: ACTION_TYPE.CHECKBOX_CATG,
@@ -73,7 +73,7 @@ export const Footer = () => {
           <li>
             <Link
               className="footer-live-link"
-              to="./shop"
+              to="../shop"
               onClick={() =>
                 dispatch({
                   type: ACTION_TYPE.CHECKBOX_CATG,
