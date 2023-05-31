@@ -129,7 +129,7 @@ export const Cart = () => {
           </div>
         </div>
       ) : (
-        <div className="no-data-page">
+        <div className="no-data-page" ref={pageRef}>
           <h2 className="no-data-msg">
             "Discover the Art of Space: Your Empty Cart Awaits Your Perfect
             Furniture Pieces!"

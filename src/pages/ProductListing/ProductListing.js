@@ -8,9 +8,10 @@ import { Loader } from "../../components/loader/loader";
 import { Footer } from "../../layout/Footer";
 
 export const ProductListing = () => {
-  const { sortedList, loading, setLoading } = useData();
+  const { sortedList, loading, setLoading, pageRef, scrollToTop } = useData();
 
   useEffect(() => {
+    scrollToTop();
     setLoading(true);
     const timer = setTimeout(() => setLoading(false), 500);
     return () => clearTimeout(timer);
@@ -18,7 +19,7 @@ export const ProductListing = () => {
   }, []);
 
   return (
-    <div className="product-listing-whole">
+    <div className="product-listing-whole" ref={pageRef}>
       {loading && <Loader />}
       <div className="product-grid">
         <div className="product-listing-mb">

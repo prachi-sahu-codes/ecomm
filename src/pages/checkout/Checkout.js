@@ -161,7 +161,16 @@ export const Checkout = () => {
                   <span>Order Total </span>
                   <span>${coupon.code ? coupon.discount : totalPrice}</span>
                 </p>
+
+                {coupon.code && (
+                  <p className="checkout-order-saving">
+                    Congratulations! You will save{" "}
+                    <span>${(totalPrice - coupon.discount).toFixed(2)}</span> on
+                    this order!
+                  </p>
+                )}
               </div>
+
               <button
                 className="card-btn order-btn"
                 onClick={orderSubmitHandler}

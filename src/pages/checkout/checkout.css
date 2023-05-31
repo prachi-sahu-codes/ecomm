@@ -125,6 +125,12 @@
   height: 1.5rem;
 }
 
+.checkout-order-saving {
+  color: green;
+  padding-top: 1rem;
+  font-weight: 500;
+}
+
 .order-btn {
   padding: 0.6rem 0;
   display: inline-block;

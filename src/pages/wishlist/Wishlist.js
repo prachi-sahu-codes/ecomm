@@ -68,11 +68,11 @@ export const Wishlist = () => {
                       onClick={() => navigate(`/detail/${item?._id}`)}
                     />
                     <div className="cart-card-title-price">
-                      <p className="wish-rating">
+                      <div className="wish-rating">
                         {item?.name}
                         <DetailRating ratingvalue={item?.rating} />
                         <span>({item?.reviewsCount})</span>
-                      </p>
+                      </div>
                       <p className="cart-item-catg">{item?.category}</p>
                       <p className="cart-item-price">${item?.price}</p>
                     </div>
@@ -96,7 +96,7 @@ export const Wishlist = () => {
           </div>
         </div>
       ) : (
-        <div className="no-data-page">
+        <div className="no-data-page" ref={pageRef}>
           <h2 className="no-data-msg">
             "Transform Your Space: Fill Your Empty Wishlist with Stunning
             Furniture Picks!"

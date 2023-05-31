@@ -299,7 +299,7 @@ export const ClickProvider = ({ children }) => {
         day: "numeric",
       });
 
-      const orderSaving = totalPrice - coupon.discount;
+      const orderSaving = (totalPrice - coupon.discount).toFixed(2);
 
       setFinalSummary((f) => [
         ...f,
