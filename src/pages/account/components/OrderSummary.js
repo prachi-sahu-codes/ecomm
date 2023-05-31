@@ -5,7 +5,7 @@ import "../account.css";
 export const OrderSummary = ({ item }) => {
   const [showDetail, setShowDetail] = useState(false);
   return (
-    <li key={item?.id} className="order-sum-whole">
+    <>
       <div className="flex-center order-sum-head">
         <div>
           <p className="order-num-head">ORDER NUMBER</p>
@@ -92,6 +92,6 @@ export const OrderSummary = ({ item }) => {
           </p>
         </div>
       )}
-    </li>
+    </>
   );
 };

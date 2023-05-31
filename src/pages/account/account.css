@@ -118,7 +118,7 @@
 
 .order-sum-items {
   margin-bottom: 1rem;
-  height: 150px;
+  max-height: 150px;
   overflow-y: scroll;
   padding-right: 0.3rem;
 }
