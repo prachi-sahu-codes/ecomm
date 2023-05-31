@@ -88,7 +88,7 @@
 
 .order-detail-btn {
   color: var(--secondary);
-  width: 110px;
+  width: 125px;
   background-color: var(--white);
   font-weight: 600;
   border: 1px solid var(--gray-line);
@@ -104,6 +104,10 @@
 
 .order-detail-btn:hover {
   border: 1px solid var(--primary);
+}
+
+.up-down-icon {
+  stroke-width: 1.5px;
 }
 
 .order-hidden-whole {
@@ -251,6 +255,11 @@
 
   .order-individual {
     gap: 0.1rem !important;
+  }
+
+  .order-sum-head {
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 }
 

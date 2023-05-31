@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 import "../account.css";
 
 export const OrderSummary = ({ item }) => {
@@ -11,10 +12,18 @@ export const OrderSummary = ({ item }) => {
           <p className="order-num">{item?.id}</p>
         </div>
         <button
-          className="order-detail-btn"
+          className="order-detail-btn flex-center"
           onClick={() => setShowDetail((s) => !s)}
         >
-          {showDetail ? "Hide Details" : "Order Details"}
+          {showDetail ? (
+            <>
+              Hide Details <BsChevronUp className="up-down-icon" />
+            </>
+          ) : (
+            <>
+              Order Details <BsChevronDown className="up-down-icon" />
+            </>
+          )}
         </button>
       </div>
       {showDetail && (
@@ -35,15 +44,15 @@ export const OrderSummary = ({ item }) => {
 
           <p className="order-sum-add-whole">Shipping Address:</p>
           <div className="other-info">
-            <p>
+            <p style={{ textTransform: "uppercase" }}>
               {item?.address?.firstname} {item?.address?.lastname}
             </p>
-            <p>
-              Address: {item?.address?.address}, {item?.address?.city},{" "}
-              {item?.address?.state}, {item?.address?.country}
+            <p style={{ paddingBottom: "0.5rem" }}>
+              {item?.address?.address}, {item?.address?.city},{" "}
+              {item?.address?.state}, {item?.address?.country},{" "}
+              {item?.address?.pincode}
             </p>
-            <p>Email: {item?.address?.email}</p>
-            <p>Phone: {item?.address?.phone}</p>
+            <p>{item?.address?.phone}</p>
           </div>
 
           <p className="other-info">
