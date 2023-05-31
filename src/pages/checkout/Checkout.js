@@ -36,7 +36,6 @@ export const Checkout = () => {
   }, []);
 
   const selectCouponHandler = (percentage, inputCode) => {
-    console.log(percentage);
     setShowCoupon((s) => !s);
     const offPrice = totalPrice * (percentage / 100);
     const totalOffPrice = (totalPrice - offPrice).toFixed(2);

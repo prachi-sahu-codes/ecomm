@@ -286,17 +286,31 @@ export const ClickProvider = ({ children }) => {
     address: addressState.selectedAddress,
   });
 
+  const [finalSummary, setFinalSummary] = useState([]);
+
   const orderSubmitHandler = () => {
     if (finalOrder.delivery && finalOrder.address) {
       const shortUuid = uuid().replace(/-/g, "").slice(0, 12).toUpperCase();
+
+      const orderDate = new Date().toLocaleDateString("en-us", {
+        weekday: "long",
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      });
+
+      const orderSaving = totalPrice - coupon.discount;
+
       setFinalSummary((f) => [
         ...f,
         {
           id: "FURN-" + shortUuid,
+          date: orderDate,
           delivery: finalOrder.delivery,
           address: finalOrder.address,
           cartitems: cartData,
-          totalPrice: totalPrice,
+          totalPrice: coupon.discount,
+          savings: orderSaving,
         },
       ]);
 
@@ -318,10 +332,6 @@ export const ClickProvider = ({ children }) => {
       notifyToast("error", "Something is wrong!");
     }
   };
-
-  //summary
-
-  const [finalSummary, setFinalSummary] = useState([]);
 
   return (
     <ClickContext.Provider
