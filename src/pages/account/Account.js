@@ -3,9 +3,12 @@ import "./account.css";
 import { Address } from "../../components/address/Address";
 import { useAuth } from "../../context/AuthContext";
 import { BsFillPersonFill } from "react-icons/bs";
+import { useClick } from "../../context/ClickContext";
+import { OrderSummary } from "./components/OrderSummary";
 
 export const Account = () => {
   const { logoutHandler, loggedUser } = useAuth();
+  const { finalSummary } = useClick();
 
   return (
     <div className="div-padding">
@@ -38,9 +41,16 @@ export const Account = () => {
               </div>
             </div>
 
-            <button className="acc-logOut" onClick={() => logoutHandler()}>
-              Log Out
-            </button>
+            {finalSummary.length > 0 && (
+              <div className="order-summary">
+                <h2 className="page-subhead">Orders</h2>
+                <ul>
+                  {finalSummary?.map((item) => (
+                    <OrderSummary item={item} />
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
           <div className="account-address">
             <Address />

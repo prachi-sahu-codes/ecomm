@@ -5,6 +5,7 @@ import {
   useReducer,
   useState,
 } from "react";
+import { v4 as uuid } from "uuid";
 import { useAuth } from "./AuthContext";
 import { useData } from "./ProductContext";
 import { AddressReducer } from "../components/address/component/AddressReducer";
@@ -287,12 +288,15 @@ export const ClickProvider = ({ children }) => {
 
   const orderSubmitHandler = () => {
     if (finalOrder.delivery && finalOrder.address) {
+      const shortUuid = uuid().replace(/-/g, "").slice(0, 12).toUpperCase();
       setFinalSummary((f) => [
         ...f,
         {
+          id: "FURN-" + shortUuid,
           delivery: finalOrder.delivery,
           address: finalOrder.address,
           cartitems: cartData,
+          totalPrice: totalPrice,
         },
       ]);
 
