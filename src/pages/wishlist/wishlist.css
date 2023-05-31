@@ -77,6 +77,12 @@
   }
 }
 
+@media screen and (max-width: 898px) {
+  .move-cart-btn {
+    width: 70%;
+  }
+}
+
 @media screen and (max-width: 450px) {
   .no-data-msg {
     font-size: 1rem;

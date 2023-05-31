@@ -47,7 +47,7 @@ export const Cart = () => {
         <div className="div-padding" ref={pageRef}>
           <div className="page-content">
             <div className="flex-center">
-              <h1 className="page-title">Cart</h1>
+              <h1 className="page-title page-title-mb">Cart</h1>
               <span className="head-count">
                 ({count} Item{count > 1 ? "s" : ""})
               </span>
@@ -57,7 +57,7 @@ export const Cart = () => {
                 <tr>
                   <th className="thead-product">Product</th>
                   <th>Quantity</th>
-                  <th className="thead-price">Total</th>
+                  <th className="thead-price">Subtotal</th>
                   <th className="thead-empty"></th>
                 </tr>
               </thead>
@@ -118,6 +118,48 @@ export const Cart = () => {
                 </tr>
               </tbody>
             </table>
+
+            <div className="cart-table-mb">
+              {cartData?.map((item, index) => (
+                <li className="mobile-card-single">
+                  <div className="flex-center">
+                    <div className="div-center">
+                      <img
+                        src={item?.image}
+                        className="cartList-item-img"
+                        alt={item?.name}
+                      />
+                      <div className="cart-card-title-price">
+                        <p className="cart-item-name">{item?.name}</p>
+                        <p className="cart-item-catg">{item?.category}</p>
+                        <p className="cart-item-price">
+                          {" "}
+                          ${(item?.price * item?.qty).toFixed(2)}
+                        </p>
+                        <div className="cart-qty-price card-qty-mb">
+                          <ProductQuantity _id={item?._id} qty={item?.qty} />
+                        </div>
+                      </div>
+                    </div>
+                    <BsXLg
+                      className="cartList-cross-icon-mb"
+                      onClick={() => {
+                        deleteCartItem(item._id);
+                        notifyToast("error", "Removed from Cart!");
+                      }}
+                    />
+                  </div>
+                  <button
+                    className="cartList-btn-mb"
+                    onClick={() => moveToWishlist(item)}
+                  >
+                    Move to Wishlist
+                  </button>
+                </li>
+              ))}
+              <p className="cart-final-price-mb">Total: ${totalPrice}</p>
+            </div>
+
             <div className="check-btn-div">
               <button
                 className="card-btn check-btn"
@@ -142,28 +184,3 @@ export const Cart = () => {
 };
 
 // phone
-
-// <li>
-//   <div
-//     className={`cart-card-detail ${
-//       index === 0 ? "first-card" : ""
-//     }`}
-//   >
-//     <img
-//       src={item?.image}
-//       className="checkout-item-img"
-//       alt={item?.name}
-//     />
-//     <div className="cart-card-title-price">
-//       <p className="cart-item-name">{item?.name}</p>
-//       <p className="cart-item-catg">{item?.category}</p>
-//       <p className="cart-item-price">
-//         {" "}
-//         ${(item?.price * item?.qty).toFixed(2)}
-//       </p>
-//       <div className="cart-qty-price">
-//         <ProductQuantity _id={item?._id} qty={item?.qty} />
-//       </div>
-//     </div>
-//   </div>
-// </li>

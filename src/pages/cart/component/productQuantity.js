@@ -28,7 +28,7 @@ export const ProductQuantity = ({ _id, qty }) => {
 
   return (
     <div>
-      <div className="detail-quantity">
+      <div className="detail-quantity detail-cart-qty-mb">
         <button
           className="detail-quantity-btn"
           onClick={() => qtyHandler("decrement")}

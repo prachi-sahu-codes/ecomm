@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700;800&display=swap");
+
 :root {
   --primary: #1c1b1b;
   --secondary: #661f1e;
@@ -15,6 +17,7 @@
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  font-family: "Albert Sans", sans-serif;
 }
 
 .App {
@@ -380,7 +383,8 @@ input[type="radio"] {
 }
 
 .product-card-btn-div {
-  padding: 1rem;
+  /* padding: 1rem; */
+  padding: 0.7rem 1rem 1rem;
 }
 
 .card-btn {

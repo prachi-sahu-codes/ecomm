@@ -70,6 +70,8 @@
 .order-pricing {
   font-weight: 500;
   font-size: 1.2rem;
+  flex-wrap: wrap;
+  gap: 0.6rem;
   padding: 1.5rem 0;
   border-top: 1px solid var(--gray-line);
   border-bottom: 1px solid var(--gray-line);
