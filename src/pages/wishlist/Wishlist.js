@@ -55,41 +55,49 @@ export const Wishlist = () => {
             <ul className="wishlist-list">
               {wishlistData?.map((item, index) => (
                 <li
-                  className={` wishlist-card-single ${
-                    index === 0 ? "first-card" : ""
-                  }`}
+                  className={`${index === 0 ? "first-card" : ""}`}
                   key={item._id}
                 >
-                  <div className="wish-card-detail">
-                    <img
-                      src={item?.image}
-                      className="cart-img"
-                      alt={item?.name}
-                      onClick={() => navigate(`/detail/${item?._id}`)}
-                    />
-                    <div className="cart-card-title-price">
-                      <div className="wish-rating">
-                        {item?.name}
-                        <DetailRating ratingvalue={item?.rating} />
-                        <span>({item?.reviewsCount})</span>
+                  <div className=" wishlist-card-single">
+                    <div className="wish-card-detail">
+                      <img
+                        src={item?.image}
+                        className="cart-img"
+                        alt={item?.name}
+                        onClick={() => navigate(`/detail/${item?._id}`)}
+                      />
+                      <div className="cart-card-title-price">
+                        <div className="wish-rating">
+                          {item?.name}
+                          <div className="div-center wish-rating-hide-mb">
+                            <DetailRating ratingvalue={item?.rating} />
+                            <span>({item?.reviewsCount})</span>
+                          </div>
+                        </div>
+                        <p className="cart-item-catg">{item?.category}</p>
+                        <p className="cart-item-price">${item?.price}</p>
                       </div>
-                      <p className="cart-item-catg">{item?.category}</p>
-                      <p className="cart-item-price">${item?.price}</p>
+                    </div>
+
+                    <div className="wishlist-icon-btn">
+                      <BsXLg
+                        className=" cross-icon-wishlist"
+                        onClick={() => deleteWishItem(item._id)}
+                      />
+                      <button
+                        className="move-cart-btn"
+                        onClick={() => moveToCart(item)}
+                      >
+                        Move to Cart
+                      </button>
                     </div>
                   </div>
-
-                  <div className="wishlist-icon-btn">
-                    <BsXLg
-                      className=" cross-icon-wishlist"
-                      onClick={() => deleteWishItem(item._id)}
-                    />
-                    <button
-                      className="move-cart-btn"
-                      onClick={() => moveToCart(item)}
-                    >
-                      Move to Cart
-                    </button>
-                  </div>
+                  <button
+                    className="btn-mb-hide"
+                    onClick={() => moveToCart(item)}
+                  >
+                    Move to Cart
+                  </button>
                 </li>
               ))}
             </ul>

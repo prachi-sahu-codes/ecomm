@@ -629,3 +629,9 @@ input[type="radio"] {
     height: 5px;
   }
 }
+
+@media screen and (max-width: 358px) {
+  .footer {
+    padding: 4rem 2.5rem;
+  }
+}

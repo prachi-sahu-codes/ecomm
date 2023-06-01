@@ -46,7 +46,7 @@ export const Cart = () => {
       {cartData.length !== 0 ? (
         <div className="div-padding" ref={pageRef}>
           <div className="page-content">
-            <div className="flex-center">
+            <div className="flex-center title-padding-mb">
               <h1 className="page-title page-title-mb">Cart</h1>
               <span className="head-count">
                 ({count} Item{count > 1 ? "s" : ""})
@@ -120,6 +120,9 @@ export const Cart = () => {
             </table>
 
             <div className="cart-table-mb">
+              <div className="page-subtitle flex-center">
+                <p className="wishlist-subtitle-product">Products</p>
+              </div>
               {cartData?.map((item, index) => (
                 <li className="mobile-card-single">
                   <div className="flex-center">
