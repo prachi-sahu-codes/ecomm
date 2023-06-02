@@ -78,7 +78,7 @@ export const ProductCard = ({
         <div className="card-content">
           <h4 className="card-title">{name}</h4>
 
-          <p className="card-price">${price}</p>
+          <p className="card-price">₹{price}</p>
         </div>
       </div>
 

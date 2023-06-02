@@ -79,7 +79,7 @@ export const Cart = () => {
                         <div className="cart-card-title-price">
                           <p className="cart-item-name">{item?.name}</p>
                           <p className="cart-item-catg">{item?.category}</p>
-                          <p className="cart-item-price">${item?.price}</p>
+                          <p className="cart-item-price">₹{item?.price}</p>
                         </div>
                       </div>
                     </td>
@@ -89,7 +89,7 @@ export const Cart = () => {
                       </div>
                     </td>
                     <td className="cart-item-total-price">
-                      ${(item?.price * item?.qty).toFixed(2)}
+                      ₹{(item?.price * item?.qty).toFixed(2)}
                     </td>
                     <td className="cross-icon-btn">
                       <BsXLg
@@ -112,7 +112,7 @@ export const Cart = () => {
                   <td></td>
                   <td></td>
                   <td>
-                    <p className="cart-final-price">Total: ${totalPrice}</p>
+                    <p className="cart-final-price">Total: ₹{totalPrice}</p>
                   </td>
                   <td></td>
                 </tr>
@@ -137,7 +137,7 @@ export const Cart = () => {
                         <p className="cart-item-catg">{item?.category}</p>
                         <p className="cart-item-price">
                           {" "}
-                          ${(item?.price * item?.qty).toFixed(2)}
+                          ₹{(item?.price * item?.qty).toFixed(2)}
                         </p>
                         <div className="cart-qty-price card-qty-mb">
                           <ProductQuantity _id={item?._id} qty={item?.qty} />
@@ -160,7 +160,7 @@ export const Cart = () => {
                   </button>
                 </li>
               ))}
-              <p className="cart-final-price-mb">Total: ${totalPrice}</p>
+              <p className="cart-final-price-mb">Total: ₹{totalPrice}</p>
             </div>
 
             <div className="check-btn-div">

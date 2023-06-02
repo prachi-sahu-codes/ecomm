@@ -115,7 +115,7 @@ export const Checkout = () => {
 
                     <p className="cart-item-price">
                       {" "}
-                      ${(item?.price * item?.qty).toFixed(2)}
+                      ₹{(item?.price * item?.qty).toFixed(2)}
                     </p>
                   </li>
                 ))}
@@ -134,7 +134,7 @@ export const Checkout = () => {
 
                 <p className="checkout-pricing flex-center">
                   <span>Subtotal </span>
-                  <span>${totalPrice}</span>
+                  <span>₹{totalPrice}</span>
                 </p>
                 <p className="checkout-pricing flex-center">
                   <span>Shipping </span>
@@ -159,13 +159,13 @@ export const Checkout = () => {
 
                 <p className="order-pricing flex-center">
                   <span>Order Total </span>
-                  <span>${coupon.code ? coupon.discount : totalPrice}</span>
+                  <span>₹{coupon.code ? coupon.discount : totalPrice}</span>
                 </p>
 
                 {coupon.code && (
                   <p className="checkout-order-saving">
                     Congratulations! You will save{" "}
-                    <span>${(totalPrice - coupon.discount).toFixed(2)}</span> on
+                    <span>₹{(totalPrice - coupon.discount).toFixed(2)}</span> on
                     this order!
                   </p>
                 )}

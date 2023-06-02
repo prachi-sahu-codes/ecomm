@@ -16,8 +16,8 @@ const couponDetailAvailable = [
   },
   {
     title: "8% Off",
-    info: "On orders over $150 and get a surprise Gift voucher with coupon code",
-    code: "SURPRISE500",
+    info: "On orders over ₹6000 and get a surprise Gift voucher with coupon code",
+    code: "SURPRISE6000",
     percentage: 8,
   },
 ];

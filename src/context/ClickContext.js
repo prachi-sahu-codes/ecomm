@@ -354,7 +354,7 @@ export const ClickProvider = ({ children }) => {
         });
 
         cartData.map(({ _id }) => deleteCartItem(_id));
-        notifyToast("success", `Payment of Rs. ${price} is Succesful`);
+        notifyToast("success", `Payment of ₹${price} is Succesful`);
         setTimeout(() => {
           navigate("../shop");
         }, 500);

@@ -75,7 +75,7 @@ export const Wishlist = () => {
                           </div>
                         </div>
                         <p className="cart-item-catg">{item?.category}</p>
-                        <p className="cart-item-price">${item?.price}</p>
+                        <p className="cart-item-price">₹{item?.price}</p>
                       </div>
                     </div>
 

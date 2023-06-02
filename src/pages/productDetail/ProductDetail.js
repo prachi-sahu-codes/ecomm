@@ -66,7 +66,7 @@ export const ProductDetail = () => {
         <div className="detail-content">
           <div className="flex-center detail-title-icon">
             <div className="detail-title">
-              <span>{findItem?.name}</span> <span> ${findItem?.price}</span>
+              <span>{findItem?.name}</span> <span> ₹{findItem?.price}</span>
             </div>
 
             <div className="detail-icon-heart">

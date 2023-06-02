@@ -30,7 +30,7 @@ export const OrderSummary = ({ item }) => {
         <div className="order-hidden-whole">
           <p className="flex-center order-sum-bold ">
             <span>Order Total: </span>
-            <span>${item?.totalPrice}</span>
+            <span>₹{item?.totalPrice}</span>
           </p>
           <p className="other-info">
             <span className="order-sum-subhead">Placed: </span>
@@ -81,7 +81,7 @@ export const OrderSummary = ({ item }) => {
 
                 <p className="cart-item-price">
                   {" "}
-                  ${(item?.price * item?.qty).toFixed(2)}
+                  ₹{(item?.price * item?.qty).toFixed(2)}
                 </p>
               </li>
             ))}
@@ -89,7 +89,7 @@ export const OrderSummary = ({ item }) => {
 
           {item?.savings !== "none" && (
             <p className="flex-center order-saving">
-              Total Savings: <span>${item?.savings} </span>
+              Total Savings: <span>₹{item?.savings} </span>
             </p>
           )}
         </div>

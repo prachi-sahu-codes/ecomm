@@ -25,12 +25,12 @@ export const Filters = ({ name }) => {
         <div className="flex-center">
           <fieldset className="filter-input-price">
             <legend>min</legend>
-            <span>$5000</span>
+            <span>₹5000</span>
           </fieldset>
           <span>-</span>
           <fieldset className="filter-input-price">
             <legend>max</legend>
-            <span>${state.priceRange}</span>
+            <span>₹{state.priceRange}</span>
           </fieldset>
         </div>
       </div>
