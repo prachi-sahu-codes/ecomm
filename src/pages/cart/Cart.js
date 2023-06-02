@@ -123,8 +123,8 @@ export const Cart = () => {
               <div className="page-subtitle flex-center">
                 <p className="wishlist-subtitle-product">Products</p>
               </div>
-              {cartData?.map((item, index) => (
-                <li className="mobile-card-single">
+              {cartData?.map((item) => (
+                <li className="mobile-card-single" key={item._id}>
                   <div className="flex-center">
                     <div className="div-center">
                       <img

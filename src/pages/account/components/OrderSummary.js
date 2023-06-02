@@ -87,9 +87,11 @@ export const OrderSummary = ({ item }) => {
             ))}
           </ul>
 
-          <p className="flex-center order-saving">
-            Total Savings: <span>${item?.savings} </span>
-          </p>
+          {item?.savings !== "none" && (
+            <p className="flex-center order-saving">
+              Total Savings: <span>${item?.savings} </span>
+            </p>
+          )}
         </div>
       )}
     </>

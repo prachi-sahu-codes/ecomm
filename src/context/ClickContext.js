@@ -288,41 +288,100 @@ export const ClickProvider = ({ children }) => {
 
   const [finalSummary, setFinalSummary] = useState([]);
 
+  //payment gateway
+
+  const loadScript = (url) => {
+    return new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = url;
+
+      script.onload = () => {
+        resolve(true);
+      };
+
+      script.onerror = () => {
+        resolve(false);
+      };
+
+      document.body.appendChild(script);
+    });
+  };
+
+  const displayRazorpay = async (price) => {
+    const response = await loadScript(
+      "https://checkout.razorpay.com/v1/checkout.js"
+    );
+    if (!response) {
+      alert("Razorpay SDK failed to load, check you internet connection");
+      return;
+    }
+    const options = {
+      key: "rzp_test_Xw6VvTBEToiwQk",
+      amount: Number(price) * 100,
+      currency: "INR",
+      name: "FURN",
+      description: "Thank you for shopping with us",
+      handler: function () {
+        const shortUuid = uuid().replace(/-/g, "").slice(0, 12).toUpperCase();
+
+        const orderDate = new Date().toLocaleDateString("en-us", {
+          weekday: "long",
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+        });
+
+        const orderSaving = coupon.code
+          ? (totalPrice - coupon.discount).toFixed(2)
+          : "none";
+
+        setFinalSummary((f) => [
+          ...f,
+          {
+            id: "FURN-" + shortUuid,
+            date: orderDate,
+            delivery: finalOrder.delivery,
+            address: finalOrder.address,
+            cartitems: cartData,
+            totalPrice: price,
+            savings: orderSaving,
+          },
+        ]);
+
+        setFinalOrder({
+          delivery: "",
+          address: addressState.selectedAddress,
+        });
+
+        cartData.map(({ _id }) => deleteCartItem(_id));
+        notifyToast("success", `Payment of Rs. ${price} is Succesful`);
+        setTimeout(() => {
+          navigate("../shop");
+        }, 500);
+        setCoupon(() => ({ code: "", discount: totalPrice }));
+
+        // setTimeout(() => {
+        //   console.log("Success");
+        //   // navigate("/");
+        // }, 4000);
+      },
+      theme: {
+        color: "#661f1e",
+      },
+    };
+
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
+  };
+
+  //make order btn
+
   const orderSubmitHandler = () => {
     if (finalOrder.delivery && finalOrder.address) {
-      const shortUuid = uuid().replace(/-/g, "").slice(0, 12).toUpperCase();
+      const finalOrderPrice = coupon.code ? coupon.discount : totalPrice;
 
-      const orderDate = new Date().toLocaleDateString("en-us", {
-        weekday: "long",
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-      });
-
-      const orderSaving = (totalPrice - coupon.discount).toFixed(2);
-
-      setFinalSummary((f) => [
-        ...f,
-        {
-          id: "FURN-" + shortUuid,
-          date: orderDate,
-          delivery: finalOrder.delivery,
-          address: finalOrder.address,
-          cartitems: cartData,
-          totalPrice: coupon.discount,
-          savings: orderSaving,
-        },
-      ]);
-
-      cartData.map(({ _id }) => deleteCartItem(_id));
-
-      notifyToast("success", "Order placed successfully!");
-
-      setCoupon(() => ({ code: "", discount: totalPrice }));
-
-      setTimeout(() => {
-        navigate("../shop");
-      }, 500);
+      console.log(finalOrderPrice);
+      displayRazorpay(finalOrderPrice);
     } else if (!finalOrder.delivery) {
       notifyToast("error", "Select delivery option to proceed!");
     } else if (!finalOrder.address) {

@@ -200,6 +200,16 @@
   display: none;
 }
 
+/*********************media query**************************/
+
+@media screen and (max-width: 1186px) {
+  .goal-content,
+  .goal-img {
+    max-width: 400px;
+    font-size: 0.85rem;
+  }
+}
+
 @media screen and (max-width: 1150px) {
   .hero-img-content {
     top: 20%;
@@ -214,6 +224,12 @@
     left: 7%;
     width: 500px;
   }
+
+  .home-title {
+    font-size: 1.8rem;
+    margin: 3rem 0.5rem;
+  }
+
   .hero-title {
     font-size: 2rem;
     font-weight: 500;
@@ -241,6 +257,57 @@
   .catg-single {
     display: none;
   }
+
+  .benefits {
+    padding: 0 0 2rem;
+  }
+  .benefits-single {
+    margin: 1rem 0;
+  }
+  .benefits-wara,
+  .benefits-quality {
+    width: 30px;
+    padding-bottom: 1rem;
+  }
+  .benefits-truck {
+    width: 55px;
+    padding-bottom: 1rem;
+  }
+  .benefits-head {
+    font-size: 1rem;
+    font-weight: 500;
+    padding-bottom: 0.6rem;
+  }
+  .benefits-detail {
+    font-size: 0.8rem;
+    max-width: 190px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .goal-content,
+  .goal-img {
+    max-width: 350px;
+    font-size: 0.85rem;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .goal-content,
+  .goal-img {
+    max-width: 500px;
+    font-size: 1rem;
+  }
+
+  .about-goal {
+    flex-wrap: wrap-reverse;
+  }
+
+  .goal-img {
+    margin-bottom: -5rem;
+    margin-top: -2rem;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -260,26 +327,9 @@
   }
 }
 
-@media screen and (max-width: 600px) {
-  .hero-img-content {
-    position: relative;
-    margin: 0 2rem;
-  }
-  .hero-title {
-    color: var(--secondary);
-    max-width: 310px;
-    margin-top: 1rem;
-    font-size: 2rem;
-  }
-
-  .hero-title-detail {
-    color: var(--gray);
-    max-width: 300px;
-    margin-top: 1rem;
-    font-size: 1rem;
-  }
-  .hero-btn {
-    margin-bottom: 2rem;
+@media screen and (max-width: 670px) {
+  .home-content {
+    padding: 0 2rem 2rem;
   }
 }
 
@@ -287,5 +337,71 @@
   .catg-content {
     width: 100%;
     padding: 1rem 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hero-img {
+    width: 1200px;
+    margin-left: -65%;
+  }
+
+  .hero-img-content {
+    max-width: 300px;
+    top: 30%;
+    left: 15%;
+  }
+
+  .hero-title-detail {
+    max-width: 250px;
+  }
+
+  .hero-btn {
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 574px) {
+  .benefits {
+    padding: 0 0 2rem;
+  }
+  .benefits-single {
+    margin: 1rem 0;
+    width: 350px;
+  }
+  .benefits-wara,
+  .benefits-quality {
+    width: 30px;
+    padding-bottom: 1rem;
+  }
+  .benefits-truck {
+    width: 55px;
+    padding-bottom: 1rem;
+  }
+  .benefits-head {
+    font-size: 1rem;
+    font-weight: 500;
+    padding-bottom: 0.6rem;
+  }
+  .benefits-detail {
+    font-size: 0.8rem;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .hero-img-content {
+    top: 30%;
+    left: 8%;
+  }
+
+  .hero-img {
+    width: 1200px;
+    margin-left: -15%;
+  }
+
+  .goal-img {
+    width: 300px;
   }
 }

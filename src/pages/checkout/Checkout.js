@@ -173,7 +173,10 @@ export const Checkout = () => {
 
               <button
                 className="card-btn order-btn"
-                onClick={orderSubmitHandler}
+                onClick={() => {
+                  orderSubmitHandler();
+                  // displayRazorpay();
+                }}
               >
                 {" "}
                 Make an Order
