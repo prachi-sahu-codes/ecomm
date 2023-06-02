@@ -7,7 +7,7 @@ export const productReducer = (state, action) => {
     }
     case ACTION_TYPE.CLEAR_FILTER: {
       return {
-        priceRange: "20000",
+        priceRange: "40000",
         checkboxCatg: [],
         radioRating: "",
         sortBy: "relevance",
