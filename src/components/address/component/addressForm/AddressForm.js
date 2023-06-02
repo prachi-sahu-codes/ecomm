@@ -32,6 +32,7 @@ export const AddressForm = ({ addressDispatch }) => {
         <div className="flex-center">
           <h3 className="form-title">New Address</h3>
           <div
+            className="address-close-mb"
             onClick={() =>
               addressDispatch({ type: FORM_ACTION_TYPE.SHOW_ADDRESS_FORM })
             }
@@ -41,7 +42,7 @@ export const AddressForm = ({ addressDispatch }) => {
         </div>
 
         <form className="form" onSubmit={(e) => e.preventDefault()}>
-          <div className="flex-center">
+          <div className="flex-center flex-center-mb">
             <div className="form-input-label">
               <label htmlFor="fname">First name: </label>
               <input
@@ -69,7 +70,7 @@ export const AddressForm = ({ addressDispatch }) => {
               />
             </div>
           </div>
-          <div className="flex-center">
+          <div className="flex-center flex-center-mb">
             <div className="form-input-label">
               <label htmlFor="useremail">Email:</label>
               <input
@@ -113,7 +114,7 @@ export const AddressForm = ({ addressDispatch }) => {
             ></textarea>
           </div>
 
-          <div className="flex-center">
+          <div className="flex-center flex-center-mb ">
             <div className="form-input-label">
               <label htmlFor="userpincode">Pincode:</label>
               <input
@@ -142,7 +143,7 @@ export const AddressForm = ({ addressDispatch }) => {
             </div>
           </div>
 
-          <div className="flex-center">
+          <div className="flex-center flex-center-mb ">
             <div className="form-input-label">
               <label htmlFor="userstate">State:</label>
               <input
@@ -171,26 +172,34 @@ export const AddressForm = ({ addressDispatch }) => {
               />
             </div>
           </div>
-          <div className="form-btn">
+          <div className="form-btn address-btn-all-mb">
             <button
-              className="form-btn-light"
+              className="form-btn-light address-btn-mb"
               onClick={() => setFormData(() => formFields)}
             >
               Reset
             </button>
             <button
-              className="form-btn-light"
+              className="form-btn-light address-btn-mb"
               onClick={() => generateRandomData()}
             >
               Random
             </button>
+            <button
+              className="form-btn-light address-btn-mb"
+              onClick={() =>
+                addressDispatch({ type: FORM_ACTION_TYPE.SHOW_ADDRESS_FORM })
+              }
+            >
+              Cancel
+            </button>
 
             <button
               type="submit"
-              className="form-btn-dark"
+              className="form-btn-dark address-btn-mb"
               onClick={(e) => submitHandler(e, formData)}
             >
-              Add Address
+              Add <span className="word-mb">Address</span>
             </button>
           </div>
         </form>

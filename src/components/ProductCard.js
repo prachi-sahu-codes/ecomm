@@ -75,20 +75,22 @@ export const ProductCard = ({
         </div>
       )}
 
-      <table className="small-card">
-        <tbody>
-          <tr className="table-row-card">
-            <td className="table-cell-card-h">Width</td>
-            <td className="table-cell-card-h">Height</td>
-            <td className="table-cell-card-h">Length</td>
-          </tr>
-          <tr className="table-row-card">
-            <td className="table-cell-card">{dimensions?.width}</td>
-            <td className="table-cell-card">{dimensions?.height}</td>
-            <td className="table-cell-card">{dimensions?.length}</td>
-          </tr>
-        </tbody>
-      </table>
+      {!noDetail && (
+        <table className="small-card">
+          <tbody>
+            <tr className="table-row-card">
+              <td className="table-cell-card-h">Width</td>
+              <td className="table-cell-card-h">Height</td>
+              <td className="table-cell-card-h">Length</td>
+            </tr>
+            <tr className="table-row-card">
+              <td className="table-cell-card">{dimensions?.width}</td>
+              <td className="table-cell-card">{dimensions?.height}</td>
+              <td className="table-cell-card">{dimensions?.length}</td>
+            </tr>
+          </tbody>
+        </table>
+      )}
       <div className="card-content-absolute">
         <div className="card-content">
           <h4 className="card-title">{name}</h4>

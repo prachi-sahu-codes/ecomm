@@ -91,7 +91,7 @@ export const Home = () => {
         <h2 className="home-title">Hot Products</h2>
         <div className="hot-products">
           {hotProducts.map((item) => (
-            <li key={item?._id} className="product-card">
+            <li key={item?._id} className="product-card-home">
               <ProductCard {...item} noDetail />
             </li>
           ))}

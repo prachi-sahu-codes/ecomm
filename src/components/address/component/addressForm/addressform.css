@@ -91,6 +91,9 @@
 
 .form-btn-dark {
   width: 100%;
+  display: flex;
+  gap: 0.3rem;
+  justify-content: center;
   font-weight: 600;
   background-image: linear-gradient(to bottom, #661f1e, #852827);
   color: var(--white);
@@ -107,4 +110,46 @@
 
 .form-btn-dark:active {
   background-image: linear-gradient(to bottom, #661f1e, #852827);
+}
+
+@media screen and (max-width: 640px) {
+  .address-block {
+    width: 250px;
+    height: 400px;
+    overflow-y: scroll;
+    padding: 1.5rem;
+  }
+
+  .form-textarea {
+    width: 95%;
+  }
+
+  .form-input-label {
+    font-size: 0.8rem;
+  }
+
+  .flex-center-mb {
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .address-close-mb {
+    display: none;
+  }
+
+  .address-btn-mb {
+    width: 86px;
+  }
+
+  .address-btn-all-mb {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .word-mb {
+    display: none;
+  }
+
+  .form-btn {
+    padding-top: 0.4rem;
+  }
 }

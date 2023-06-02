@@ -215,6 +215,10 @@
   top: 1.9rem;
 }
 
+.signup-page {
+  min-height: 650px;
+}
+
 /* account page  */
 
 @media screen and (max-width: 948px) {
@@ -284,7 +288,7 @@
   }
 
   .sign-up-whole {
-    margin: 5rem 0 2rem;
+    margin: 1.5rem 0 2rem;
   }
 }
 
@@ -293,6 +297,6 @@
     margin-top: 2.5rem;
   }
   .sign-up-whole {
-    margin: 7rem 0 2rem;
+    margin: 3rem 0 2rem;
   }
 }
