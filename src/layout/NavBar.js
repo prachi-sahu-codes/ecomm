@@ -5,8 +5,6 @@ import { useData } from "../context/ProductContext";
 import { ACTION_TYPE } from "../reducer/actionType";
 import { useClick } from "../context/ClickContext";
 
-//BsHeart, BsPerson, BsSearch, BsSliders2(phone filter), BsChevronDown, BsChevronUp, BsDashLg, BsDash, BsPlusLg, BsPlus, BsJustify(hamburger)
-
 const styleLinks = ({ isActive }) => ({
   borderBottom: isActive ? "1px solid #fff" : "none",
 });

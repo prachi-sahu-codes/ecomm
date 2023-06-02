@@ -13,11 +13,20 @@
   gap: 1rem;
 }
 
+.detail-image-div {
+  background-color: var(--card-bg);
+  margin-top: 3rem;
+  width: max-content;
+}
+
 .detail-image {
   width: 500px;
-  margin-top: 3rem;
-  background-color: var(--card-bg);
   border-radius: 2px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.detail-image:hover {
+  transform: scale(1.05);
 }
 
 .detail-content {
@@ -204,9 +213,11 @@
 }
 
 @media screen and (max-width: 450px) {
+  .detail-image-div {
+    margin-top: 5rem;
+  }
   .detail-image {
     max-width: 300px;
-    margin-top: 5rem;
   }
 }
 

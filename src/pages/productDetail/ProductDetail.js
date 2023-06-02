@@ -57,11 +57,13 @@ export const ProductDetail = () => {
     <>
       {loading && <Loader />}
       <div className="detail" ref={pageRef}>
-        <img
-          src={findItem?.image}
-          className="detail-image"
-          alt={findItem?.name}
-        />
+        <div className="detail-image-div">
+          <img
+            src={findItem?.image}
+            className="detail-image"
+            alt={findItem?.name}
+          />
+        </div>
 
         <div className="detail-content">
           <div className="flex-center detail-title-icon">
@@ -105,7 +107,7 @@ export const ProductDetail = () => {
                 <span className="detail-rating-star">
                   <DetailRating ratingvalue={rating} />
                 </span>
-                <span className="rating-number">({rating}.0)</span>
+                <span className="rating-number">({rating?.toFixed(1)})</span>
               </div>
               <p className="rating-desc">Average rating on this year</p>
             </div>
@@ -178,7 +180,7 @@ export const ProductDetail = () => {
         <p className="detail-desc">
           The product has a rating of{" "}
           <strong className="rating-strong-num">
-            "{findItem?.rating} stars"
+            "{findItem?.rating?.toFixed(1)} stars"
           </strong>{" "}
           and have garnered{" "}
           <strong className="rating-strong-num">

@@ -5,7 +5,7 @@ import { BsJustify } from "react-icons/bs";
 import { Filters } from "./Filters";
 
 export const OnScrollHide = () => {
-  const { dispatch, state } = useData();
+  const { dispatch, state, sortedList } = useData();
   const [isHidden, setIsHidden] = useState(false);
   const [showFilter, setShowFilter] = useState(false);
 
@@ -34,12 +34,22 @@ export const OnScrollHide = () => {
       ) : (
         <div className="scroll-content">
           <div className="flex-center listing-main-head">
-            <div className="burger-mb" onClick={() => setShowFilter((s) => !s)}>
-              <BsJustify className="burger-icon" />
+            <div className="div-center" style={{ alignItems: "center" }}>
+              <div
+                className="burger-mb"
+                onClick={() => setShowFilter((s) => !s)}
+              >
+                <BsJustify className="burger-icon" />
+              </div>
+              <p className="products-count">
+                Showing {sortedList?.length} out of 48 furnitures
+              </p>
+              <p className="products-count-mb">
+                Furnitures ({sortedList?.length}/48)
+              </p>
             </div>
 
             <select
-              className="wrapper"
               onChange={(e) =>
                 dispatch({
                   type: ACTION_TYPE.SORT_SELECT,

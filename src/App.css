@@ -9,7 +9,7 @@
   --gray: #4f4f4f;
   --light-gray: #eaeaea;
   --gray-line: #4f4f4f55;
-  --card-bg: #f1f1f1;
+  --card-bg: #f3f3f3;
 }
 
 * {
@@ -85,7 +85,7 @@
   align-items: center;
   background-color: var(--primary);
   color: var(--light-gray);
-  padding: 0.5rem 5rem;
+  padding: 0.5rem 3rem;
   height: 3rem;
   z-index: 1000;
 }
@@ -134,7 +134,8 @@
   width: 6px;
   height: 6px;
   border-radius: 7px;
-  background-color: var(--light-gray);
+  border: 1px solid var(--white);
+  background-color: var(--secondary);
 }
 
 .icon-dot2 {
@@ -144,7 +145,8 @@
   width: 6px;
   height: 6px;
   border-radius: 7px;
-  background-color: var(--light-gray);
+  border: 1px solid var(--white);
+  background-color: var(--secondary);
 }
 
 .nav-search-mb-show {
@@ -267,7 +269,7 @@ input[type="range"]::-moz-range-thumb {
 
 .filter-single {
   border-bottom: 1px solid var(--tertiary);
-  padding: 1rem;
+  padding: 1.3rem 1rem;
 }
 
 .filter-label {
@@ -339,16 +341,19 @@ input[type="radio"] {
   display: inline-block;
   text-transform: uppercase;
   font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--primary);
-  padding: 1.5rem 2rem;
+  font-weight: 800;
+  color: var(--secondary);
+  padding: 1.5rem 1rem;
 }
 
 /********************card********************/
 .card-image {
-  /* position: relative; */
   width: 300px;
-  background-color: var(--card-bg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover .card-image {
+  transform: scale(1.05);
 }
 
 .card-content {
@@ -359,11 +364,23 @@ input[type="radio"] {
   font-size: 1rem;
   margin-bottom: 0.1rem;
 }
+
+.card-star-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  color: var(--secondary);
+  font-weight: 700;
+  padding: 0.2rem;
+  border-radius: 2px;
+}
+
 .card-price {
   font-size: 0.9rem;
   color: var(--primary);
   margin-right: 0.6rem;
   padding-top: 0.2rem;
+  font-weight: 500;
 }
 
 .card-heart {
