@@ -14,8 +14,8 @@ export const Filters = ({ name }) => {
         <label className="filter-label">Price</label>
         <input
           type="range"
-          min="100"
-          max="20000"
+          min="5000"
+          max="40000"
           step="100"
           value={state.priceRange}
           onChange={(e) =>
@@ -25,7 +25,7 @@ export const Filters = ({ name }) => {
         <div className="flex-center">
           <fieldset className="filter-input-price">
             <legend>min</legend>
-            <span>$100</span>
+            <span>$5000</span>
           </fieldset>
           <span>-</span>
           <fieldset className="filter-input-price">

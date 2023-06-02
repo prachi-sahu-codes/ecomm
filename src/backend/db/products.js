@@ -6,7 +6,7 @@ export const products = [
     name: "Gable Dining Chair",
     description:
       "Part of a larger design collection for the living room but it can also be used as a side chair. Its curved low back has some stitched seam accents that give it a stylish look. It features a round polished brass swivel base that contrasts with the dreamy cotton velvet.",
-    price: 6299.99,
+    price: 18499.99,
     category: "Chair",
     dimensions: {
       width: "20.9 inches",
@@ -37,7 +37,7 @@ export const products = [
     name: "Isadora Bed",
     description:
       "Inspired by the Isadora Dining Chair, that has become one of the public's favorite pieces from the Studiopepe collection with Essential Home, the Isadora Bed is here to elevate and transform your bedroom décor. This bed achieves elegance through its design featuring a soft touch boucle textile throughout and minimalistic brass details to complement the look.",
-    price: 19599.99,
+    price: 30499.99,
     category: "Bed",
     dimensions: {
       width: "80.7 inches",
@@ -160,7 +160,7 @@ export const products = [
     name: "Isadora Dining Chair",
     description:
       "If you’re looking for an artistic furniture piece to match your luxury design project with its own artistic personality, Isadora is the one. The upholstered dining chair by the Italian designers of Studiopepe is characterized by asymmetrical design, embellished with brass details. This bespoke dining chair combines the best of luxury design with a modern twist, exactly what you need to bring an exquisite touch to your home décor.",
-    price: 1099.99,
+    price: 10990.99,
     category: "Chair",
     dimensions: {
       width: "20.9 inches",
@@ -191,7 +191,7 @@ export const products = [
     name: "Collins Dining Chair",
     description:
       "Designed with a classic retro chic feel, comfortable and perfect to pair with a circular dining table. Finely upholstered in velvet, welted stitches on the seat and a stylish degree reclining on the crescent open back. It features a perfectly curved back, supported by tapered glossy black legs with rich accents of polished brass.",
-    price: 8199.99,
+    price: 7199.99,
     category: "Chair",
     dimensions: {
       width: "20.9 inches",
@@ -222,7 +222,7 @@ export const products = [
     name: "Loren Sofa",
     description:
       "This elegant sofa features a sleek design with a button-tufted back and solid wood legs. Upholstered in high-quality fabric.",
-    price: 899.99,
+    price: 30899.99,
     category: "Sofa",
     dimensions: {
       width: "80 inches",
@@ -253,7 +253,7 @@ export const products = [
     name: "Hadley Dining Chair",
     description:
       "Get inspired by the color palette of the 1930s midcentury style with this versatile dining chair that engages the eye with a trendy orange velvet seat. Comfortable and timeless, this dining chair makes the most of the square lines of the midcentury modern design in its wooden legs. Curved lines in the back make it modern, but it screams vintage in the overall design.",
-    price: 199.99,
+    price: 9198.99,
     category: "Chair",
     dimensions: {
       width: "20.9 inches",
@@ -285,7 +285,7 @@ export const products = [
     name: "Doris Sofa",
     description:
       "This elegant sofa features a sleek design with a button-tufted back and solid wood legs. Upholstered in high-quality fabric.",
-    price: 899.99,
+    price: 5899.99,
     category: "Sofa",
     dimensions: {
       width: "80 inches",
@@ -347,7 +347,7 @@ export const products = [
     name: "Mansfield Sofa",
     description:
       "A contemporary mid-century modern style sofa featuring strong shapes and hard edges along with a rich velvet fabric.",
-    price: 4699.99,
+    price: 14699.99,
     category: "Sofa",
     dimensions: {
       width: "96 inches",
@@ -378,7 +378,7 @@ export const products = [
     name: "Maxime Dining Table",
     description:
       "This elegant sofa features a sleek design with a button-tufted back and solid wood legs. Upholstered in high-quality fabric.",
-    price: 899.99,
+    price: 7899.99,
     category: "Table",
     dimensions: {
       width: "80 inches",
@@ -409,7 +409,7 @@ export const products = [
     name: "Sophia Sectional Sofa",
     description:
       "A contemporary mid-century modern style sofa featuring strong shapes and hard edges along with a rich velvet fabric.",
-    price: 299.99,
+    price: 28299.99,
     category: "Sofa",
     dimensions: {
       width: "36 inches",
@@ -440,7 +440,7 @@ export const products = [
     name: "Novak Sofa",
     description:
       "A contemporary mid-century modern style sofa featuring strong shapes and hard edges along with a rich velvet fabric.",
-    price: 1499.99,
+    price: 21499.99,
     category: "Sofa",
     dimensions: {
       width: "96 inches",
@@ -449,20 +449,20 @@ export const products = [
     },
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/novak-sofa/novak-sofa-1.png",
-    rating: 5.0,
+    rating: 1.0,
     ratingHike: "19",
     reviewsCount: "4.5k",
     sales: 4800,
     reviews: [
       {
         author: "Tom Wilson",
-        text: "Absolutely stunning sofa, great craftsmanship.",
-        rating: 5,
+        text: "Absolutely stunning sofa but could have been better.",
+        rating: 1,
       },
       {
         author: "Emily Green",
         text: "The sofa is a bit bigger than I expected, but still fits perfectly in my room.",
-        rating: 4,
+        rating: 2,
       },
     ],
   },
@@ -471,7 +471,7 @@ export const products = [
     name: "Marco Sofa",
     description:
       "A contemporary mid-century modern style sofa featuring strong shapes and hard edges along with a rich velvet fabric.",
-    price: 2099.99,
+    price: 24099.99,
     category: "Sofa",
     dimensions: {
       width: "96 inches",
@@ -502,7 +502,7 @@ export const products = [
     name: "Curtis Sofa",
     description:
       "A contemporary mid-century modern style sofa featuring strong shapes and hard edges along with a rich velvet fabric.",
-    price: 1499.99,
+    price: 13499.99,
     category: "Sofa",
     dimensions: {
       width: "96 inches",
@@ -564,7 +564,7 @@ export const products = [
     name: "Romero Sofa",
     description:
       "A contemporary mid-century modern style sofa featuring strong shapes and hard edges along with a rich velvet fabric.",
-    price: 1299.99,
+    price: 11299.99,
     category: "Sofa",
     dimensions: {
       width: "96 inches",
@@ -595,7 +595,7 @@ export const products = [
     name: "Dandridge Sofa",
     description:
       "This mid-century inspired single sofa proves that the curved lines in the furniture trend are here to stay.",
-    price: 1499.99,
+    price: 14099.99,
     category: "Sofa",
     dimensions: {
       width: "96 inches",
@@ -637,8 +637,8 @@ export const products = [
       "https://essentialhome.eu/images/products/thumbnails/upholstery/pierre-single-sofa.png",
     rating: 5.0,
     ratingHike: "32",
-    reviewsCount: "40.5k",
-    sales: 41000,
+    reviewsCount: "20.5k",
+    sales: 21000,
     reviews: [
       {
         author: "Tom Wilson",
@@ -658,7 +658,7 @@ export const products = [
     name: "Gable Single Sofa",
     description:
       "This space-age aesthetics armchair pairs perfectly with its sister product. This space-age aesthetics armchair pairs perfectly with its sister product.",
-    price: 1699.99,
+    price: 38699.99,
     category: "Sofa",
     dimensions: {
       width: "96 inches",
@@ -690,7 +690,7 @@ export const products = [
     name: "Sidney Dining Table",
     description:
       "Get inspired by the color palette of the 1930s midcentury style with this versatile dining table that engages the eye with a trendy orange velvet seat. Comfortable and timeless, this dining table makes the most of the square lines of the midcentury modern design in its wooden legs. Curved lines in the back make it modern, but it screams vintage in the overall design.",
-    price: 1499.99,
+    price: 9499.99,
     category: "Table",
     dimensions: {
       width: "20.9 inches",
@@ -721,7 +721,7 @@ export const products = [
     name: "Isadora II Bed",
     description:
       "This beautiful dining table is made of solid wood and features a natural finish. Seats up to 8 people.",
-    price: 12499.99,
+    price: 32499.99,
     category: "Bed",
     dimensions: {
       width: "31,50 inches",
@@ -752,7 +752,7 @@ export const products = [
     name: "Minelli Bed",
     description:
       "A mid-century style bed that is perfect for a bedroom ambience that is both sober and sophisticated.",
-    price: 11499.99,
+    price: 37499.99,
     category: "Bed",
     dimensions: {
       width: "31.50 inches",
@@ -783,7 +783,7 @@ export const products = [
     name: "Wormley Dining Table",
     description:
       "Get inspired by the color palette of the 1930s midcentury style with this versatile dining table that engages the eye with a trendy orange velvet seat. Comfortable and timeless, this dining table makes the most of the square lines of the midcentury modern design in its wooden legs. Curved lines in the back make it modern, but it screams vintage in the overall design.",
-    price: 5999.99,
+    price: 25999.99,
     category: "Table",
     dimensions: {
       width: "20.9 inches",
@@ -814,7 +814,7 @@ export const products = [
     name: "Ezra Dining Table",
     description:
       "The Ezra Dining Table might be one of the most unique pieces in Studiopepe’s collection for Essential Home. Inspired by the beautiful Italian architecture scenario, the modern dining table was drawn from a combination of straight curvilinear lines redeﬁning the limits of physics. Ezra opens the world’s design horizon with its solid wooden structure enlightened with some polished brass details, perfect to embellish any modern space.",
-    price: 1100,
+    price: 35100,
     category: "Table",
     dimensions: {
       width: "20.9 inches",
@@ -845,7 +845,7 @@ export const products = [
     name: "Isadora Bed",
     description:
       "Inspired by the Isadora Dining Chair, that has become one of the public's favorite pieces from the Studiopepe collection with Essential Home, the Isadora Bed is here to elevate and transform your bedroom décor. This bed achieves elegance through its design featuring a soft touch boucle textile throughout and minimalistic brass details to complement the look.",
-    price: 15599.99,
+    price: 16509.99,
     category: "Bed",
     dimensions: {
       width: "80.7 inches",
@@ -876,7 +876,7 @@ export const products = [
     name: "Franco Bed",
     description:
       "A true display of handskill, this bed’s immense headboard is a testament to craftsmanship.With Polished Brass, Varnished Walnut, Straw and Leds on the sides of the headboard.",
-    price: 18499.99,
+    price: 39499.99,
     category: "Bed",
     dimensions: {
       width: "80.7 inches",
@@ -907,7 +907,7 @@ export const products = [
     name: "Hadley Dining Chair",
     description:
       "Get inspired by the color palette of the 1930s midcentury style with this versatile dining chair that engages the eye with a trendy orange velvet seat. Comfortable and timeless, this dining chair makes the most of the square lines of the midcentury modern design in its wooden legs. Curved lines in the back make it modern, but it screams vintage in the overall design.",
-    price: 5099.99,
+    price: 27099.99,
     category: "Chair",
     dimensions: {
       width: "20.9 inches",
@@ -938,7 +938,7 @@ export const products = [
     name: "Loren Sofa",
     description:
       "This elegant sofa features a sleek design with a button-tufted back and solid wood legs. Upholstered in high-quality fabric.",
-    price: 10000.99,
+    price: 36000.99,
     category: "Sofa",
     dimensions: {
       width: "80 inches",
@@ -969,7 +969,7 @@ export const products = [
     name: "Doris Sofa",
     description:
       "This elegant sofa features a sleek design with a button-tufted back and solid wood legs. Upholstered in high-quality fabric.",
-    price: 2000.99,
+    price: 23000.99,
     category: "Sofa",
     dimensions: {
       width: "80 inches",
@@ -1000,7 +1000,7 @@ export const products = [
     name: "Mansfield Sofa",
     description:
       "A contemporary mid-century modern style sofa featuring strong shapes and hard edges along with a rich velvet fabric.",
-    price: 699.99,
+    price: 34699.99,
     category: "Sofa",
     dimensions: {
       width: "96 inches",
@@ -1031,7 +1031,7 @@ export const products = [
     name: "Maxime Dining Table",
     description:
       "This elegant sofa features a sleek design with a button-tufted back and solid wood legs. Upholstered in high-quality fabric.",
-    price: 209.99,
+    price: 36209.99,
     category: "Table",
     dimensions: {
       width: "80 inches",
@@ -1063,7 +1063,7 @@ export const products = [
     name: "Sophia Sectional Sofa",
     description:
       "A contemporary mid-century modern style sofa featuring strong shapes and hard edges along with a rich velvet fabric.",
-    price: 8299.99,
+    price: 20299.99,
     category: "Sofa",
     dimensions: {
       width: "36 inches",
@@ -1094,7 +1094,7 @@ export const products = [
     name: "Novak Sofa",
     description:
       "A contemporary mid-century modern style sofa featuring strong shapes and hard edges along with a rich velvet fabric.",
-    price: 7499.99,
+    price: 31499.99,
     category: "Sofa",
     dimensions: {
       width: "96 inches",
@@ -1125,7 +1125,7 @@ export const products = [
     name: "Marco Sofa",
     description:
       "A contemporary mid-century modern style sofa featuring strong shapes and hard edges along with a rich velvet fabric.",
-    price: 12099.99,
+    price: 22099.99,
     category: "Sofa",
     dimensions: {
       width: "96 inches",
@@ -1156,7 +1156,7 @@ export const products = [
     name: "Curtis Sofa",
     description:
       "A contemporary mid-century modern style sofa featuring strong shapes and hard edges along with a rich velvet fabric.",
-    price: 9499.99,
+    price: 33499.99,
     category: "Sofa",
     dimensions: {
       width: "96 inches",
@@ -1188,7 +1188,7 @@ export const products = [
     name: "Romero Sofa",
     description:
       "A contemporary mid-century modern style sofa featuring strong shapes and hard edges along with a rich velvet fabric.",
-    price: 10299.99,
+    price: 23299.99,
     category: "Sofa",
     dimensions: {
       width: "96 inches",
@@ -1219,7 +1219,7 @@ export const products = [
     name: "Dandridge Sofa",
     description:
       "This mid-century inspired single sofa proves that the curved lines in the furniture trend are here to stay.",
-    price: 10499.99,
+    price: 18999.99,
     category: "Sofa",
     dimensions: {
       width: "96 inches",
@@ -1281,7 +1281,7 @@ export const products = [
     name: "Apollo Single Sofa",
     description:
       "This space-age aesthetics armchair pairs perfectly with its sister product, the Apollo sofa. This space-age aesthetics armchair pairs perfectly with its sister product, the Apollo sofa.",
-    price: 599.99,
+    price: 26599.99,
     category: "Sofa",
     dimensions: {
       width: "96 inches",
@@ -1312,7 +1312,7 @@ export const products = [
     name: "Gable Single Sofa",
     description:
       "This space-age aesthetics armchair pairs perfectly with its sister product. This space-age aesthetics armchair pairs perfectly with its sister product.",
-    price: 499.99,
+    price: 19599.99,
     category: "Sofa",
     dimensions: {
       width: "96 inches",
@@ -1344,7 +1344,7 @@ export const products = [
     name: "Sidney Dining Table",
     description:
       "Get inspired by the color palette of the 1930s midcentury style with this versatile dining table that engages the eye with a trendy orange velvet seat. Comfortable and timeless, this dining table makes the most of the square lines of the midcentury modern design in its wooden legs. Curved lines in the back make it modern, but it screams vintage in the overall design.",
-    price: 15499.99,
+    price: 29499.99,
     category: "Table",
     dimensions: {
       width: "20.9 inches",
@@ -1375,7 +1375,7 @@ export const products = [
     name: "Isadora II Bed",
     description:
       "This beautiful dining table is made of solid wood and features a natural finish. Seats up to 8 people.",
-    price: 1499.99,
+    price: 21000.99,
     category: "Bed",
     dimensions: {
       width: "31,50 inches",
@@ -1406,7 +1406,7 @@ export const products = [
     name: "Minelli Bed",
     description:
       "A mid-century style bed that is perfect for a bedroom ambience that is both sober and sophisticated.",
-    price: 3199.99,
+    price: 25199.99,
     category: "Bed",
     dimensions: {
       width: "31.50 inches",
@@ -1437,7 +1437,7 @@ export const products = [
     name: "Wormley Dining Table",
     description:
       "Get inspired by the color palette of the 1930s midcentury style with this versatile dining table that engages the eye with a trendy orange velvet seat. Comfortable and timeless, this dining table makes the most of the square lines of the midcentury modern design in its wooden legs. Curved lines in the back make it modern, but it screams vintage in the overall design.",
-    price: 999.99,
+    price: 33999.99,
     category: "Table",
     dimensions: {
       width: "20.9 inches",
@@ -1468,7 +1468,7 @@ export const products = [
     name: "Ezra Dining Table",
     description:
       "The Ezra Dining Table might be one of the most unique pieces in Studiopepe’s collection for Essential Home. Inspired by the beautiful Italian architecture scenario, the modern dining table was drawn from a combination of straight curvilinear lines redeﬁning the limits of physics. Ezra opens the world’s design horizon with its solid wooden structure enlightened with some polished brass details, perfect to embellish any modern space.",
-    price: 11000,
+    price: 27800,
     category: "Table",
     dimensions: {
       width: "20.9 inches",
@@ -1477,7 +1477,7 @@ export const products = [
     },
     image:
       "https://essentialhome.eu/images/products/product-page/casegoods/ezra-dining-table/ezra-dining-table-1.png",
-    rating: 2.0,
+    rating: 3.0,
     ratingHike: "65",
     reviewsCount: "54.5k",
     sales: 59000,

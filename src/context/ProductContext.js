@@ -33,7 +33,7 @@ export const ProductProvider = ({ children }) => {
   }, []);
 
   const initialState = {
-    priceRange: "20000",
+    priceRange: "40000",
     checkboxCatg: [],
     radioRating: "",
     sortBy: "",
