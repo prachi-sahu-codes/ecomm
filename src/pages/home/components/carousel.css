@@ -1,0 +1,17 @@
+.slide-whole {
+  width: 500px;
+  height: 400px;
+  background-color: antiquewhite;
+}
+.slider-img {
+  width: 10px;
+  height: 10px;
+  margin: auto;
+}
+.slider-title {
+  font-size: 1.5rem;
+}
+.slider-comment {
+  font-size: 0.9rem;
+  color: gray;
+}

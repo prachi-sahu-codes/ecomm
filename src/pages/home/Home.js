@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BsStarFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
+import TestimonialCarousel from "./components/Carousel";
 import "./home.css";
 import home from "../../assets/home-images/home.jpg";
 import dt from "../../assets/home-images/dt.png";
@@ -12,7 +13,6 @@ import sofasCatg from "../../assets/home-images/sofasCatg.jpg";
 import sofaCatg1 from "../../assets/home-images/sofaCatg1.jpg";
 import { Footer } from "../../layout/Footer";
 import { useData } from "../../context/ProductContext";
-import { ProductCard } from "../../components/ProductCard";
 import { Loader } from "../../components/loader/loader";
 import { getData } from "./service/categoryApi";
 import { ACTION_TYPE } from "../../reducer/actionType";
@@ -160,6 +160,9 @@ export const Home = () => {
               </div>
             </li>
           ))}
+        </div>
+        <div className="carousel">
+          <TestimonialCarousel />
         </div>
       </div>
       <Footer />

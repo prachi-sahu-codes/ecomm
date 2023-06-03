@@ -163,6 +163,7 @@
   text-decoration: none;
   width: 250px;
   height: max-content;
+  cursor: pointer;
   margin-bottom: 3rem;
   border-radius: 2px;
   box-shadow: 0 1px 5px rgb(214, 214, 214);
@@ -203,6 +204,7 @@
   width: 250px;
   height: 290px;
   overflow: hidden;
+  cursor: pointer;
   box-shadow: 0 1px 5px rgb(214, 214, 214);
 }
 .catg-image {
@@ -266,6 +268,12 @@
 .see-catg-link:hover {
   text-decoration: none;
   color: var(--secondary);
+}
+
+/***************************carousel*******************************/
+
+.carousel {
+  padding: 2rem 0;
 }
 
 /*********************media query**************************/
