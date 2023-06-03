@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { BsStarFill } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 import "./home.css";
 import home from "../../assets/home-images/home.jpg";
 import dt from "../../assets/home-images/dt.png";
@@ -16,15 +18,16 @@ import { getData } from "./service/categoryApi";
 import { ACTION_TYPE } from "../../reducer/actionType";
 
 export const Home = () => {
+  const [categories, setCategories] = useState([]);
   const { data, dispatch, loading } = useData();
 
-  const [categories, setCategories] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     getData(setCategories);
   }, []);
 
-  const hotProducts = [...data].sort((a, b) => b.sales - a.sales).slice(0, 3);
+  const hotProducts = [...data].sort((a, b) => b.sales - a.sales).slice(0, 4);
 
   return (
     <div className="container">
@@ -61,8 +64,38 @@ export const Home = () => {
           </div>
           <img src={goal} alt="sofa" className="goal-img" />
         </div>
-        <h2 className="home-title">Benefits Using Our Services</h2>
-        <div className="benefits">
+
+        <h2 className="home-title ">Catalogs</h2>
+        <div className="catg-whole-cards">
+          {categories.map((item, index) => (
+            <Link
+              className="home-catg"
+              key={item._id}
+              to="./shop"
+              onClick={() =>
+                dispatch({
+                  type: ACTION_TYPE.CHECKBOX_CATG,
+                  payload: item.categoryName,
+                })
+              }
+            >
+              <>
+                <img
+                  className="catg-image"
+                  src={item.image}
+                  alt={item.categoryName}
+                />
+                <div className="catg-content">
+                  <h3>{item.categoryName}</h3>
+                  <p>{item.description}</p>
+                </div>
+              </>
+            </Link>
+          ))}
+        </div>
+
+        {/* <h2 className="home-title extra-margin">Benefits Using Our Services</h2> */}
+        <div className="benefits extra-margin">
           <div className="benefits-single">
             <img src={quality} alt="Quality" className="benefits-quality" />
             <h4 className="benefits-head">Best Quality</h4>
@@ -85,18 +118,13 @@ export const Home = () => {
             <img src={waran} alt="Waranty" className="benefits-wara" />
             <h4 className="benefits-head">Waranty</h4>
             <p className="benefits-detail">
-              Rest assured with our comprehensive warranty, providing peace of
-              mind and protection for your purchased online products.
+              Rest assured with our comprehensive warranty, providing protection
+              for your purchased online products.
             </p>
           </div>
         </div>
-        <h2 className="home-title">Hot Products</h2>
-        <div className="hot-products">
-          {hotProducts.map((item) => (
-            <li key={item?._id} className="product-card-home">
-              <ProductCard {...item} noDetail />
-            </li>
-          ))}
+        <div className="flex-center">
+          <h2 className="home-title">Hot Products</h2>
           <Link
             to="/shop"
             className="home-best-sell-link"
@@ -104,91 +132,33 @@ export const Home = () => {
               dispatch({ type: ACTION_TYPE.SORT_SELECT, payload: "bestSell" })
             }
           >
-            See All &#x27F6;
+            See All <span className="hot-prod-see-all">&#x27F6;</span>
           </Link>
         </div>
-        <h2 className="home-title catg-head">Catalogs</h2>
-        <div>
-          {categories.map((item, index) => (
-            <div className="catg-single" key={item._id}>
-              {index % 2 === 0 ? (
-                <>
+        <div className="hot-whole-cards">
+          {hotProducts.map((item) => (
+            <li key={item?._id} className="product-card-home">
+              <div onClick={() => navigate(`/detail/${item?._id}`)}>
+                <div className="home-card-image-div">
                   <img
-                    className="catg-image"
-                    src={item.image}
-                    alt={item.categoryName}
+                    src={item?.image}
+                    alt={item?.name}
+                    className="home-card-image"
                   />
-                  <div className="catg-content">
-                    <h3>{item.categoryName}</h3>
-                    <p>{item.description}</p>
-                    <Link
-                      className="see-catg-link"
-                      to="./shop"
-                      onClick={() =>
-                        dispatch({
-                          type: ACTION_TYPE.CHECKBOX_CATG,
-                          payload: item.categoryName,
-                        })
-                      }
-                    >
-                      Catalog
-                    </Link>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="catg-content">
-                    <h3>{item.categoryName}</h3>
-                    <p>{item.description}</p>
-                    <Link
-                      className="see-catg-link"
-                      to="./shop"
-                      onClick={() =>
-                        dispatch({
-                          type: ACTION_TYPE.CHECKBOX_CATG,
-                          payload: item.categoryName,
-                        })
-                      }
-                    >
-                      Catalog
-                    </Link>
-                  </div>
-                  <img
-                    className="catg-image"
-                    src={item.image}
-                    alt={item.categoryName}
-                  />
-                </>
-              )}
-            </div>
-          ))}
-
-          {categories.map((item, index) => (
-            <div className="catg-phone" key={item._id}>
-              <>
-                <img
-                  className="catg-image"
-                  src={item.image}
-                  alt={item.categoryName}
-                />
-                <div className="catg-content">
-                  <h3>{item.categoryName}</h3>
-                  <p>{item.description}</p>
-                  <Link
-                    className="see-catg-link"
-                    to="./shop"
-                    onClick={() =>
-                      dispatch({
-                        type: ACTION_TYPE.CHECKBOX_CATG,
-                        payload: item.categoryName,
-                      })
-                    }
-                  >
-                    Catalog
-                  </Link>
                 </div>
-              </>
-            </div>
+
+                <div className="card-content home-card-content">
+                  <h4 className="card-title">{item?.name}</h4>
+                  <div className="flex-center">
+                    <p className="card-price">₹{item?.price}</p>
+                    <p className="card-star-rating">
+                      <BsStarFill color="gold" />
+                      {item?.rating?.toFixed(1)}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </li>
           ))}
         </div>
       </div>
