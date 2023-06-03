@@ -6,6 +6,8 @@ import dt from "../../assets/home-images/dt.png";
 import waran from "../../assets/home-images/waran.png";
 import quality from "../../assets/home-images/quality.png";
 import goal from "../../assets/home-images/goal.png";
+import sofasCatg from "../../assets/home-images/sofasCatg.jpg";
+import sofaCatg1 from "../../assets/home-images/sofaCatg1.jpg";
 import { Footer } from "../../layout/Footer";
 import { useData } from "../../context/ProductContext";
 import { ProductCard } from "../../components/ProductCard";
