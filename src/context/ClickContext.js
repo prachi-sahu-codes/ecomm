@@ -378,10 +378,12 @@ export const ClickProvider = ({ children }) => {
 
   const orderSubmitHandler = () => {
     if (finalOrder.delivery && finalOrder.address) {
-      const finalOrderPrice = coupon.code ? coupon.discount : totalPrice;
-
-      console.log(finalOrderPrice);
+      const finalOrderPrice = parseInt(
+        coupon.code ? coupon.discount : totalPrice
+      );
+      console.log("finalOrderPrice", typeof finalOrderPrice, finalOrderPrice);
       displayRazorpay(finalOrderPrice);
+      // displayRazorpay(1850.28);
     } else if (!finalOrder.delivery) {
       notifyToast("error", "Select delivery option to proceed!");
     } else if (!finalOrder.address) {
