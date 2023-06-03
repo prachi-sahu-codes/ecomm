@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./home.css";
-import home from "../../backend/utils/images/home.jpg";
-import dt from "../../backend/utils/images/dt.png";
-import waran from "../../backend/utils/images/waran.png";
-import quality from "../../backend/utils/images/quality.png";
-import goal from "../../backend/utils/images/goal.png";
+import home from "../../assets/home-images/home.jpg";
+import dt from "../../assets/home-images/dt.png";
+import waran from "../../assets/home-images/waran.png";
+import quality from "../../assets/home-images/quality.png";
+import goal from "../../assets/home-images/goal.png";
 import { Footer } from "../../layout/Footer";
 import { useData } from "../../context/ProductContext";
 import { ProductCard } from "../../components/ProductCard";
