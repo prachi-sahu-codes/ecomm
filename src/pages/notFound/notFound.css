@@ -10,8 +10,10 @@
 }
 
 .notFound-link {
-  color: var(--secondary);
-  font-weight: 500;
+  display: inline-block;
+  width: 200px;
   padding-left: 0.5rem;
   font-size: 1.1rem;
+  margin: 1.5rem 0.5rem;
+  text-decoration: none;
 }

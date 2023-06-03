@@ -317,7 +317,8 @@ export const ClickProvider = ({ children }) => {
     }
     const options = {
       key: "rzp_test_Xw6VvTBEToiwQk",
-      amount: Number(price) * 100,
+      // amount: Number(price) * 100,
+      amount: (price * 100).toFixed(2),
       currency: "INR",
       name: "FURN",
       description: "Thank you for shopping with us",
@@ -356,13 +357,12 @@ export const ClickProvider = ({ children }) => {
         cartData.map(({ _id }) => deleteCartItem(_id));
         notifyToast("success", `Payment of ₹${price} is Succesful`);
         setTimeout(() => {
-          navigate("../shop");
+          navigate("../orderSuccess");
         }, 500);
         setCoupon(() => ({ code: "", discount: totalPrice }));
 
         // setTimeout(() => {
-        //   console.log("Success");
-        //   // navigate("/");
+        //   navigate("/account");
         // }, 4000);
       },
       theme: {
@@ -378,12 +378,14 @@ export const ClickProvider = ({ children }) => {
 
   const orderSubmitHandler = () => {
     if (finalOrder.delivery && finalOrder.address) {
-      const finalOrderPrice = parseInt(
+      // const finalOrderPrice = parseInt(
+      //   coupon.code ? coupon.discount : totalPrice
+      // );
+      const finalOrderPrice = Number(
         coupon.code ? coupon.discount : totalPrice
       );
-      console.log("finalOrderPrice", typeof finalOrderPrice, finalOrderPrice);
+
       displayRazorpay(finalOrderPrice);
-      // displayRazorpay(1850.28);
     } else if (!finalOrder.delivery) {
       notifyToast("error", "Select delivery option to proceed!");
     } else if (!finalOrder.address) {

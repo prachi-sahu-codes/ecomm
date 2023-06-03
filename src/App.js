@@ -15,6 +15,7 @@ import { Login } from "./pages/account/login";
 import { RequiresAuth } from "./components/RequiresAuth";
 import "react-toastify/dist/ReactToastify.css";
 import { Checkout } from "./pages/checkout/Checkout";
+import { OrderSuccess } from "./pages/orderSuccess/OrderSuccess";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         <Route path="/detail/:productId" element={<ProductDetail />} />
         <Route path="/signUp" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/orderSuccess" element={<OrderSuccess />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/mockman" element={<Mockman />} />
         <Route
