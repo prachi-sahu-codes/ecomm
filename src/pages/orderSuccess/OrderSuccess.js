@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Confetti from "react-confetti";
-import confirm from "../../assets/confirm.png";
 import order from "../../assets/order.png";
 
 import { Footer } from "../../layout/Footer";

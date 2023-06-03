@@ -23,29 +23,27 @@ export const Account = () => {
           </div>
 
           <div className="account-whole">
-            <div className="account-user-detail">
+            <div className="account-user-detail shipping-block">
               <h2 className="page-subhead">Personal Information</h2>
               <div className="account-content">
-                <BsFillPersonFill className="acc-user-icon" />
+                <div>
+                  <BsFillPersonFill className="acc-user-icon" />
+                </div>
                 <div className="acc-subcontent">
-                  <p className="acc-info">
-                    <span className="acc-info-title">First Name: </span>
-                    {loggedUser?.firstName}
+                  <p
+                    className="acc-info acc-info-title"
+                    style={{ textTransform: "uppercase" }}
+                  >
+                    {loggedUser?.firstName} {loggedUser?.lastName}{" "}
                   </p>
-                  <p className="acc-info">
-                    <span className="acc-info-title">Last Name: </span>
-                    {loggedUser?.lastName}
-                  </p>
-                  <p className="acc-info">
-                    <span className="acc-info-title">Email: </span>{" "}
-                    {loggedUser?.email}
-                  </p>
+
+                  <p className="acc-info-title">{loggedUser?.email}</p>
                 </div>
               </div>
 
-              {finalSummary.length > 0 && (
-                <div className="order-summary">
-                  <h2 className="page-subhead">Orders</h2>
+              <div className="order-summary">
+                <h2 className="page-subhead">Orders</h2>
+                {finalSummary.length > 0 ? (
                   <ul>
                     {finalSummary?.map((item) => (
                       <li key={item?.id} className="order-sum-whole">
@@ -53,8 +51,10 @@ export const Account = () => {
                       </li>
                     ))}
                   </ul>
-                </div>
-              )}
+                ) : (
+                  <p className="no-order-msg">No orders placed yet!</p>
+                )}
+              </div>
             </div>
             <div className="account-address">
               <Address />

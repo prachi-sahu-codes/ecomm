@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import empty from "../../assets/empty.png";
 import "../cart/cart.css";
 import "./wishlist.css";
 import { BsXLg } from "react-icons/bs";
@@ -105,10 +106,17 @@ export const Wishlist = () => {
         </div>
       ) : (
         <div className="no-data-page" ref={pageRef}>
-          <h2 className="no-data-msg">
-            "Transform Your Space: Fill Your Empty Wishlist with Stunning
-            Furniture Picks!"
-          </h2>
+          <div className="no-data-msg">
+            <img
+              src={empty}
+              className="no-data-img"
+              alt="Boy sitting in empty box"
+            />
+            <h2 className="no-data-content-msg">
+              "Transform Your Space: Fill Your Empty Wishlist with Stunning
+              Furniture Picks!"
+            </h2>
+          </div>
         </div>
       )}
       <Footer />

@@ -85,8 +85,11 @@
 }
 
 @media screen and (max-width: 1035px) {
-  .no-data-msg {
+  .no-data-content-msg {
     font-size: 1.3rem;
+  }
+  .no-data-img {
+    width: 250px;
   }
 }
 
@@ -130,7 +133,10 @@
 }
 
 @media screen and (max-width: 450px) {
-  .no-data-msg {
+  .no-data-content-msg {
     font-size: 1rem;
+  }
+  .no-data-img {
+    width: 200px;
   }
 }

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import empty from "../../assets/empty.png";
 import "../../App.css";
 import "./cart.css";
 import { BsXLg } from "react-icons/bs";
@@ -175,15 +176,20 @@ export const Cart = () => {
         </div>
       ) : (
         <div className="no-data-page" ref={pageRef}>
-          <h2 className="no-data-msg">
-            "Discover the Art of Space: Your Empty Cart Awaits Your Perfect
-            Furniture Pieces!"
-          </h2>
+          <div className="no-data-msg">
+            <img
+              src={empty}
+              className="no-data-img"
+              alt="Boy sitting in empty box"
+            />
+            <h2 className="no-data-content-msg">
+              "Discover the Art of Space: Your Empty Cart Awaits Your Perfect
+              Furniture Pieces!"
+            </h2>
+          </div>
         </div>
       )}
       <Footer />
     </>
   );
 };
-
-// phone

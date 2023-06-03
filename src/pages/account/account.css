@@ -5,8 +5,9 @@
 .account-content {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 1rem;
   margin: auto;
+  margin-bottom: 1rem;
 }
 
 .account-whole {
@@ -17,9 +18,14 @@
 }
 
 .acc-user-icon {
-  font-size: 10rem;
+  font-size: 4rem;
   color: var(--secondary);
   margin: 1rem 0;
+}
+
+.no-order-msg {
+  margin: 1rem 0;
+  font-size: 1.1rem;
 }
 
 .acc-subcontent {
@@ -34,7 +40,7 @@
 }
 
 .acc-info {
-  padding-bottom: 0.8rem;
+  padding-bottom: 0.3rem;
 }
 
 .acc-info-title {
@@ -239,11 +245,10 @@
 
 @media screen and (max-width: 529px) {
   .account-content {
-    gap: 1rem;
     margin-top: 1rem;
   }
   .acc-user-icon {
-    font-size: 7rem;
+    font-size: 5rem;
   }
 
   .acc-info {
