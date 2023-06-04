@@ -13,13 +13,13 @@
   height: 420px;
   margin-bottom: 1rem;
   border-radius: 2px;
-  box-shadow: 0 1px 5px rgb(214, 214, 214);
+  box-shadow: 0 1px 5px var(--card-shadow);
   transition: all 0.3s ease-in-out;
   overflow: hidden;
 }
 
 .product-card:hover {
-  box-shadow: 0 3px 7px rgb(176, 176, 176);
+  box-shadow: 0 3px 7px var(--card-shadow-hover);
 }
 
 /***************************************/

@@ -34,7 +34,7 @@ export const AuthProvider = ({ children }) => {
         setToken(encodedToken);
         setLoggedUser(foundUser);
         navigate("../shop");
-        notifyToast("success", "Succesfully Logged In!");
+        notifyToast("success", `Welcome back, ${foundUser.firstName}!`);
       } else {
         notifyToast("error", "Something is Wrong!");
       }
@@ -49,6 +49,7 @@ export const AuthProvider = ({ children }) => {
     setLoggedUser(null);
     navigate("/shop");
     dispatch({ type: ACTION_TYPE.CLEAR_FILTER });
+    notifyToast("success", "Succesfully Logged Out!");
   };
 
   const signUpUser = async (input) => {

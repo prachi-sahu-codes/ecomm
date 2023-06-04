@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import Confetti from "react-confetti";
+import { Footer } from "../../layout/Footer";
+import { useData } from "../../context/ProductContext";
+import "../../App.css";
 import order from "../../assets/order.png";
 
-import { Footer } from "../../layout/Footer";
-import "../../App.css";
 export const OrderSuccess = () => {
+  const { pageRef, scrollToTop } = useData();
   const [confettiWidth, setConfettiWidth] = useState(window.innerWidth - 16);
 
   useEffect(() => {
+    scrollToTop();
+
     const handleResize = () => {
       setConfettiWidth(window.innerWidth - 16);
     };
@@ -17,9 +21,11 @@ export const OrderSuccess = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   return (
-    <>
+    <div ref={pageRef}>
       <div className="no-data-page">
         <Confetti
           recycle={true}
@@ -51,6 +57,6 @@ export const OrderSuccess = () => {
         </h2>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };

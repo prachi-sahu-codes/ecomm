@@ -166,13 +166,13 @@
   cursor: pointer;
   margin-bottom: 3rem;
   border-radius: 2px;
-  box-shadow: 0 1px 5px rgb(214, 214, 214);
+  box-shadow: 0 1px 5px var(--card-shadow);
   transition: all 0.3s ease-in-out;
   overflow: hidden;
 }
 
 .product-card-home:hover {
-  box-shadow: 0 3px 7px rgb(134, 134, 134);
+  box-shadow: 0 3px 7px var(--card-shadow-hover);
 }
 
 .product-card-home:hover .home-card-image {
@@ -220,7 +220,7 @@
   bottom: 00px;
   padding: 0 0.9rem;
   color: var(--white);
-  background-color: rgba(28, 28, 28, 0.535);
+  background-color: rgba(28, 28, 28, 0.831);
   transition: all 0.3s ease-in-out;
 }
 
