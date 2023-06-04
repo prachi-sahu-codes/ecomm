@@ -308,6 +308,7 @@ input {
   align-items: center;
   margin: 0.4rem 0;
   font-size: 1rem;
+  cursor: pointer;
 }
 
 .radio-whole {
@@ -315,6 +316,7 @@ input {
   align-items: center;
   margin: 0.4rem 0;
   font-size: 1rem;
+  cursor: pointer;
 }
 
 input[type="checkbox"] {
@@ -354,6 +356,7 @@ input[type="radio"] {
   accent-color: var(--secondary);
   margin-right: 0.6rem;
   transform: scale(1.2);
+  cursor: pointer;
 }
 
 /***********reset link********/

@@ -10,6 +10,8 @@
 
 .cross-icon-wishlist {
   font-size: 0.9rem;
+  cursor: pointer;
+  stroke-width: 0.2px;
   color: var(--gray);
 }
 

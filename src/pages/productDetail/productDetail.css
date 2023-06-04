@@ -22,6 +22,7 @@
 .detail-image {
   width: 500px;
   border-radius: 2px;
+  cursor: pointer;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -40,6 +41,7 @@
 
 .detail-icon-heart {
   font-size: 1.2rem;
+  cursor: pointer;
 }
 
 .detail-title {
@@ -74,6 +76,7 @@
   padding: 0.1rem 1rem;
   font-size: 1.4rem;
   border: none;
+  cursor: pointer;
   background-color: transparent;
   border-radius: 2px;
 }

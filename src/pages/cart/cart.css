@@ -48,6 +48,8 @@
   font-size: 0.9rem;
   color: var(--gray);
   margin-bottom: 1rem;
+  cursor: pointer;
+  stroke-width: 0.2px;
 }
 
 .move-cart-btn {

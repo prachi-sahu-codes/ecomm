@@ -28,10 +28,12 @@
   padding: 0.3rem 0;
   color: var(--gray);
   font-size: 0.9rem;
+  cursor: pointer;
 }
 
 .delivery-label {
   font-weight: 500;
+  cursor: pointer;
 }
 
 .delivery-card {
@@ -125,6 +127,7 @@
 .coupon-remove {
   stroke-width: 1.5px;
   height: 1.5rem;
+  cursor: pointer;
 }
 
 .checkout-order-saving {

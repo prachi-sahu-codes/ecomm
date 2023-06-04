@@ -53,6 +53,7 @@ export const Address = ({ noDetail }) => {
                 <input id={firstname} type="radio" name="address-radio" />
               )}
               <label
+                className="address-card-label"
                 htmlFor={firstname}
                 style={{ paddingLeft: noDetail ? "0" : "1.5rem" }}
               >

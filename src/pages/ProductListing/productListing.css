@@ -14,6 +14,7 @@
   margin-bottom: 1rem;
   border-radius: 2px;
   box-shadow: 0 1px 5px var(--card-shadow);
+  cursor: pointer;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
 }
@@ -70,6 +71,7 @@
   font-weight: 600;
   color: var(--secondary);
   outline: none;
+  cursor: pointer;
   background-color: #fff;
 }
 
