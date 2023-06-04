@@ -31,13 +31,14 @@ $ npm start
 - Wishlist managment
 - Address management
 - Order management
+- Account Page with order summary
 - Checkout page
 - Payment gateway integration
 - Authentication:
   - User Signup
   - User Login
   - logout page
-- Error Page
+- Not found 404 Page
 - Toast and Loaders
 - Fully Responsive
 
