@@ -112,12 +112,20 @@
   background-image: linear-gradient(to bottom, #661f1e, #852827);
 }
 
+.address-btn-hide-desktop {
+  display: none;
+}
+
 @media screen and (max-width: 640px) {
   .address-block {
     width: 250px;
     height: 400px;
     overflow-y: scroll;
     padding: 1.5rem;
+  }
+
+  .address-btn-hide-desktop {
+    display: inline-block;
   }
 
   .form-textarea {

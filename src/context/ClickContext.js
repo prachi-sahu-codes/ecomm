@@ -349,6 +349,11 @@ export const ClickProvider = ({ children }) => {
           },
         ]);
 
+        addressDispatch({
+          type: FORM_ACTION_TYPE.SELECT_ADDRESS_FORM,
+          payload: null,
+        });
+
         setFinalOrder({
           delivery: "",
           address: addressState.selectedAddress,
@@ -361,9 +366,9 @@ export const ClickProvider = ({ children }) => {
         }, 500);
         setCoupon(() => ({ code: "", discount: totalPrice }));
 
-        // setTimeout(() => {
-        //   navigate("/account");
-        // }, 4000);
+        setTimeout(() => {
+          navigate("/account");
+        }, 5000);
       },
       theme: {
         color: "#661f1e",

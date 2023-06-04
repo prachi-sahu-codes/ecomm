@@ -38,7 +38,7 @@ export const Cart = () => {
       setTimeout(() => {
         deleteCartItem(input._id);
         notifyToast("error", "Removed from Cart!");
-      }, 500);
+      }, 1000);
     }
   };
 

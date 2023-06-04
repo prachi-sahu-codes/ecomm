@@ -186,7 +186,7 @@ export const AddressForm = ({ addressDispatch }) => {
               Random
             </button>
             <button
-              className="form-btn-light address-btn-mb"
+              className="form-btn-light address-btn-mb address-btn-hide-desktop"
               onClick={() =>
                 addressDispatch({ type: FORM_ACTION_TYPE.SHOW_ADDRESS_FORM })
               }
