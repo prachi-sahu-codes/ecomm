@@ -250,7 +250,7 @@ export const ClickProvider = ({ children }) => {
         type: FORM_ACTION_TYPE.UPDATE_ADDRESS,
         payload: formData,
       });
-
+      setFormData(formFields);
       addressDispatch({
         type: FORM_ACTION_TYPE.SHOW_ADDRESS_FORM,
       });
@@ -317,7 +317,6 @@ export const ClickProvider = ({ children }) => {
     }
     const options = {
       key: "rzp_test_Xw6VvTBEToiwQk",
-      // amount: Number(price) * 100,
       amount: (price * 100).toFixed(2),
       currency: "INR",
       name: "FURN",
@@ -383,9 +382,6 @@ export const ClickProvider = ({ children }) => {
 
   const orderSubmitHandler = () => {
     if (finalOrder.delivery && finalOrder.address) {
-      // const finalOrderPrice = parseInt(
-      //   coupon.code ? coupon.discount : totalPrice
-      // );
       const finalOrderPrice = Number(
         coupon.code ? coupon.discount : totalPrice
       );
