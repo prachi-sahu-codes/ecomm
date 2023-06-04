@@ -592,7 +592,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    name: "Dandridge Sofa",
+    name: "Dandridgel Sofa",
     description:
       "This mid-century inspired single sofa proves that the curved lines in the furniture trend are here to stay.",
     price: 14099.99,
@@ -1091,7 +1091,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    name: "Novak Sofa",
+    name: "Novakel Sofa",
     description:
       "A contemporary mid-century modern style sofa featuring strong shapes and hard edges along with a rich velvet fabric.",
     price: 31499.99,
@@ -1106,7 +1106,7 @@ export const products = [
     rating: 5.0,
     ratingHike: "56",
     reviewsCount: "43.5k",
-    sales: 44125,
+    sales: 59000,
     reviews: [
       {
         author: "Tom Wilson",
@@ -1229,9 +1229,9 @@ export const products = [
     image:
       "https://essentialhome.eu/images/products/product-page/upholstery/dandridge-sofa/dandridge-sofa-1.png",
     rating: 5.0,
-    ratingHike: "16",
-    reviewsCount: "24.5k",
-    sales: 28000,
+    ratingHike: "39",
+    reviewsCount: "54.5k",
+    sales: 59500,
     reviews: [
       {
         author: "Tom Wilson",
@@ -1465,9 +1465,9 @@ export const products = [
   },
   {
     _id: uuid(),
-    name: "Ezra Dining Table",
+    name: "Ezran Dining Table",
     description:
-      "The Ezra Dining Table might be one of the most unique pieces in Studiopepe’s collection for Essential Home. Inspired by the beautiful Italian architecture scenario, the modern dining table was drawn from a combination of straight curvilinear lines redeﬁning the limits of physics. Ezra opens the world’s design horizon with its solid wooden structure enlightened with some polished brass details, perfect to embellish any modern space.",
+      "The Ezran Dining Table might be one of the most unique pieces in Studiopepe’s collection for Essential Home. Inspired by the beautiful Italian architecture scenario, the modern dining table was drawn from a combination of straight curvilinear lines redeﬁning the limits of physics. Ezra opens the world’s design horizon with its solid wooden structure enlightened with some polished brass details, perfect to embellish any modern space.",
     price: 27800,
     category: "Table",
     dimensions: {
@@ -1479,8 +1479,8 @@ export const products = [
       "https://essentialhome.eu/images/products/product-page/casegoods/ezra-dining-table/ezra-dining-table-1.png",
     rating: 3.0,
     ratingHike: "65",
-    reviewsCount: "54.5k",
-    sales: 59000,
+    reviewsCount: "24.5k",
+    sales: 28652,
     reviews: [
       {
         author: "Tom Wilson",
