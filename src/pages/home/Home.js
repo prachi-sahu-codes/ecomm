@@ -17,12 +17,19 @@ import { ACTION_TYPE } from "../../reducer/actionType";
 
 export const Home = () => {
   const [categories, setCategories] = useState([]);
-  const { data, dispatch, loading } = useData();
+  const { data, dispatch, loading, setLoading } = useData();
 
   const navigate = useNavigate();
 
   useEffect(() => {
     getData(setCategories);
+  }, []);
+
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => setLoading(false), 700);
+    return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const hotProducts = [...data].sort((a, b) => b.sales - a.sales).slice(0, 4);
