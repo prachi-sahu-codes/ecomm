@@ -1,11 +1,14 @@
 # FURN
-A minimal E-commerce Furniture App built on top of ReactJS.
+FURN A minimal E-commerce Furniture App built on top of ReactJS. Your one-stop destination for furniture shopping with an emphasis on exceptional content. We prioritize simplicity and functionality in our design, providing you with a seamless and enjoyable journey from start to checkout.
 
-Discover a wide range of high-quality furniture pieces that will transform your living spaces into stunning havens. With user-friendly navigation, secure payment options, and personalized wishlist features, FURN makes it effortless to find and purchase the perfect pieces for your home. Our target audience are individuals who are passionate about interior design and seek high-quality, visually appealing furniture to enhance their living spaces. 
+Discover a wide range of high-quality furniture pieces that will transform your living spaces into stunning havens. With user-friendly navigation, secure payment options, and personalized wishlist features, FURN makes it effortless to find and purchase the perfect pieces for your home. 
+
+Our target audience are individuals who are passionate about interior design and seek high-quality, visually appealing furniture to enhance their living spaces. 
 
 ## Visualizing the Project in Action
 
-https://github.com/prachi-sahu-codes/ecomm/assets/87253962/a75f7459-0071-4fce-8adb-72c1c825f4ca
+https://github.com/prachi-sahu-codes/ecomm/assets/87253962/d35eeca3-def5-4b5a-a916-692fd4d5ad36
+
 
 ## Key Features
 
