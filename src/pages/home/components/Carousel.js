@@ -11,12 +11,12 @@ import "./carousel.css";
 const TestimonialCarousel = () => {
   return (
     <Carousel
-      autoPlay={true} // Enable automatic slide change
-      interval={3000} // Set the interval between slides (in milliseconds)
-      infiniteLoop={true} // Enable infinite loop
-      showArrows={true} // Hide navigation arrows
-      showStatus={false} // Hide slide status indicators
-      showThumbs={false} // Hide thumbnail navigation
+      autoPlay={true} 
+      interval={3000} 
+      infiniteLoop={true} 
+      showArrows={true} 
+      showStatus={false}
+      showThumbs={false}
     >
       <img src={per1} alt="person1" />
       <img src={per2} alt="person2" />
