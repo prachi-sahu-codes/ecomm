@@ -1,4 +1,7 @@
 # FURN
+Welcome to FURN, your ultimate destination for all things furniture! Our ecommerce website project is dedicated to providing you with a seamless and enjoyable shopping experience. 
+
+Discover a wide range of high-quality furniture pieces that will transform your living spaces into stunning havens. With user-friendly navigation, secure payment options, and personalized wishlist features, FURN makes it effortless to find and purchase the perfect pieces for your home. Get ready to reimagine your living spaces and create the ambiance you've always dreamed of with us.
 
 ## How to install and run locally?
 
@@ -28,13 +31,14 @@ $ npm start
 - Wishlist managment
 - Address management
 - Order management
+- Account Page with order summary
 - Checkout page
 - Payment gateway integration
 - Authentication:
   - User Signup
   - User Login
   - logout page
-- Error Page
+- Not found 404 Page
 - Toast and Loaders
 - Fully Responsive
 
