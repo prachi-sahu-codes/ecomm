@@ -1,5 +1,5 @@
 # FURN
-FURN A minimal E-commerce Furniture App built on top of ReactJS. Your one-stop destination for furniture shopping with an emphasis on exceptional content. We prioritize simplicity and functionality in our design, providing you with a seamless and enjoyable journey from start to checkout.
+FURN, a minimal E-commerce Furniture App built on top of ReactJS. Your one-stop destination for furniture shopping with an emphasis on exceptional content. We prioritize simplicity and functionality in our design, providing you with a seamless and enjoyable journey from start to checkout.
 
 Discover a wide range of high-quality furniture pieces that will transform your living spaces into stunning havens. With user-friendly navigation, secure payment options, and personalized wishlist features, FURN makes it effortless to find and purchase the perfect pieces for your home. 
 
