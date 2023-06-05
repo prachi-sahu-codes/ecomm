@@ -8,7 +8,10 @@ import { useData } from "../../context/ProductContext";
 export const Signup = () => {
   const { signUpUser } = useAuth();
   const { notifyToast } = useData();
-  const [passVisible, setPassVisible] = useState("password");
+  const [passVisible, setPassVisible] = useState({
+    pass: "password",
+    confPass: "password",
+  });
   const [userInfo, setUserInfo] = useState({
     firstName: "",
     lastName: "",
@@ -90,7 +93,7 @@ export const Signup = () => {
           <div className="sign-input-label pwd-input">
             <label htmlFor="pwd">Password:</label>
             <input
-              type={passVisible}
+              type={passVisible.pass}
               placeholder="********"
               id="pwd"
               name="pwd"
@@ -101,10 +104,18 @@ export const Signup = () => {
               required
             />
             <div className="pwd-eye-icon">
-              {passVisible === "password" ? (
-                <BsEyeSlashFill onClick={() => setPassVisible(() => "text")} />
+              {passVisible.pass === "password" ? (
+                <BsEyeSlashFill
+                  onClick={() =>
+                    setPassVisible((p) => ({ ...p, pass: "text" }))
+                  }
+                />
               ) : (
-                <BsEyeFill onClick={() => setPassVisible(() => "password")} />
+                <BsEyeFill
+                  onClick={() =>
+                    setPassVisible((p) => ({ ...p, pass: "password" }))
+                  }
+                />
               )}
             </div>
           </div>
@@ -112,7 +123,7 @@ export const Signup = () => {
           <div className="sign-input-label pwd-input">
             <label htmlFor="cnfrmpwd">Confirm password:</label>
             <input
-              type={passVisible}
+              type={passVisible.confPass}
               placeholder="********"
               id="cnfrmpwd"
               name="cnfrmpwd"
@@ -123,10 +134,18 @@ export const Signup = () => {
               required
             />
             <div className="pwd-eye-icon">
-              {passVisible === "password" ? (
-                <BsEyeSlashFill onClick={() => setPassVisible(() => "text")} />
+              {passVisible.confPass === "password" ? (
+                <BsEyeSlashFill
+                  onClick={() =>
+                    setPassVisible((p) => ({ ...p, confPass: "text" }))
+                  }
+                />
               ) : (
-                <BsEyeFill onClick={() => setPassVisible(() => "password")} />
+                <BsEyeFill
+                  onClick={() =>
+                    setPassVisible((p) => ({ ...p, confPass: "password" }))
+                  }
+                />
               )}
             </div>
           </div>
