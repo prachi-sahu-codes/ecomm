@@ -1,10 +1,9 @@
-![Frame 31](https://github.com/prachi-sahu-codes/ecomm/assets/87253962/0f0bf8bb-f7ed-4e87-afa7-ae325f658d3e)
-
+![logo (1)](https://github.com/prachi-sahu-codes/ecomm/assets/87253962/19c5c793-5749-45ce-be0e-bc4d4d15a9ae)
 A minimal E-commerce Furniture App built on top of ReactJS.
-
 Discover a wide range of high-quality furniture pieces that will transform your living spaces into stunning havens. With user-friendly navigation, secure payment options, and personalized wishlist features, FURN makes it effortless to find and purchase the perfect pieces for your home. Our target audience are individuals who are passionate about interior design and seek high-quality, visually appealing furniture to enhance their living spaces. 
 
 ##Visualizing the Project in Action
+
 https://github.com/prachi-sahu-codes/ecomm/assets/87253962/a75f7459-0071-4fce-8adb-72c1c825f4ca
 
 ## Key Features
