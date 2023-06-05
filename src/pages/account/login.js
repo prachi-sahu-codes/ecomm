@@ -17,7 +17,7 @@ export const Login = () => {
             <label htmlFor="email">Email address:</label>
             <input
               type="email"
-              placeholder="josh@gmail.com"
+              placeholder="prachi@gmail.com"
               id="email"
               name="email"
               className="sign-input"
@@ -64,8 +64,8 @@ export const Login = () => {
             className="card-btn"
             onClick={() =>
               loginUser({
-                email: "aditya66r@gmail.com",
-                password: "aditya66r",
+                email: "prachi@gmail.com",
+                password: "prachi66r",
               })
             }
           >
