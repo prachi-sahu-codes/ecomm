@@ -245,6 +245,8 @@ export const ClickProvider = ({ children }) => {
       });
 
       notifyToast("success", "New address added!");
+    } else if (!isFormFilled) {
+      notifyToast("error", "Please fill all fields!");
     } else {
       addressDispatch({
         type: FORM_ACTION_TYPE.UPDATE_ADDRESS,
