@@ -186,6 +186,14 @@ export const Cart = () => {
               "Discover the Art of Space: Your Empty Cart Awaits Your Perfect
               Furniture Pieces!"
             </h2>
+            <div>
+              <button
+                className="nodata-page-link card-btn"
+                onClick={() => navigate(`../shop`)}
+              >
+                Shop Now
+              </button>
+            </div>
           </div>
         </div>
       )}

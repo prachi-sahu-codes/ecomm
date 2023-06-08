@@ -116,6 +116,12 @@ export const Wishlist = () => {
               "Transform Your Space: Fill Your Empty Wishlist with Stunning
               Furniture Picks!"
             </h2>
+            <button
+              className="nodata-page-link card-btn"
+              onClick={() => navigate(`../shop`)}
+            >
+              Shop Now
+            </button>
           </div>
         </div>
       )}

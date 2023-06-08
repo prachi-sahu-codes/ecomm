@@ -11,9 +11,8 @@
 
 .notFound-link {
   display: inline-block;
-  width: 200px;
-  padding-left: 0.5rem;
-  font-size: 1.1rem;
+  max-width: 190px;
+  font-size: 1.05rem;
   margin: 1.5rem 0.5rem;
   text-decoration: none;
 }

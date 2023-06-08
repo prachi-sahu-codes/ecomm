@@ -174,6 +174,14 @@
   text-align: right;
 }
 
+.nodata-page-link {
+  display: inline-block;
+  max-width: 150px;
+  font-size: 1.05rem;
+  margin: 1.5rem 0.5rem;
+  text-decoration: none;
+}
+
 /*******************media query************************/
 
 @media screen and (max-width: 735px) {
