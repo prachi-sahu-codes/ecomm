@@ -39,7 +39,7 @@ export const Wishlist = () => {
   return (
     <>
       {wishlistData.length !== 0 ? (
-        <div className="div-padding" ref={pageRef}>
+        <div className="div-padding div-height" ref={pageRef}>
           <div className="page-content">
             <div className="flex-center">
               <h1 className="page-title">Wishlist </h1>

@@ -40,6 +40,10 @@
   padding: 6rem 2rem 2rem;
 }
 
+.div-height {
+  min-height: 100vh;
+}
+
 .div-center {
   display: flex;
   align-items: center;

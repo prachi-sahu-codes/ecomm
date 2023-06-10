@@ -45,7 +45,7 @@ export const Cart = () => {
   return (
     <>
       {cartData.length !== 0 ? (
-        <div className="div-padding" ref={pageRef}>
+        <div className="div-padding div-height" ref={pageRef}>
           <div className="page-content">
             <div className="flex-center title-padding-mb">
               <h1 className="page-title page-title-mb">Cart</h1>
