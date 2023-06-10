@@ -158,7 +158,7 @@ export const Signup = () => {
             Create new account
           </button>
           <div>
-            <span>Don't have an account? </span>
+            <span>Already have an account? </span>
             <Link to="/login" className="sign-link">
               Sign In
             </Link>

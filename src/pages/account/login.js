@@ -72,7 +72,7 @@ export const Login = () => {
             Login as a guest
           </button>
           <div>
-            <span>Already have an account? </span>
+            <span>Don't have an account? </span>
             <Link to="/signUp" className="sign-link">
               Sign Up
             </Link>
