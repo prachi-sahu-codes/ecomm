@@ -16,7 +16,7 @@ export const categories = [
   {
     _id: uuid(),
     categoryName: "Table",
-    image: "https://i.imgur.com/KRm0EvR.png",
+    image: "https://i.imgur.com/mNIJKvV.jpg",
     description:
       "Enhance your living spaces with our versatile tables which is designed to add a touch of elegance.",
   },
